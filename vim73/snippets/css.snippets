@@ -1,0 +1,162 @@
+snippet i
+	!important
+# Background 
+snippet bg
+	background: #${1:ccc};${2}
+
+snippet bgurl
+	background: url(${1}) ${2:no-repeat};${3}
+
+snippet bggradient
+	background: #$1;
+	background: -webkit-gradient(linear, left top, left bottom, from(#${1:000}), to(#${2:fff}));
+	background: -moz-linear-gradient(top,  #$1,  #$2);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#$1', endColorstr='#$2');${3}
+
+# Borders
+snippet border
+	border: ${1:1}px ${2:solid} #${3:ccc};${4}
+
+snippet bt
+	border-top: ${1:1}px ${2:solid} #${3:ccc};${4}
+	
+snippet bb
+	border-bottom: ${1:1}px ${2:solid} #${3:ccc};${4}
+
+snippet bl
+	border-left: ${1:1}px ${2:solid} #${3:ccc};${4}
+
+snippet br
+	border-right: ${1:1}px ${2:solid} #${3:ccc};${4}
+
+# Margin
+snippet margin
+	margin: ${1:1}px ${2:1}px ${3:1}px ${4:1}px;${5}
+
+snippet	m
+	margin: ${1:1}px ${2:1}px;${3}
+
+snippet mb
+	margin-bottom: ${1:10}px;${2}
+
+snippet mt
+	margin-top: ${1:10}px;${2}
+
+snippet ml
+	margin-left: ${1:10}px;${2}
+
+snippet mr
+	margin-right: ${1:10}px;${3}
+	
+# Padding
+snippet padding
+	padding: ${1:1}px ${2:1}px ${3:1}px ${4:1}px;${5}
+
+snippet	p
+	padding: ${1:1}px ${2:1}px;${3}
+
+snippet pb
+	padding-bottom: ${1:10}px;${2}
+
+snippet pt
+	padding-top: ${1:10}px;${2}
+
+snippet pl
+	padding-left: ${1:10}px;${2}
+
+snippet pr
+	padding-right: ${1:10}px;${2}
+
+# Font & Text
+snippet f
+	font: ${1:12}px ${2:Arial}, ${3:Sans-serif};${4}
+
+snippet fface
+	@font-face {
+		font-family: '${1:Family}';
+		font-style: ${2:Normal};
+		font-weight: ${3:Bold};
+		src: local('${4:Family}'), local('${5:Local}'), url('${6:URL}') format('${7:format}');
+	}
+	${8}
+snippet ffamily
+	font-family: ${1:Arial}, ${2:Sans-serif};${3}
+
+snippet fstyle
+	font-style: ${1:Style};${2}
+
+snippet fweight
+	font-weight: ${1:Normal};${2}
+
+snippet fsize
+	font-size: ${1:12}px;${2}
+
+snippet	c
+	color: #${1:333};${2}
+
+snippet ta
+	text-align: ${1:center};${2}
+
+snippet tt
+	text-transform: ${1:none};${2}
+
+# Width
+snippet w
+	width: ${1:960}px;${2}
+
+snippet h
+	height: ${1:100}px;${2}
+
+# Position
+snippet fl
+	float: left;${1}
+
+snippet fr
+	float: right;${1}
+
+snippet dt
+	display: table;${1}
+
+snippet db
+	display: block;${1}
+
+snippet positionr
+	position: relative;${1}
+
+snippet positiona
+	position: absolute;${1}
+
+# CSS3 
+snippet boxshadow
+	-moz-box-shadow: ${1:1}px ${2:1}px ${3:1}px ${4:1}px #${5:000};
+	-webkit-box-shadow: $1px $2px $3px $4px #$5;
+	box-shadow: $1px $2px $3px $4px #$5;
+	${6}
+
+snippet roundcorners
+	-moz-border-radius: ${1:1}px ${2:1}px ${3:1}px ${4:1}px;
+	-webkit-border-radius: $1px $2px $3px $4px;
+	border-radius: $1px $2px $3px $4px;
+	${5}
+
+snippet textshadow
+	 text-shadow: ${1:1}px ${2:1}px ${3:1}px ${4:1}px #${5:000};${6}
+
+snippet com
+	/* ${1} */
+
+snippet comm
+	/* 
+	 * ${1} 
+	 */
+
+snippet id 
+	#${1} {
+		${2}
+	}
+
+snippet cls
+	.${1} {
+		${2}
+	}
+	
