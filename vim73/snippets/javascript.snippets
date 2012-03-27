@@ -79,3 +79,22 @@ snippet	cl
 
 snippet jq
 	$('${1}');
+
+snippet module
+	(function(window, document, $, undefined){
+
+		var app = (function(){        
+
+			function init() {
+
+			}
+
+			return {
+				init : init
+			};
+
+		})();
+
+		$(window).ready(app.init);
+
+	})(window, document, jQuery);
