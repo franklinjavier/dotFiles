@@ -65,7 +65,9 @@ snippet :f
 	}${3:,}
 # setTimeout function
 snippet timeout
-	setTimeout(function() {${3}}${2}, ${1:10};
+	setTimeout( function() {
+		${2}
+	}, ${1:10} );
 # Get Elements
 snippet get
 	getElementsBy${1:TagName}('${2}')${3}
@@ -80,13 +82,13 @@ snippet	cl
 snippet jq
 	$('${1}');
 
-snippet module
-	(function(window, document, $, undefined){
+snippet app
+	;( function( window, document, undefined ) {
 
-		var app = (function(){        
+		var app = (function() {        
 
 			function init() {
-
+				${1}
 			}
 
 			return {
@@ -95,6 +97,25 @@ snippet module
 
 		})();
 
-		$(window).ready(app.init);
+		app.init();
 
-	})(window, document, jQuery);
+	})( window, document );
+
+snippet appjq
+	;( function( window, document, $, undefined ) {
+
+		var app = (function() {        
+
+			function init() {
+				${1}
+			}
+
+			return {
+				init : init
+			};
+
+		})();
+
+		$(window).ready( app.init );
+
+	})( window, document, jQuery );

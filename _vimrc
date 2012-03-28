@@ -61,7 +61,7 @@ filetype indent on
 " highlight the syntax
 syntax on
 "set color scheme
-colorscheme rdark
+colorscheme lucius
 " set the default gui font to Monaco
 "set guifont=Monaco\ 11
 set guifont=Consolas:h11
