@@ -78,7 +78,7 @@ set expandtab
 " highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
 autocmd FileType php let php_sql_query=1
 " does exactly that. highlights html inside of php strings
-"autocmd FileTyp php let php_htmlInStrings=1
+" autocmd FileTyp php let php_htmlInStrings=1
 " no short tags
 autocmd FileType php let php_noShortTags=1
 " automagically folds functions & methods. this is getting IDE-like isn't it?
@@ -86,7 +86,7 @@ autocmd FileType php let php_folding=1
 " autocomplete funcs and identifiers for languages
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP

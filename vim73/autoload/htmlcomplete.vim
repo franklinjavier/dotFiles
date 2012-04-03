@@ -285,6 +285,7 @@ function! htmlcomplete#CompleteTags(findstart, base)
 				let cssfiles = styletable + secimportfiles
 				let classes = []
 				for file in cssfiles
+					let classlines = []
 					if filereadable(file)
 						let stylesheet = readfile(file)
 						let stylefile = join(stylesheet, ' ')
