@@ -45,6 +45,8 @@ set visualbell
 set noerrorbells
 " show the cursor position all the time
 set ruler 
+" highlight the cursor line
+set cursorline
 " display incomplete commands
 set showcmd
 " set 4 lines on the edge of the screen
