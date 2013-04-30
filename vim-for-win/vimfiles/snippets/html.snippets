@@ -1,0 +1,347 @@
+# Some useful Unicode entities
+# Non-Breaking Space
+snippet nbs
+	&nbsp;
+# ←
+snippet left
+	&#x2190;
+# →
+snippet right
+	&#x2192;
+# ↑
+snippet up
+	&#x2191;
+# ↓
+snippet down
+	&#x2193;
+# ↩
+snippet return
+	&#x21A9;
+# ⇤
+snippet backtab
+	&#x21E4;
+# ⇥
+snippet tab
+	&#x21E5;
+# ⇧
+snippet shift
+	&#x21E7;
+# ⌃
+snippet control
+	&#x2303;
+# ⌅
+snippet enter
+	&#x2305;
+# ⌘
+snippet command
+	&#x2318;
+# ⌥
+snippet option
+	&#x2325;
+# ⌦
+snippet delete
+	&#x2326;
+# ⌫
+snippet backspace
+	&#x232B;
+# ⎋
+snippet escape
+	&#x238B;
+# Generic Doctype
+snippet doctype HTML 4.01 Strict
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+snippet doctype HTML 4.01 Transitional
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+snippet doctype HTML 5
+	<!DOCTYPE HTML>
+snippet doctype XHTML 1.0 Frameset
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+snippet doctype XHTML 1.0 Strict
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+snippet doctype XHTML 1.0 Transitional
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+snippet doctype XHTML 1.1
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+# HTML Doctype 4.01 Strict
+snippet docts
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+# HTML Doctype 4.01 Transitional
+snippet doct
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+# HTML Doctype 5
+snippet doct5
+	<!DOCTYPE HTML>
+# XHTML Doctype 1.0 Frameset
+snippet docxf
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+# XHTML Doctype 1.0 Strict
+snippet docxs
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+# XHTML Doctype 1.0 Transitional
+snippet docxt
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+# XHTML Doctype 1.1
+snippet docx
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+snippet html
+	<html>
+	${1}
+	</html>
+snippet xhtml
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	${1}
+	</html>
+snippet body
+	<body>
+		${1}
+	</body>
+snippet head
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8"`Close()`>
+
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+		${2}
+	</head>
+snippet title
+	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
+snippet script
+	<script type="text/javascript" charset="utf-8">
+		${1}
+	</script>${2}
+snippet scriptsrc
+	<script src="${1}.js" type="text/javascript" charset="utf-8"></script>${2}
+snippet style
+	<style type="text/css" media="${1:screen}">
+		${2}
+	</style>${3}
+snippet base
+	<base href="${1}" target="${2}"`Close()`>
+snippet r
+	<br`Close()[1:]`>
+snippet div
+	<div id="${1:name}">
+		${2}
+	</div>
+# Embed QT Movie
+snippet movie
+	<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+	 codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+		<param name="src" value="$1"`Close()`>
+		<param name="controller" value="$4"`Close()`>
+		<param name="autoplay" value="$5"`Close()`>
+		<embed src="${1:movie.mov}"
+			width="${2:320}" height="${3:240}"
+			controller="${4:true}" autoplay="${5:true}"
+			scale="tofit" cache="true"
+			pluginspage="http://www.apple.com/quicktime/download/"
+		`Close()[1:]`>
+	</object>${6}
+snippet fieldset
+	<fieldset id="$1">
+		<legend>${1:name}</legend>
+
+		${3}
+	</fieldset>
+snippet form
+	<form action="${1:`Filename('$1_submit')`}" method="${2:get}" accept-charset="utf-8">
+		${3}
+
+
+	<p><input type="submit" value="Continue &rarr;"`Close()`></p>
+	</form>
+snippet h1
+	<h1 id="${1:heading}">${2:$1}</h1>
+snippet input
+	<input type="${1:text/submit/hidden/button}" name="${2:some_name}" value="${3}"`Close()`>${4}
+snippet label
+	<label for="${2:$1}">${1:name}</label><input type="${3:text/submit/hidden/button}" name="${4:$2}" value="${5}" id="${6:$2}"`Close()`>${7}
+snippet link
+	<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" charset="utf-8"`Close()`>${4}
+snippet mailto
+	<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>
+snippet meta
+	<meta name="${1:name}" content="${2:content}"`Close()`>${3}
+snippet opt
+	<option value="${1:option}">${2:$1}</option>${3}
+snippet optt
+	<option>${1:option}</option>${2}
+snippet select
+	<select name="${1:some_name}" id="${2:$1}">
+		<option value="${3:option}">${4:$3}</option>
+	</select>${5}
+snippet table
+	<table border="${1:0}">
+		<tr><th>${2:Header}</th></tr>
+		<tr><th>${3:Data}</th></tr>
+	</table>${4}
+snippet textarea
+	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
+
+# sidebar
+snippet aside
+	<aside id="${1:name}">
+		${2}
+	</aside>  
+
+# article
+snippet article
+	<article id="${1:name}">
+		${2}
+	</article>
+
+#audio
+snippet audio
+	<audio controls="${1:controls}" ${2:autoplay="autoplay"} ${3:loop="loop""}
+		${4:preload="auto|metadata|none"} ${5:src="URL"}>
+		<source src="${6:sound}.ogg" type="audio/ogg" />
+		<source src="${7}.mp3" type="audio/mp3" />
+		${8:Your browser does not support the audio tag.}
+	</audio>
+
+#bdi
+snippet bdi
+	<bdi>${1:text}</bdi>${2}
+
+#canvas
+snippet canvas
+	<canvas id="${1:name}" height="${2:100}" width="${3:100}"></canvas>
+
+#command
+snippet command
+	<command type="${1:checkbox|command|radio}" label="${2:Save}" ${3:checked="checked"}
+		${4:disabled="disabled"} ${5:url="URL"} ${5:radiogroup="name"}>
+		${1}
+	</command>
+
+#datalist = An <input> element with pre-defined values in a <datalist>:
+# <input list="browsers" />
+snippet datalist
+	<datalist id="${1:name}">
+		<option value="${2:value}">
+	</datalist>
+
+#summary
+snippet details
+	<details ${1:open="open"}>${2}</details>
+
+#embed
+snippet embed
+	<embed src="${1:file.swf}" type="${2:MIME-TYPE}" height="${3:100}" width="${4:100}"/>
+
+#figcaption
+snippet figcaption
+	<figcaption>${1:Caption}</figcaption>
+
+#figure
+snippet figure
+	<figure>
+		${1}
+	</figure>
+
+#footer
+snippet footer
+	<footer ${1}>
+		${2}
+	</footer>
+
+# header
+snippet header
+	<header id="${1:name}">
+		${2}
+	</header>
+
+#hgroup
+snippet hgroup
+	<hgroup id="${1:name}">
+		${2}
+	</hgroup>  
+
+#keygen
+snippet keygen
+	<keygen name="${1:name}" ${2:autofocus="autofocus"}
+		${3:challenge="challenge"} ${4:disabled="disabled"} ${5:keytype="rsa|dsa|ec"}/>
+
+#mark
+snippet mark
+	<mark>${1:Text}</mark>${2}
+
+#meter
+snippet metter
+	<meter ${1:min="1"} ${2:max="10"} ${3:high="high"} ${4:optimum="optimum"}
+		${5:form="form-id"} ${6:value="value"} ${7:low="low"}></meter>
+
+#nav
+snippet nav
+	<nav>
+		${1}
+	</nav>
+	
+#output
+snippet output
+	<output ${1:for="for"} ${2:name="name"} ${3:form="form-name"}></output>
+
+#progress
+snippet progress
+	<progress max="${1:100}" value="${2:10}"></progress>
+
+#rp
+snippet rp
+	<rp>${1:annotation}</rp>
+
+#rp
+snippet rt
+	<rt>${1:annotation}</rt>
+
+#ruby
+snippet ruby
+	<ruby>
+		${1:annotation}
+	</ruby>
+
+#section
+snippet section
+	<section>
+		${1:Content}
+	</section>
+
+#summary
+snippet summary
+	<summary>
+		${1:Content}
+	</summary>
+
+#time
+snippet time
+	<time ${1:datetime=""2012-12-31"} ${2:pubdate=""2012-12-31"}>${3}</time>
+
+#track
+snippet track
+	<track src="${1:url}" ${2:label="text"} kind="${3:captions|chapters|descriptions|metadata|subtitles}"
+		${4:default="default"} ${5:srclang="lang"}></track>
+
+#video
+snippet video
+	<video controls="${1:controls}" ${2:autoplay="autoplay"} ${3:loop="loop""}
+		${4:preload="auto|metadata|none"} ${5:src="URL"} ${6:muted="muted"}
+		${7:poster="poster"} ${8:height="100"} ${9:width="100"}>
+		<source src="${10:sound}.ogg" type="video/ogg" />
+		<source src="${11}.mp4" type="video/mp4" />
+		${12:Your browser does not support the audio tag.}
+	</audio>
+
+#wbr
+snippet wbr
+	<wbr>${1:text}</wbr>${2}
+
