@@ -1,0 +1,390 @@
+# Some useful Unicode entities
+# Non-Breaking Space
+snippet nbs
+	&nbsp;
+# ←
+snippet left
+	&#x2190;
+# →
+snippet right
+	&#x2192;
+# ↑
+snippet up
+	&#x2191;
+# ↓
+snippet down
+	&#x2193;
+# ↩
+snippet return
+	&#x21A9;
+# ⇤
+snippet backtab
+	&#x21E4;
+# ⇥
+snippet tab
+	&#x21E5;
+# ⇧
+snippet shift
+	&#x21E7;
+# ⌃
+snippet control
+	&#x2303;
+# ⌅
+snippet enter
+	&#x2305;
+# ⌘
+snippet command
+	&#x2318;
+# ⌥
+snippet option
+	&#x2325;
+# ⌦
+snippet delete
+	&#x2326;
+# ⌫
+snippet backspace
+	&#x232B;
+# ⎋
+snippet escape
+	&#x238B;
+# Generic Doctype
+snippet doctype HTML 4.01 Strict
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+snippet doctype HTML 4.01 Transitional
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+snippet doctype HTML 5
+	<!DOCTYPE HTML>
+snippet doctype XHTML 1.0 Frameset
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+snippet doctype XHTML 1.0 Strict
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+snippet doctype XHTML 1.0 Transitional
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+snippet doctype XHTML 1.1
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+# HTML Doctype 4.01 Strict
+snippet docts
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+	"http://www.w3.org/TR/html4/strict.dtd">
+# HTML Doctype 4.01 Transitional
+snippet doct
+	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+	"http://www.w3.org/TR/html4/loose.dtd">
+# HTML Doctype 5
+snippet doct5
+	<!DOCTYPE HTML>
+# XHTML Doctype 1.0 Frameset
+snippet docxf
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
+# XHTML Doctype 1.0 Strict
+snippet docxs
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+# XHTML Doctype 1.0 Transitional
+snippet docxt
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+# XHTML Doctype 1.1
+snippet docx
+	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+snippet html
+	<html>
+	${1}
+	</html>
+snippet xhtml
+	<html xmlns="http://www.w3.org/1999/xhtml">
+	${1}
+	</html>
+snippet body
+	<body>
+		${1}
+	</body>
+snippet head HTML 4.1
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+		${2}
+	</head>
+snippet title
+	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
+snippet script
+	<script type="text/javascript" charset="utf-8">
+		${1}
+	</script>${2}
+snippet scriptsrc
+	<script src="${1}.js" type="text/javascript" charset="utf-8"></script>${2}
+snippet style
+	<style type="text/css" media="${1:screen}">
+		${2}
+	</style>${3}
+snippet base
+	<base href="${1}" target="${2}" />
+snippet r
+	<br`Close()[1:]`>
+snippet div
+	<div id="${1:name}">
+		${2}
+	</div>
+# Embed QT Movie
+snippet movie
+	<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+	 codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+		<param name="src" value="$1" />
+		<param name="controller" value="$4" />
+		<param name="autoplay" value="$5" />
+		<embed src="${1:movie.mov}"
+			width="${2:320}" height="${3:240}"
+			controller="${4:true}" autoplay="${5:true}"
+			scale="tofit" cache="true"
+			pluginspage="http://www.apple.com/quicktime/download/"
+		`Close()[1:]`>
+	</object>${6}
+snippet fieldset
+	<fieldset id="$1">
+		<legend>${1:name}</legend>
+
+		${3}
+	</fieldset>
+snippet form
+	<form action="${1:`Filename('$1_submit')`}" method="${2:get}" accept-charset="utf-8">
+		${3}
+
+
+	<p><input type="submit" value="Continue &rarr;" /></p>
+	</form>
+snippet h1
+	<h1 id="${1:heading}">${2:$1}</h1>
+snippet input
+	<input type="${1:text/submit/hidden/button}" name="${2:some_name}" value="${3}" />${4}
+snippet label
+	<label for="${2:$1}">${1:name}</label><input type="${3:text/submit/hidden/button}" name="${4:$2}" value="${5}" id="${6:$2}" />${7}
+snippet link
+	<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" charset="utf-8" />${4}
+snippet mailto
+	<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>
+snippet meta
+	<meta name="${1:name}" content="${2:content}" />${3}
+snippet opt
+	<option value="${1:option}">${2:$1}</option>${3}
+snippet optt
+	<option>${1:option}</option>${2}
+snippet select
+	<select name="${1:some_name}" id="${2:$1}">
+		<option value="${3:option}">${4:$3}</option>
+	</select>${5}
+snippet table
+	<table border="${1:0}">
+		<tr><th>${2:Header}</th></tr>
+		<tr><th>${3:Data}</th></tr>
+	</table>${4}
+snippet textarea
+	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
+
+# CUSTOM TAGS AND HTML 5 SPECIFIC SNIPPETS
+# source: http://www.w3schools.com/html/html5_new_elements.asp
+
+# NEW SEMANTIC ELEMENTS
+
+# Defines an article
+snippet article
+	<article>${1}</article>${2} 
+
+# Defines content aside from the page content
+snippet aside
+	<aside>${1}</aside>${2}
+
+# Isolates a part of text that might be formatted in a different direction from other text outside it
+snippet bdi
+	<bdi>${1}</bdi>${2}
+
+# Defines a command button that a user can invoke
+snippet command
+	<command>${1}</command>${2}
+
+# Defines additional details that the user can view or hide
+snippet details
+	<details>${1}</details>${2}
+
+# Defines a visible heading for a <details> element
+snippet summary
+	<summary>${1}</summary>${2}
+
+# Specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
+snippet figure
+	<figure>${1}</figure>${2}
+
+# Defines a caption for a <figure> element
+snippet figcaption
+	<figcaption>${1}</figcaption>${2}
+
+# Defines a footer for a document or section
+snippet footer
+	<footer>${1}</footer>${2}
+
+# Defines a header for a document or section
+snippet header
+	<header>${1}</header>${2}
+
+# Groups a set of <h1> to <h6> elements when a heading has multiple levels
+snippet hgroup
+	<hgroup>${1}</hgroup>${2}
+
+# Defines marked/highlighted text
+snippet mark
+	<mark>${1}</mark>${2}
+
+# Defines a scalar measurement within a known range (a gauge)
+snippet meter
+	<meter value="${1}" min="${2}" max="${3}">${1}</meter>${4}
+
+# Defines navigation links
+snippet nav
+	<nav>${1}</nav>${2}
+
+# Represents the progress of a task
+snippet progress
+	<progress>${1}</progress>${2}
+
+# Defines a ruby annotation (for East Asian typography)
+snippet ruby
+	<ruby>${1}</ruby>${2}
+
+# Defines an explanation/pronunciation of characters (for East Asian typography)
+snippet rt
+	<rt>$1</rt>${2}
+	
+# Defines what to show in browsers that do not support ruby annotations
+snippet rp
+	<rp>$1</rp>${2}
+	
+# Defines a section in a document
+snippet section
+	<section>$1</section>${2}
+
+# Defines a date/time
+snippet time
+	<time>$1</time>${2}
+
+# Defines a possible line-break
+snippet wbr
+	<wbr>$1</wbr>${2}
+
+# NEW MEDIA TAGS
+
+# Defines sound content
+snippet audio
+	<audio src="${1}">${2}</audio>${3}
+
+#  Defines a video or movie 
+snippet video
+	<video src="${1}">${2}</video>${3}
+	
+# Defines multiple media resources for <video> and <audio> 
+snippet source
+	<source>${1}</source>${2}
+
+# Defines a container for an external application or interactive content (a plug-in)
+snippet embed
+	<embed src="${1}" type="${2}" />${3}
+
+# Defines text tracks for <video> and <audio>
+snippet track
+	<track>${1}</track>${2}
+
+# NEW CANVAS ELEMENT
+
+# Used to draw graphics, on the fly, via scripting (usually JavaScript)
+snippet canvas
+	<canvas>${1}</canvas>${2}
+
+# NEW FORM ELEMENTS
+# Specifies a list of pre-defined options for input controls
+snippet datalist
+	<datalist id="${1}">${2}</datalist>${3}
+
+# Defines a key-pair generator field (for forms)
+snippet keygen
+	<keygen name="${1}"/>${2}
+
+# Defines the result of a calculation
+snippet output
+	<output name="${1}">${2}</output>${3}
+
+snippet h
+	<h${1:1}>${2:Title}</h$1>${3}
+
+snippet head HTML 5 
+	<head>
+		<!-- meta -->
+		<meta charset="utf8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<meta name="author" content="" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- /meta -->
+
+		<!-- style -->
+		<!-- Twitter Bootstrap CDN -->
+		<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.2.2/css/bootstrap-combined.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/global.css" />
+		<!-- /style -->
+
+		<!-- scripts -->
+		<script src="assts/js/global.js" type="text/javascript"></script>
+		<!-- /scripts -->
+
+		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+	</head> 
+	${2}
+
+snippet content
+	<!-- container -->
+	<div class="container">
+		<!-- header -->
+		<header>
+		<hgroup>
+		<h1 class="logo">
+			<a href="">${1:Client Name}</a>
+		</h1>
+		<h2 class="slogan">${2:Slogan}</h2>
+		</hgroup>
+		</header>
+		<!-- /header -->
+
+		<!-- main-content -->
+		<div class="main">
+			<!-- aside -->
+			<aside>
+			<!-- main-navigation -->
+			<nav class="main-navigation">
+			<ul>
+				<li>
+					<a href="">Lorem</a>
+				</li>
+			</ul>
+			</nav>
+			</aside>
+			<!-- /aside -->
+
+			<section class="content">
+			${4}
+			</section>
+		</div>
+		<!-- /main-content -->
+
+		<!-- footer -->
+		<footer>
+		<p>&copy; ${3:Todos os direitos reservados}</p>
+		</footer>
+		<!-- /footer -->
+	</div>
+	<!-- /container -->
