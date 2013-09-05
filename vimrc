@@ -30,6 +30,8 @@ set tabstop=4
 set backspace=indent,eol,start
 " set auto indent
 set autoindent
+" set smart indent
+set si 
 " copy the previous indentation
 set copyindent
 " set 4 space for autoindenting
@@ -42,6 +44,8 @@ set showmatch
 set ignorecase
 " use case sensitive when the terms are not all in smallcase
 set smartcase
+" don't redraw while executing macros (good performance config)
+set lazyredraw
 " highlight search terms
 set hlsearch
 " show search matches as you type
@@ -64,8 +68,8 @@ set scrolloff=4
 " let the cursor go anywhere
 set virtualedit=all
 " no backup file :D
-set nobackup
-set noswapfile
+"set nobackup
+"set noswapfile
 
 " Set the identation on
 filetype indent on
@@ -74,8 +78,8 @@ filetype indent on
 syntax on
 "set color scheme
 colorscheme candyman
-" set the default gui font to Monaco
-set guifont=Inconsolata\ 11
+" set the default gui font to Inconsolata
+set guifont=Inconsolata\ 12
 " disable the toolbar
 set guioptions-=T
 " disable the menu
@@ -84,6 +88,8 @@ set guioptions-=m
 set ts=4
 " convert tab to spaces
 set expandtab
+" set number
+set number
 " highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
 autocmd FileType php let php_sql_query=1
 " does exactly that. highlights html inside of php strings
@@ -123,9 +129,7 @@ imap <C-z> <Esc><C-y>,a
 " Activate Nerd Commenter
 map <C-c> <leader>ci
 " Avoid accidental hits of <F1> while aiming for <Esc>
-map! <F1> <Esc>
-" Map taglist plugin shortcut
-map <C-f> <Esc>:TlistToggle<cr>
+map <F1> <Esc>
 " Check php syntax
 map <F5> :!php -l %<cr>
 
@@ -151,12 +155,12 @@ autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | se
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
 
-" Plugins "
+" Plugins
 
-    " Ctrl + P "
+    " Ctrl + P
     set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-    " Manager plugins "
+    " Manager plugins
     set rtp+=~/.vim/bundle/vundle/
     call vundle#rc()
 
@@ -165,11 +169,146 @@ autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:las
     Bundle 'gmarik/vundle'
     Bundle 'mattn/webapi-vim'
 
-    " Gist "
+    " Gist
     Bundle 'mattn/gist-vim'
     let g:gist_clip_command = 'xclip -selection clipboard' 
     let g:gist_detect_filetype = 1              "  to detect filetype from the filename
     let g:gist_open_browser_after_post = 1      " to open browser after the post:
 
-    " Themes "
+    " Multiple cursors
+    Bundle 'terryma/vim-multiple-cursors'
+
+    " Themes
     Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
+
+    " CSS Comb - sort properties of css
+    Bundle 'miripiruni/CSScomb-for-Vim'
+
+    " Powerline
+    Bundle 'Lokaltog/powerline'
+
+    " Easy align
+    Bundle 'junegunn/vim-easy-align'
+    vnoremap <silent> <Enter> :EasyAlign<cr>
+
+    " CTRL P list directory
+    Bundle 'ctrlp.vim'
+
+    " CSS Color
+    Bundle 'ap/vim-css-color'
+
+    " TernJS
+    Bundle 'marijnh/tern_for_vim'
+
+
+" Change leader to a comma because the backslash is too far away
+" That means all \x commands turn into ,x
+" The mapleader has to be set before vundle starts loading all 
+" the plugins.
+let mapleader=","
+
+
+" Settings for CTRLP 
+let g:ctrlp_working_path_mode = ''
+
+cd! ~/repository/webcontent/
+
+" Fast saving
+nmap <leader>w :w!<cr>
+
+" Changing focus of split panes can be a bit of a pain (<C-w>[direction]), 
+" let's drop the middle man!
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
+
+" Switch CWD to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" Return to last edit position when opening files (You want this!)
+autocmd BufReadPost *
+     \ if line("'\"") > 0 && line("'\"") <= line("$") |
+     \   exe "normal! g`\"" |
+     \ endif
+" Remember info about open buffers on close
+set viminfo^=%
+
+" Move a line of text using ALT+[jk] or Comamnd+[jk] on mac
+nmap <M-j> mz:m+<cr>`z
+nmap <M-k> mz:m-2<cr>`z
+vmap <M-j> :m'>+<cr>`<my`>mzgv`yo`z
+vmap <M-k> :m'<-2<cr>`>my`<mzgv`yo`z
+
+" When you press <leader>r you can search and replace the selected text
+vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
+
+" Remove the Windows ^M - when the encodings gets messed up
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
+
+" Easy way to yank to register / paste from register (system clipboard)
+"nnoremap y "+y
+"vnoremap y "+y
+"nnoremap p "+p
+"vnoremap p "+p
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Helper functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! CmdLine(str)
+    exe "menu Foo.Bar :" . a:str
+    emenu Foo.Bar
+    unmenu Foo
+endfunction
+
+function! VisualSelection(direction) range
+    let l:saved_reg = @"
+    execute "normal! vgvy"
+
+    let l:pattern = escape(@", '\\/.*$^~[]')
+    let l:pattern = substitute(l:pattern, "\n$", "", "")
+
+    if a:direction == 'b'
+        execute "normal ?" . l:pattern . "^M"
+    elseif a:direction == 'gv'
+        call CmdLine("vimgrep " . '/'. l:pattern . '/' . ' **/*.')
+    elseif a:direction == 'replace'
+        call CmdLine("%s" . '/'. l:pattern . '/')
+    elseif a:direction == 'f'
+        execute "normal /" . l:pattern . "^M"
+    endif
+
+    let @/ = l:pattern
+    let @" = l:saved_reg
+endfunction
+
+
+" Returns true if paste mode is enabled
+function! HasPaste()
+    if &paste
+        return 'PASTE MODE  '
+    en
+    return ''
+endfunction
+
+" Don't close window, when deleting a buffer
+command! Bclose call <SID>BufcloseCloseIt()
+function! <SID>BufcloseCloseIt()
+   let l:currentBufNum = bufnr("%")
+   let l:alternateBufNum = bufnr("#")
+
+   if buflisted(l:alternateBufNum)
+     buffer #
+   else
+     bnext
+   endif
+
+   if bufnr("%") == l:currentBufNum
+     new
+   endif
+
+   if buflisted(l:currentBufNum)
+     execute("bdelete! ".l:currentBufNum)
+   endif
+endfunction
