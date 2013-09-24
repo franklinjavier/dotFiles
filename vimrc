@@ -44,8 +44,6 @@ set showmatch
 set ignorecase
 " use case sensitive when the terms are not all in smallcase
 set smartcase
-" don't redraw while executing macros (good performance config)
-set lazyredraw
 " highlight search terms
 set hlsearch
 " show search matches as you type
@@ -68,8 +66,8 @@ set scrolloff=4
 " let the cursor go anywhere
 set virtualedit=all
 " no backup file :D
-"set nobackup
-"set noswapfile
+set nobackup
+set noswapfile
 
 " Set the identation on
 filetype indent on
@@ -135,8 +133,8 @@ map <F5> :!php -l %<cr>
 
 au! BufRead,BufNewFile *.json setfiletype json
 " Highlight long lines (soft limit: 80, hard limit: 100)
-au BufWinEnter *.php,*.py let w:m1=matchadd('Search', '\%<101v.\%>80v', -1)
-au BufWinEnter *.php,*.py let w:m2=matchadd('ErrorMsg', '\%>100v.\+', -1)
+"au BufWinEnter *.php,*.py let w:m1=matchadd('Search', '\%<101v.\%>80v', -1)
+"au BufWinEnter *.php,*.py let w:m2=matchadd('ErrorMsg', '\%>100v.\+', -1)
 
 set termencoding=utf-8
 set encoding=utf-8
