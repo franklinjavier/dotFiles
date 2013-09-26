@@ -141,3 +141,34 @@ snippet roundcorners
 
 snippet textshadow
 	 text-shadow: ${1:1}px ${2:1}px ${3:1}px ${4:1}px #${5:000};${6}
+
+snippet info
+
+	.${1:infografico} {
+		color: #000;
+		font: 14px Arial, "Sans serif";
+		text-align: left;
+		overflow: hidden;
+		position: relative;
+		width: 944px;
+	}
+	.$1 ul, .$1 li { list-style: none; }
+	.$1 .abs { position: absolute; }
+	.$1 .trans {
+		transition: all .1s linear;
+		-moz-transition: all .1s linear;
+		-webkit-transition: all .1s linear;
+	}
+	.$1 .row {
+		float: left;
+		width: 100%;
+		display: block;
+		overflow: hidden;
+		position: relative;
+	}
+	.$1 .hide { display: none; }
+	.$1 .left { float: left; }
+	.$1 .right { float: right; }
+	.$1 .spr { 
+		background: url(http://imguol.com/c/infograficos/2013//sprites.png?1) no-repeat;
+	}
