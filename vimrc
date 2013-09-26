@@ -198,6 +198,9 @@ autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:las
     " TernJS
     Bundle 'marijnh/tern_for_vim'
 
+    " Vim and tmux navigator
+    Bundle 'christoomey/vim-tmux-navigator'
+
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
@@ -216,10 +219,10 @@ nmap <leader>w :w!<cr>
 
 " Changing focus of split panes can be a bit of a pain (<C-w>[direction]), 
 " let's drop the middle man!
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
-noremap <C-h> <C-w>h
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
 
 " Switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
