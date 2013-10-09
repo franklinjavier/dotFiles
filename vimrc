@@ -68,6 +68,9 @@ set virtualedit=all
 " no backup file :D
 set nobackup
 set noswapfile
+" no underline html links
+hi link htmlLink NONE
+
 
 " Set the identation on
 filetype indent on
@@ -132,6 +135,9 @@ map <F1> <Esc>
 map <F5> :!php -l %<cr>
 
 au! BufRead,BufNewFile *.json setfiletype json
+au BufRead,BufNewFile *.scss set filetype=scss.css
+au BufEnter *.scss :syntax sync fromstart
+
 " Highlight long lines (soft limit: 80, hard limit: 100)
 "au BufWinEnter *.php,*.py let w:m1=matchadd('Search', '\%<101v.\%>80v', -1)
 "au BufWinEnter *.php,*.py let w:m2=matchadd('ErrorMsg', '\%>100v.\+', -1)
@@ -212,7 +218,7 @@ let mapleader=","
 " Settings for CTRLP 
 let g:ctrlp_working_path_mode = ''
 
-cd! ~/repository/webcontent/
+cd! ~/root/
 
 " Fast saving
 nmap <leader>w :w!<cr>
