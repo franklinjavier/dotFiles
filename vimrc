@@ -77,6 +77,7 @@ filetype indent on
 
 " highlight the syntax
 syntax on
+"set term=xterm-256color
 "set color scheme
 colorscheme candyman
 " set the default gui font to Inconsolata
@@ -158,6 +159,8 @@ filetype plugin on
 autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
 
+" Force Saving Files that Require Root Permission
+cmap w!! %!sudo tee > /dev/null %
 
 " Plugins
 
@@ -171,32 +174,55 @@ autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:las
     " let Vundle manage Vundle
     " required! 
     Bundle 'gmarik/vundle'
+
     Bundle 'mattn/webapi-vim'
 
     " Gist
     Bundle 'mattn/gist-vim'
-    let g:gist_clip_command = 'xclip -selection clipboard' 
-    let g:gist_detect_filetype = 1              "  to detect filetype from the filename
-    let g:gist_open_browser_after_post = 1      " to open browser after the post:
+
+        let g:gist_clip_command = 'xclip -selection clipboard' 
+        let g:gist_detect_filetype = 1              "  to detect filetype from the filename
+        let g:gist_open_browser_after_post = 1      " to open browser after the post:
 
     " Multiple cursors
     Bundle 'terryma/vim-multiple-cursors'
 
+
     " Themes
     Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
+
 
     " CSS Comb - sort properties of css
     Bundle 'miripiruni/CSScomb-for-Vim'
 
+
     " Powerline
     Bundle 'Lokaltog/powerline'
+    
+        if ! has('gui_running')
+            set ttimeoutlen=10
+            augroup FastEscape
+                autocmd!
+                au InsertEnter * set timeoutlen=0
+                au InsertLeave * set timeoutlen=1000
+            augroup END
+        endif
+
+        let g:Powerline_symbols = 'fancy'
+        set laststatus=2 " Always display the statusline in all windows
+        set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
+        set t_Co=256
+
 
     " Easy align
     Bundle 'junegunn/vim-easy-align'
-    vnoremap <silent> <Enter> :EasyAlign<cr>
+
+        vnoremap <silent> <Enter> :EasyAlign<cr>
+
 
     " CTRL P list directory
     Bundle 'ctrlp.vim'
+    Bundle 'fisadev/vim-ctrlp-cmdpalette'
 
     " CSS Color
     Bundle 'ap/vim-css-color'
@@ -206,6 +232,23 @@ autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:las
 
     " Vim and tmux navigator
     Bundle 'christoomey/vim-tmux-navigator'
+
+    " Vastly improved Javascript indentation and syntax support in Vim. 
+    Bundle 'pangloss/vim-javascript'
+        
+        let b:javascript_fold=1
+        let g:javascript_conceal=1
+
+
+    " Vim runtime files for Haml, Sass, and SCSS 
+    Bundle 'tpope/vim-haml'
+
+    " Syntax highlighting for JSON in Vim
+    "Bundle 'leshill/vim-json'
+    "
+    "Vim MarkDown runtime files
+    Bundle 'tpope/vim-markdown'
+
 
 
 " Change leader to a comma because the backslash is too far away
@@ -217,6 +260,9 @@ let mapleader=","
 
 " Settings for CTRLP 
 let g:ctrlp_working_path_mode = ''
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules$'
+  \ }
 
 cd! ~/root/
 

@@ -17,3 +17,15 @@ set fish_theme robbyrussell
 function infograficos 
 	cd ~/root/svn/branches/infograficos
 end
+
+function jsuol
+	cd ~/root/svn/webcontent/com/jsuol/c/
+end
+
+function cachevm
+	cd ~/root/svn/webcontent/br/com/uol/commons/static/v1/web/estrutura/
+end
+
+function uolutils
+	cd ~/root/svn/webcontent/com/jsuol/c/_template/v1/web/js/
+end
