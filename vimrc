@@ -70,22 +70,27 @@ set nobackup
 set noswapfile
 " no underline html links
 hi link htmlLink NONE
-
-
 " Set the identation on
 filetype indent on
-
 " highlight the syntax
 syntax on
 "set term=xterm-256color
 "set color scheme
-colorscheme candyman
+if !has("gui_running")
+    let g:solarized_termtrans=1
+    let g:solarized_termcolors=256
+endif
+colorscheme Tomorrow-Night
+set background=dark
 " set the default gui font to Inconsolata
-set guifont=Inconsolata\ 12
+set guifont=Inconsolata\ 11
 " disable the toolbar
 set guioptions-=T
 " disable the menu
 set guioptions-=m
+" disable the scrollbar
+set guioptions+=LlRrb
+set guioptions-=LlRrb
 " set the tab space to 4
 set ts=4
 " convert tab to spaces
@@ -194,25 +199,6 @@ cmap w!! %!sudo tee > /dev/null %
 
     " CSS Comb - sort properties of css
     Bundle 'miripiruni/CSScomb-for-Vim'
-
-
-    " Powerline
-    Bundle 'Lokaltog/powerline'
-    
-        if ! has('gui_running')
-            set ttimeoutlen=10
-            augroup FastEscape
-                autocmd!
-                au InsertEnter * set timeoutlen=0
-                au InsertLeave * set timeoutlen=1000
-            augroup END
-        endif
-
-        let g:Powerline_symbols = 'fancy'
-        set laststatus=2 " Always display the statusline in all windows
-        set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-        set t_Co=256
-
 
     " Easy align
     Bundle 'junegunn/vim-easy-align'
