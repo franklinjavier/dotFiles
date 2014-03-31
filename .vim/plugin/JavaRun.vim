@@ -93,9 +93,6 @@ if maparg("<F9>") == ""
 	map <F9> :make<CR>
 endif
 
-iab psvm public static void main(String[] args) {
- 
-}<UP><END><BS><BS>
 iab sout System.out.println();<LEFT><LEFT>
 iab serr System.err.println();<LEFT><LEFT>
 iab pr private
@@ -114,4 +111,3 @@ iab Ob Object
 iab Ex Exception
 iab En Enumeration
 iab Gr Graphics
-
