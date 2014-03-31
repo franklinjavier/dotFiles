@@ -70,6 +70,9 @@ set nobackup
 set noswapfile
 " no underline html links
 hi link htmlLink NONE
+" remove scrollbar 
+set guioptions+=lrb
+set guioptions-=lrb
 " Set the identation on
 filetype indent on
 " highlight the syntax
@@ -80,7 +83,7 @@ if !has("gui_running")
     let g:solarized_termtrans=1
     let g:solarized_termcolors=256
 endif
-colorscheme Tomorrow-Night
+colorscheme candyman
 set background=dark
 " set the default gui font to Inconsolata
 set guifont=Inconsolata\ 11
@@ -137,8 +140,6 @@ imap <C-z> <Esc><C-y>,a
 map <C-c> <leader>ci
 " Avoid accidental hits of <F1> while aiming for <Esc>
 map <F1> <Esc>
-" Check php syntax
-map <F5> :!php -l %<cr>
 
 au! BufRead,BufNewFile *.json setfiletype json
 au BufRead,BufNewFile *.scss set filetype=scss.css
@@ -215,9 +216,6 @@ cd! ~/root/
     " CSS Color
     Bundle 'ap/vim-css-color'
 
-    " TernJS
-    Bundle 'marijnh/tern_for_vim'
-
     " Vim and tmux navigator
     Bundle 'christoomey/vim-tmux-navigator'
 
@@ -286,10 +284,10 @@ vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 " Easy way to yank to register / paste from register (system clipboard)
-"nnoremap y "+y
-"vnoremap y "+y
-"nnoremap p "+p
-"vnoremap p "+p
+nnoremap y "+y
+vnoremap y "+y
+nnoremap p "+p
+vnoremap p "+p
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
