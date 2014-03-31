@@ -167,6 +167,8 @@ autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:las
 " Force Saving Files that Require Root Permission
 cmap w!! %!sudo tee > /dev/null %
 
+cd! ~/root/
+
 " Plugins
 
     " Ctrl + P
