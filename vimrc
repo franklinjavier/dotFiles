@@ -281,12 +281,6 @@ vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-" Easy way to yank to register / paste from register (system clipboard)
-nnoremap y "+y
-vnoremap y "+y
-nnoremap p "+p
-vnoremap p "+p
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
