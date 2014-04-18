@@ -1,3 +1,10 @@
+snippet init
+	import java.util.*;
+	public class Classe {
+		public static void main (String [] args) {
+			${1:/* code */}
+		}
+	}
 snippet main
 	public static void main (String [] args)
 	{
@@ -93,3 +100,10 @@ snippet tryf
 	}
 snippet rst
 	ResultSet ${1:rst}${2: = null}${3};${4}
+
+snippet sys
+	System.out.println("${1}");
+
+snippet scanner
+	Scanner entrada = new Scanner( System.in );
+	
