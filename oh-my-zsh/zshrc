@@ -27,6 +27,8 @@ alias gd="grunt dist"
 alias gdi="grunt dist:img"
 alias gdj="grunt dist:js"
 alias gdc="grunt dist:css"
+alias gitl="git log --all --graph --decorate --oneline --abbrev-commit"
+alias gits="git status -sb"
 
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
@@ -92,6 +94,5 @@ fi
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
 
-alias gitlog="git log --all --graph --decorate --oneline --abbrev-commit"
 
 precmd() { print "" }
