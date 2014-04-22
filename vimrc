@@ -51,7 +51,7 @@ set incsearch
 " remember more commands
 set history=1000
 " levels of undo command
-set undolevels=1000
+set undolevels=1000 
 " Change the terminal title
 set title
 " no sonds
@@ -84,7 +84,7 @@ if !has("gui_running")
     let g:solarized_termcolors=256
 endif
 colorscheme candyman
-set background=dark
+"set background=dark
 " set the default gui font to Inconsolata
 set guifont=Inconsolata\ 11
 " disable the toolbar
@@ -250,6 +250,8 @@ let g:ctrlp_custom_ignore = {
 
 " Fast saving
 nmap <leader>w :w!<cr>
+" Fast saving and close
+nmap <leader>x :x<cr>
 
 " Changing focus of split panes can be a bit of a pain (<C-w>[direction]), 
 " let's drop the middle man!

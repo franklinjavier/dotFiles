@@ -1,8 +1,8 @@
 sw_volume: 100
 audio_device_state:1:whatever name you want
-state: play
-current: 61
-time: 3947
+state: pause
+current: 51
+time: 17
 random: 0
 repeat: 0
 single: 0
@@ -94,4 +94,13 @@ playlist_begin
 80:Psy/Intersys-Power_Supply_Injectio.mp3
 81:Psy/Perplex_vs_InterSys_-_Creating.mp3
 82:Gerais/MICHAEL TELO BARA BARA BERE BERE  BUMBA DJ. REMIX WILTERAN.mp3
+83:FLAC/Psy/Deerob - Jayus - 2014 - FLAC/01 - Deerob - Gated.flac
+84:FLAC/Psy/Deerob - Jayus - 2014 - FLAC/02 - Deerob - Fluffy.flac
+85:FLAC/Psy/Deerob - Jayus - 2014 - FLAC/03 - Deerob - Pluck n Play.flac
+86:FLAC/Psy/Deerob - Jayus - 2014 - FLAC/04 - Deerob - E Dee M.flac
+87:FLAC/Psy/Deerob - Jayus - 2014 - FLAC/05 - Deerob - Fall Down (feat. Jan Pecher).flac
+88:FLAC/Psy/Deerob - Jayus - 2014 - FLAC/06 - Deerob - Jayus.flac
+89:FLAC/Psy/KarmasynK - Psymatiks - 2014 - FLAC/01 - KarmasynK - Psylther.flac
+90:FLAC/Psy/KarmasynK - Psymatiks - 2014 - FLAC/02 - Kristina Aqua - Moonwalker (KarmasynK ReVision).flac
+91:FLAC/Psy/KarmasynK - Psymatiks - 2014 - FLAC/03 - KarmasynK - Orbit Reversal.flac
 playlist_end

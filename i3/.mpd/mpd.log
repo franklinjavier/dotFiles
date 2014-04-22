@@ -2687,3 +2687,169 @@ Mar 31 12:03 : avahi: Service 'Music Player' successfully established.
 Home directory not accessible: Permission denied
 Mar 31 12:03 : mad: Input does not appear to be a mp3 bit stream.
 Mar 31 12:04 : mad: Input does not appear to be a mp3 bit stream.
+Mar 31 13:05 : player_thread: played "Electro/2013/08/Best Electro House.mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Mar 31 13:05 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Mar 31 13:05 : player_thread: problems opening audio device while playing "Electro/dBerrie - Malfunction (Original Mix)www.livingelectro.com.mp3"
+Mar 31 15:59 : player_thread: played "Electro/dBerrie - Malfunction (Original Mix)www.livingelectro.com.mp3"
+Mar 31 16:05 : player_thread: played "Electro/Infected Mushroom feat. Savant - Savant On Mushrooms (Original Mix)www.livingelectro.com.mp3"
+Mar 31 16:10 : player_thread: played "Electro/Infected Mushroom feat. Pegboard Nerds - Nerds On Mushrooms (Original Mix)www.livingelectro.com.mp3"
+Mar 31 16:23 : player_thread: played "Electro/Infected Mushroom feat. Savant - Savant On Mushrooms (Original Mix)www.livingelectro.com.mp3"
+Mar 31 16:28 : player_thread: played "Electro/Infected Mushroom feat. Pegboard Nerds - Nerds On Mushrooms (Original Mix)www.livingelectro.com.mp3"
+Mar 31 16:43 : player_thread: played "DJ Elon Matana/dj idan ben yaakov - hits of 2013 vol.6.mp3"
+Mar 31 16:49 : player_thread: played "DJ Elon Matana/DJ Elon Matana - Hits of 2013 Vol 9.mp3"
+Mar 31 16:50 : mad: Input does not appear to be a mp3 bit stream.
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Mar 31 16:50 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Mar 31 16:50 : player_thread: problems opening audio device while playing "Electro/2013/08/Best Electro House.mp3"
+Mar 31 16:50 : mad: Input does not appear to be a mp3 bit stream.
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Mar 31 16:50 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Mar 31 16:50 : player_thread: problems opening audio device while playing "Electro/2013/08/Best Electro House.mp3"
+Mar 31 16:55 : player_thread: played "Antigas/Michael_Bolton_-_When_a_Man_Loves_a_Woman_Legendado[www.MP3Fiber.com].mp3"
+Mar 31 16:59 : mad: Input does not appear to be a mp3 bit stream.
+Mar 31 16:59 : player_thread: played "Bass/Rickyxsan_-_Yeah_Let39s_Rage_FREE_DL[www.MP3Fiber.com].mp3"
+Mar 31 18:00 : player_thread: played "Electro/2013/08/Best Electro House.mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Mar 31 18:00 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Mar 31 18:00 : player_thread: problems opening audio device while playing "Electro/dBerrie - Malfunction (Original Mix)www.livingelectro.com.mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Mar 31 19:05 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:13 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:13 : mad: Input does not appear to be a mp3 bit stream.
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:13 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:13 : player_thread: problems opening audio device while playing "Electro/2013/08/Best Electro House.mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:31 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:31 : player_thread: problems opening audio device while playing "Bass/Rickyxsan_-_Yeah_Let39s_Rage_FREE_DL[www.MP3Fiber.com].mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:31 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:31 : player_thread: problems opening audio device while playing "Antigas/Chicago_-_Hard_To_Say_I39m_Sorry_Legendado[www.MP3Fiber.com].mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:31 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:31 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:31 : player_thread: problems opening audio device while playing "Antigas/Chicago_-_Hard_To_Say_I39m_Sorry_Legendado[www.MP3Fiber.com].mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:31 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:31 : player_thread: problems opening audio device while playing "Antigas/Chicago_-_Hard_To_Say_I39m_Sorry_Legendado[www.MP3Fiber.com].mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:31 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:31 : player_thread: problems opening audio device while playing "Antigas/Chicago_-_Hard_To_Say_I39m_Sorry_Legendado[www.MP3Fiber.com].mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:31 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:31 : player_thread: problems opening audio device while playing "Antigas/Chicago_-_Hard_To_Say_I39m_Sorry_Legendado[www.MP3Fiber.com].mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:32 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:32 : player_thread: problems opening audio device while playing "Antigas/Chicago_-_Hard_To_Say_I39m_Sorry_Legendado[www.MP3Fiber.com].mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:32 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:32 : player_thread: problems opening audio device while playing "Antigas/Chicago_-_Hard_To_Say_I39m_Sorry_Legendado[www.MP3Fiber.com].mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:32 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:32 : player_thread: problems opening audio device while playing "Antigas/Chicago_-_Hard_To_Say_I39m_Sorry_Legendado[www.MP3Fiber.com].mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:32 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:32 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:32 : player_thread: problems opening audio device while playing "Antigas/Chicago_-_Hard_To_Say_I39m_Sorry_Legendado[www.MP3Fiber.com].mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:32 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:32 : player_thread: problems opening audio device while playing "Electro/Infected Mushroom feat. Savant - Savant On Mushrooms (Original Mix)www.livingelectro.com.mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:32 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:32 : player_thread: problems opening audio device while playing "Electro/Infected Mushroom feat. Pegboard Nerds - Nerds On Mushrooms (Original Mix)www.livingelectro.com.mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:33 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:33 : player_thread: problems opening audio device while playing "DJ Elon Matana/dj idan ben yaakov - hits of 2013 vol.6.mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:33 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:33 : player_thread: problems opening audio device while playing "DJ Elon Matana/DJ Elon Matana - Hits of 2013 Vol 9.mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:33 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:33 : player_thread: problems opening audio device while playing "DJ Elon Matana/dj idan ben yaakov - hits of 2013 vol.6.mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:33 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:33 : player_thread: problems opening audio device while playing "Electro/Infected Mushroom feat. Pegboard Nerds - Nerds On Mushrooms (Original Mix)www.livingelectro.com.mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:33 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:33 : player_thread: problems opening audio device while playing "Electro/Infected Mushroom feat. Pegboard Nerds - Nerds On Mushrooms (Original Mix)www.livingelectro.com.mp3"
+ALSA lib pcm_dmix.c:1018:(snd_pcm_dmix_open) unable to open slave
+Apr 01 12:33 : output: Failed to open "whatever name you want" [alsa]: Failed to open ALSA device "default": Device or resource busy
+Apr 01 12:33 : player_thread: problems opening audio device while playing "Electro/Infected Mushroom feat. Savant - Savant On Mushrooms (Original Mix)www.livingelectro.com.mp3"
+Apr 01 12:33 : avahi: Service 'Music Player' successfully established.
+Apr 01 12:33 : mixer: Failed to read mixer for 'whatever name you want': no such mixer control: PCM
+Apr 01 12:33 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 01 12:38 : mad: Input does not appear to be a mp3 bit stream.
+Apr 01 12:38 : player_thread: played "Bass/Rickyxsan_-_Yeah_Let39s_Rage_FREE_DL[www.MP3Fiber.com].mp3"
+Apr 01 12:38 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 01 13:40 : player_thread: played "Electro/2013/08/Best Electro House.mp3"
+Apr 01 13:40 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 01 13:44 : player_thread: played "Electro/dBerrie - Malfunction (Original Mix)www.livingelectro.com.mp3"
+Apr 01 13:51 : player_thread: played "Electro/Infected Mushroom feat. Savant - Savant On Mushrooms (Original Mix)www.livingelectro.com.mp3"
+Apr 01 13:56 : player_thread: played "Electro/Infected Mushroom feat. Pegboard Nerds - Nerds On Mushrooms (Original Mix)www.livingelectro.com.mp3"
+Apr 01 14:11 : player_thread: played "DJ Elon Matana/dj idan ben yaakov - hits of 2013 vol.6.mp3"
+Apr 01 14:17 : player_thread: played "DJ Elon Matana/DJ Elon Matana - Hits of 2013 Vol 9.mp3"
+Apr 01 14:28 : player_thread: played "DJ Elon Matana/DJ Elon Matana - Hits of 2013 Vol 9 - completo.mp3"
+Apr 01 14:53 : player_thread: played "DJ Elon Matana/DJ Elon Matana - Hits of 2013 Vol 8.mp3"
+Apr 01 15:18 : player_thread: played "DJ Elon Matana/DJ Elon Matana - Hits of 2013 Vol 7.mp3"
+Apr 01 15:33 : player_thread: played "DJ Elon Matana/DJ Elon Matana - Hits of 2013 Vol 6.mp3"
+Apr 01 15:40 : player_thread: played "Electro/Infected Mushroom feat. Savant - Savant On Mushrooms (Original Mix)www.livingelectro.com.mp3"
+Apr 01 15:46 : player_thread: played "Electro/Infected Mushroom feat. Pegboard Nerds - Nerds On Mushrooms (Original Mix)www.livingelectro.com.mp3"
+Apr 01 16:01 : player_thread: played "DJ Elon Matana/dj idan ben yaakov - hits of 2013 vol.6.mp3"
+Apr 01 16:07 : player_thread: played "DJ Elon Matana/DJ Elon Matana - Hits of 2013 Vol 9.mp3"
+Apr 01 16:15 : player_thread: played "Electro/Infected Mushroom feat. Savant - Savant On Mushrooms (Original Mix)www.livingelectro.com.mp3"
+Apr 01 16:21 : player_thread: played "Electro/Infected Mushroom feat. Pegboard Nerds - Nerds On Mushrooms (Original Mix)www.livingelectro.com.mp3"
+Apr 01 16:36 : player_thread: played "DJ Elon Matana/dj idan ben yaakov - hits of 2013 vol.6.mp3"
+Apr 01 16:42 : player_thread: played "DJ Elon Matana/DJ Elon Matana - Hits of 2013 Vol 9.mp3"
+Apr 01 16:53 : player_thread: played "DJ Elon Matana/DJ Elon Matana - Hits of 2013 Vol 9 - completo.mp3"
+Apr 01 17:17 : player_thread: played "DJ Elon Matana/DJ Elon Matana - Hits of 2013 Vol 8.mp3"
+Apr 01 17:42 : player_thread: played "DJ Elon Matana/DJ Elon Matana - Hits of 2013 Vol 7.mp3"
+Apr 01 17:57 : player_thread: played "DJ Elon Matana/DJ Elon Matana - Hits of 2013 Vol 6.mp3"
+Apr 01 18:01 : player_thread: played "Bruno e marrone/bruno e marrone - amei, amei (acustico).mp3"
+Apr 01 18:04 : player_thread: played "Bruno e marrone/14. Dormi na praça - Bruno & Marrone.mp3"
+Apr 01 18:04 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 01 18:08 : player_thread: played "Black/Tyga-Ft_-Wiz-Khalifa-Mally-Mall-Molly-Instrumental.mp3"
+Apr 01 18:08 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 01 18:12 : player_thread: played "Black/J_Dash_feat_Flo_Rida_-_Wop_Original_Mix_Free_Download[www.MP3Fiber.com].mp3"
+Apr 01 18:12 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 01 18:13 : player_thread: played "Bass test/5-100.flac"
+Apr 01 18:13 : player_thread: played "Bass test/25-20and30and35and40.flac"
+Apr 01 18:13 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 01 18:32 : player_thread: played "Bass/Trap_and_Bass_1000_Likes_Mix_FREE_DL[www.MP3Fiber.com].mp3"
+Apr 01 18:47 : player_thread: played "Bass/The_Trap_And_Bass_39Damn_Son_100k_Subs_Mix39_Mixed_by_DarkstepWarrior_FREE_DL[www.MP3Fiber.com].mp3"
+Apr 01 18:47 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 01 18:53 : player_thread: played "Psy/X-Noize_-_Breaking_The_Toys__I.mp3"
+Apr 01 18:53 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 01 19:00 : player_thread: played "Psy/Intersys-Power_Supply_Injectio.mp3"
+Apr 01 19:07 : player_thread: played "Psy/Perplex_vs_InterSys_-_Creating.mp3"
+Apr 01 19:11 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 02 14:45 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 02 14:45 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 02 14:45 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 02 14:53 : player_thread: played "FLAC/Psy/Deerob - Jayus - 2014 - FLAC/01 - Deerob - Gated.flac"
+Apr 02 14:59 : player_thread: played "FLAC/Psy/Deerob - Jayus - 2014 - FLAC/02 - Deerob - Fluffy.flac"
+Apr 02 15:07 : player_thread: played "FLAC/Psy/Deerob - Jayus - 2014 - FLAC/03 - Deerob - Pluck n Play.flac"
+Apr 02 15:13 : player_thread: played "FLAC/Psy/Deerob - Jayus - 2014 - FLAC/04 - Deerob - E Dee M.flac"
+Apr 02 15:20 : player_thread: played "FLAC/Psy/Deerob - Jayus - 2014 - FLAC/05 - Deerob - Fall Down (feat. Jan Pecher).flac"
+Apr 02 15:26 : player_thread: played "FLAC/Psy/Deerob - Jayus - 2014 - FLAC/06 - Deerob - Jayus.flac"
+Apr 02 15:32 : player_thread: played "FLAC/Psy/KarmasynK - Psymatiks - 2014 - FLAC/01 - KarmasynK - Psylther.flac"
+Apr 02 15:36 : player_thread: played "FLAC/Psy/KarmasynK - Psymatiks - 2014 - FLAC/02 - Kristina Aqua - Moonwalker (KarmasynK ReVision).flac"
+Apr 02 17:45 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 02 18:09 : player_thread: played "Psy/InterSys_FeatElla_-_No_Music_N.mp3"
+Apr 02 18:09 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 02 18:17 : player_thread: played "Psy/Freakulizer_-_moving_in_harmon.mp3"
+Apr 02 18:23 : player_thread: played "Psy/Electro_Sun_vs_Stereomatic_-_Bubble_Crash.mp3"
+Apr 02 18:23 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 02 18:26 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 02 18:26 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 02 18:28 : player_thread: played "Bass/Big_Chocolate_-_Blue_Milk[www.MP3Fiber.com].mp3"
+Apr 02 18:31 : player_thread: played "Bass/Reee_-_Molly_LOUDPVCK_Remix_FREE_DL[www.MP3Fiber.com].mp3"
+Apr 04 12:07 : Failed to open mixer for 'whatever name you want': no such mixer control: PCM
+Apr 04 12:10 : player_thread: played "Bass/DJ_Slink_-_Drop_That_Bass[www.MP3Fiber.com].mp3"
+Apr 04 12:14 : player_thread: played "Bass/Calvin_Harris_-_I_Need_Your_Love_ft_Ellie_Goulding_R3hab_Remix[www.MP3Fiber.com].mp3"
+Apr 04 12:18 : player_thread: played "Bass/CRNKN_-_Heart_FREE_DL[www.MP3Fiber.com].mp3"
+Apr 04 12:21 : player_thread: played "Bass/Bro_Safari_-_Scumbag_FREE_DL[www.MP3Fiber.com].mp3"
+Apr 04 12:25 : player_thread: played "Electro/2013/08/Lazy_Rich_-_Breakfast_Of_Champions_Original_Mix_Big_Fish_Recordings[www.MP3Fiber.com].mp3"
