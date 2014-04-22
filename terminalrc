@@ -1,14 +1,4 @@
-[Configuration]
-FontName=Monospace 9
-MiscAlwaysShowTabs=FALSE
-MiscBell=FALSE
-MiscBordersDefault=FALSE
-MiscCursorBlinks=FALSE
-MiscCursorShape=TERMINAL_CURSOR_SHAPE_BLOCK
-MiscDefaultGeometry=80x24
-MiscInheritGeometry=FALSE
-MiscMenubarDefault=FALSE
-MiscMouseAutohide=FALSE
+iscMouseAutohide=FALSE
 MiscToolbarDefault=FALSE
 MiscConfirmClose=TRUE
 MiscCycleTabs=TRUE
@@ -18,9 +8,6 @@ MiscTabPosition=GTK_POS_TOP
 MiscHighlightUrls=TRUE
 MiscScrollAlternateScreen=TRUE
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
-ColorCursor=#0f0f49499999
-ColorForeground=#838394949696
-ColorBackground=#00002b2b3636
 ColorPalette1=#070736364242
 ColorPalette2=#dcdc32322f2f
 ColorPalette3=#858599990000
@@ -38,3 +25,8 @@ ColorPalette14=#6c6c7171c4c4
 ColorPalette15=#9393a1a1a1a1
 ColorPalette16=#fdfdf6f6e3e3
 Term=xterm-color
+ColorPalette=#631863186318;#df8a66a766a7;#7a5ea5cc61fc;#b35d82e351e4;#8755a010c7db;#72b53a3a7bdd;#ba0f92e8b958;#77bd77bd77bd;#555557575353;#efef29292929;#7979cdcd95db;#fcfce9e94f4f;#73739f9fcfcf;#c40e51bfb7a2;#3434e2e2e2e2;#b1b1b1b1b1b1
+ColorBackground=#14831c6f262b
+ColorForeground=#9b1ba215a6f5
+ColorBoldUseDefault=FALSE
+
