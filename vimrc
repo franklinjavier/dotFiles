@@ -250,8 +250,15 @@ let g:ctrlp_custom_ignore = {
 
 " Fast saving
 nmap <leader>w :w!<cr>
+
 " Fast saving and close
 nmap <leader>x :x<cr>
+
+" Switch CWD to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+
+" Delete HTML tags but keeps text
+map <leader>h :%s#<[^>]\+>##g<cr>
 
 " Changing focus of split panes can be a bit of a pain (<C-w>[direction]), 
 " let's drop the middle man!
@@ -259,9 +266,6 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-
-" Switch CWD to the directory of the open buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
