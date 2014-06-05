@@ -206,7 +206,6 @@ cmap w!! %!sudo tee > /dev/null %
 
         vnoremap <silent> <Enter> :EasyAlign<cr>
 
-
     " CTRL P list directory
     Bundle 'ctrlp.vim'
     Bundle 'fisadev/vim-ctrlp-cmdpalette'
@@ -233,6 +232,8 @@ cmap w!! %!sudo tee > /dev/null %
     "Vim MarkDown runtime files
     Bundle 'tpope/vim-markdown'
 
+    " Node.vim
+    Bundle 'moll/vim-node'
 
 
 " Change leader to a comma because the backslash is too far away
