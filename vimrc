@@ -100,6 +100,8 @@ set ts=4
 set expandtab
 " set number
 set number
+" turn off error beeping and flashing
+set vb t_vb=
 " highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
 autocmd FileType php let php_sql_query=1
 " does exactly that. highlights html inside of php strings
