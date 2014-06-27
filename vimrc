@@ -246,7 +246,7 @@ let mapleader=","
 " Settings for CTRLP 
 let g:ctrlp_working_path_mode = ''
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules$'
+  \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|build$'
   \ }
 
 " Fast saving
@@ -260,6 +260,12 @@ map <leader>cd :cd %:p:h<cr>:pwd<cr>
 
 " Delete HTML tags but keeps text
 map <leader>h :%s#<[^>]\+>##g<cr>
+
+" Easy access to the vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+
+" Reload vimrc
+nnoremap <leader>rv :source $MYVIMRC<cr>
 
 " Changing focus of split panes can be a bit of a pain (<C-w>[direction]), 
 " let's drop the middle man!
