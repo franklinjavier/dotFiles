@@ -88,6 +88,9 @@ set wildmenu                    " make tab completion for files/buffers act like
 set wildmode=list:full          " show a list when pressing tab and complete
 filetype plugin on              " enable filetype plugins
 :nohl                           " turn off highlighting
+xmap <c-k> :mo'<-- <cr> gv      " moving selection to up
+xmap <c-j> :mo'>+ <cr> gv       " moving selection to down
+
 
 autocmd FileType php let php_sql_query=1        " highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
 autocmd FileType php let php_htmlInStrings=1    " does exactly that. highlights html inside of php strings
