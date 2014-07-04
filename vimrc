@@ -92,6 +92,8 @@ xmap <c-k> :mo'<-- <cr> gv      " moving selection to up
 xmap <c-j> :mo'>+ <cr> gv       " moving selection to down
 vmap <silent> <Tab> >gv         " tab indents selection
 vmap <silent> <S-Tab> <gv       " shift-tab unindents
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr> " ,p --> past from clipboard system 
+
 
 
 autocmd FileType php let php_sql_query=1        " highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
