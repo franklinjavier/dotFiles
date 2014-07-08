@@ -111,9 +111,10 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
-au! BufRead,BufNewFile *.json setfiletype json
+au! BufRead,BufNewFile *.json set filetype json
 au BufRead,BufNewFile *.scss set filetype=scss.css
 au BufEnter *.scss :syntax sync fromstart
+au BufNewFile,BufRead,BufReadPost *.jade set filetype=jade
 " Sourced from vim tip: http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
 autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
@@ -145,6 +146,7 @@ Bundle "miripiruni/CSScomb-for-Vim"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "christoomey/vim-tmux-navigator"
 Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
+Bundle "digitaltoad/vim-jade"
 Bundle "mattn/webapi-vim"
 Bundle "mattn/gist-vim"
     let g:gist_clip_command = 'xclip -selection clipboard' 

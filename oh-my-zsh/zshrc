@@ -29,6 +29,9 @@ alias gdj="grunt dist:js"
 alias gdc="grunt dist:css"
 alias gitl="git log --all --graph --decorate --oneline --abbrev-commit"
 alias gits="git status -sb"
+alias lst='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e 
+'"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
+
 
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
