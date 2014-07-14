@@ -8,100 +8,176 @@ endif
 
 " Re-organize statusline
 " http://got-ravings.blogspot.com.br/2008/08/vim-pr0n-making-statuslines-that-own.html
-set statusline=%t               "tail of the filename
-set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
-set statusline+=%{fugitive#statusline()} "fugitive.vim information
-set statusline+=%{&ff}]         " file format
-set statusline+=%h              " help file flag
-set statusline+=%m              " modified flag
-set statusline+=%r              " read only flag
-set statusline+=%y              " filetype
-set statusline+=%=              " left/right separator
-set statusline+=%c,             " cursor column
-set statusline+=%l/%L           " cursor line/total lines
-set statusline+=\ %P            " percent through file
-set hidden                      " hides the buffer instead of closing the files
-set nowrap                      " wrap lines
-set tabstop=4                   " set tab to be 4 spaces
-set backspace=indent,eol,start  " allow backspace over everything in edit mode
-set autoindent                  " set auto indent
-set si                          " set smart indent
-set copyindent                  " copy the previous indentation
-set shiftwidth=4                " set 4 space for autoindenting
-set shiftround                  " set multiples of shiftwidth when indenting with '<' 
-set showmatch                   " show the matching symbols
-set ignorecase                  " ignore case when searching
-set smartcase                   " use case sensitive when the terms are not all in smallcase
-set hlsearch                    " highlight search terms
-set incsearch                   " show search matches as you type
-set history=1000                " remember more commands
-set undolevels=1000             " levels of undo command
-set title                       " Change the terminal title
-set noeb vb t_vb=               " turn off error beeping 
-au GUIEnter * set vb t_vb=      " turn off flashing
-set ruler                       " show the cursor position all the time
-set showcmd                     " display incomplete commands
-set scrolloff=4                 " set 4 lines on the edge of the screen
-set virtualedit=all             " let the cursor go anywhere
-set nobackup                    " no backup file :D
+set statusline=%t               
+ "file encoding
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, 
+"fugitive.vim information
+set statusline+=%{fugitive#statusline()} 
+" file format
+set statusline+=%{&ff}]
+" help file flag
+set statusline+=%h
+" modified flag
+set statusline+=%m
+" read only flag
+set statusline+=%r
+" filetype
+set statusline+=%y
+" left/right separator
+set statusline+=%=
+" cursor column
+set statusline+=%c,
+" cursor line/total lines
+set statusline+=%l/%L
+" percent through file
+set statusline+=\ %P
+" hides the buffer instead of closing the files
+set hidden
+" wrap lines
+set nowrap
+" set tab to be 4 spaces
+set tabstop=4
+" allow backspace over everything in edit mode
+set backspace=indent,eol,start
+" set auto indent
+set autoindent
+" set smart indent
+set si
+" copy the previous indentation
+set copyindent
+" set 4 space for autoindenting
+set shiftwidth=4
+" set multiples of shiftwidth when indenting with '<' 
+set shiftround
+" show the matching symbols
+set showmatch
+" ignore case when searching
+set ignorecase
+" use case sensitive when the terms are not all in smallcase
+set smartcase
+" highlight search terms
+set hlsearch
+" show search matches as you type
+set incsearch
+" remember more commands
+set history=1000
+" levels of undo command
+set undolevels=1000
+" Change the terminal title
+set title
+" turn off error beeping 
+set noeb vb t_vb=
+" turn off flashing
+au GUIEnter * set vb t_vb=
+" show the cursor position all the time
+set ruler
+" display incomplete commands
+set showcmd
+" set 4 lines on the edge of the screen
+set scrolloff=4
+" let the cursor go anywhere
+set virtualedit=all
+" no backup file :D
+set nobackup
 set noswapfile
-hi link htmlLink NONE           " no underline html links
-filetype indent on              " Set the identation on
-syntax on                       " highlight the syntax
-colorscheme candyman            " set color scheme
+" no underline html links
+hi link htmlLink NONE
+" Set the identation on
+filetype indent on
+" highlight the syntax
+syntax on
+" set color scheme
+colorscheme candyman
 if !has("gui_running")          
     let g:solarized_termtrans=1
     let g:solarized_termcolors=256
 endif
 " set background=dark
 " set term=xterm-256color
-set guifont=Inconsolata\ 11     " set the default gui font to Inconsolata
-set guioptions-=T               " disable the toolbar
-set guioptions-=m               " disable the menu
-set guioptions+=LlRrb           " disable the scrollbar
+" set the default gui font to Inconsolata
+set guifont=Inconsolata\ 11
+" disable the toolbar
+set guioptions-=T
+" disable the menu
+set guioptions-=m
+" disable the scrollbar
+set guioptions+=LlRrb
 set guioptions-=LlRrb
-set ts=4                        " set the tab space to 4
-set expandtab                   " convert tab to spaces
-set number                      " set number
-let mapleader=","               " change leader to a comma because the backslash is too far away 
-                                "   that means all \x commands turn into ,x                        
-                                "   the mapleader has to be set before vundle starts loading all   
-                                "   the plugins.                                                   
+" set the tab space to 4
+set ts=4
+" convert tab to spaces
+set expandtab
+" set number
+set number
 
-nmap <leader>w :w!<cr>          " fast saving
-nmap <leader>x :x<cr>           " fast saving and close
-map <C-h> <C-w>h                " changing focus of split panes can 
-set viminfo^=%                  " remember info about open buffers on close
-map <C-j> <C-w>j                " be a bit of a pain (<C-w>[direction]), 
-map <C-k> <C-w>k                " let's drop the middle man!
+" change leader to a comma because the backslash is too far away 
+"   that means all \x commands turn into ,x                        
+"   the mapleader has to be set before vundle starts loading all   
+"   the plugins.                                       
+let mapleader=","                           
+
+" fast saving
+nmap <leader>w :w!<cr>
+" fast saving and close
+nmap <leader>x :x<cr>
+" changing focus of split panes can 
+map <C-h> <C-w>h
+" remember info about open buffers on close
+set viminfo^=%
+" be a bit of a pain (<C-w>[direction]), 
+map <C-j> <C-w>j
+" let's drop the middle man!
+map <C-k> <C-w>k
 map <C-l> <C-w>l
-map Q gq                        " don't use Ex mode, use Q for formatting
-imap <C-z> <Esc><C-y>,a         " activate the Zencoding
-map <C-c> <leader>ci            " activate Nerd Commenter
-map <F1> <Esc>                  " avoid accidental hits of <F1> while aiming for <Esc>
-set termencoding=utf-8          " encoding for the terminal
-set encoding=utf-8              " set the encoding
-set lazyredraw                  " don't update the display while executing macros
-set laststatus=2                " tell VIM to always put a status line in, even
-                                "    if there is only one window
-set wildmenu                    " make tab completion for files/buffers act like bash
-set wildmode=list:full          " show a list when pressing tab and complete
-filetype plugin on              " enable filetype plugins
-:nohl                           " turn off highlighting
-xmap <c-k> :mo'<-- <cr> gv      " moving selection to up
-xmap <c-j> :mo'>+ <cr> gv       " moving selection to down
-vmap <silent> <Tab> >gv         " tab indents selection
-vmap <silent> <S-Tab> <gv       " shift-tab unindents
-map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr> " ,p --> past from clipboard system 
+" don't use Ex mode, use Q for formatting
+map Q gq
+" activate the Zencoding
+imap <C-z> <Esc><C-y>,a         
+"activate Nerd Commenter
+map <C-c> <leader>ci            
+" avoid accidental hits of <F1> while aiming for <Esc>
+map <F1> <Esc>
+" encoding for the terminal
+set termencoding=utf-8
+" set the encoding
+set encoding=utf-8
+" don't update the display while executing macros
+set lazyredraw
+" tell VIM to always put a status line in, even
+" if there is only one window     
+set laststatus=2
+" make tab completion for files/buffers act like bash
+set wildmenu
+" show a list when pressing tab and complete
+set wildmode=list:full
+" enable filetype plugins
+filetype plugin on
+" turn off highlighting
+:nohl
+" moving selection to up
+xmap <c-k> :mo'<-- <cr> gv
+" moving selection to down
+xmap <c-j> :mo'>+ <cr> gv
+" tab indents selection
+vmap <silent> <Tab> >gv
+" shift-tab unindents
+vmap <silent> <S-Tab> <gv
+" ,p --> past from clipboard system 
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr> 
 
 
-
-autocmd FileType php let php_sql_query=1        " highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
-autocmd FileType php let php_htmlInStrings=1    " does exactly that. highlights html inside of php strings
-autocmd FileType php let php_noShortTags=1      " no short tags
-autocmd FileType php let php_folding=1          " automagically folds functions & methods. this is getting IDE-like isn't it?
-autocmd Filetype php set ft=php.html            " Set multiple filetypes to the php files
-set makeprg=php\ -l\ %                          " set "make" command when editing php files
+" highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
+autocmd FileType php let php_sql_query=1
+" does exactly that. highlights html inside of php strings
+autocmd FileType php let php_htmlInStrings=1
+" no short tags
+autocmd FileType php let php_noShortTags=1
+" automagically folds functions & methods. this is getting IDE-like isn't it?
+autocmd FileType php let php_folding=1
+" Set multiple filetypes to the php files
+autocmd Filetype php set ft=php.html
+" set "make" command when editing php files
+set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 " autocomplete funcs and identifiers for languages
 autocmd FileType python set omnifunc=pythoncomplete#Complete
@@ -118,16 +194,25 @@ au BufNewFile,BufRead,BufReadPost *.jade set filetype=jade
 " Sourced from vim tip: http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
 autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
-cmap w!! %!sudo tee > /dev/null %   " Force Saving Files that Require Root Permission
-map <leader>cd :cd %:p:h<cr>:pwd<cr>     " Switch CWD to the directory of the open buffer
-map <leader>h :%s#<[^>]\+>##g<cr>        " Delete HTML tags but keeps text
-nnoremap <leader>ev :vsplit $MYVIMRC<cr> " Easy access to the vimrc
-nnoremap <leader>rv :source $MYVIMRC<cr> " Reload vimrc
-vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>  " When you press <leader>r you can search and replace the selected text
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm  " Remove the Windows ^M - when the encodings gets messed up
+" Force Saving Files that Require Root Permission
+cmap w!! %!sudo tee > /dev/null %
+" Switch CWD to the directory of the open buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+" Delete HTML tags but keeps text
+map <leader>h :%s#<[^>]\+>##g<cr>
+" Easy access to the vimrc
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" Reload vimrc
+nnoremap <leader>rv :source $MYVIMRC<cr>
+" When you press <leader>r you can search and replace the selected text
+vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>  
+" Remove the Windows ^M - when the encodings gets messed up
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm  
 
-if has('mouse')                 " in many terminal emulators the mouse works just fine
-  set mouse=a                   " thus enable it.
+" in many terminal emulators the mouse works just fine
+" thus enable it.
+if has('mouse')
+  set mouse=a                   
 endif
 
 " Plugins
