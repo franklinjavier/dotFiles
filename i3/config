@@ -3,11 +3,11 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
-set $blue #005588
+#set $color1 #003366
 #set $color1 #347741
 set $color1 #313a69
 set $color2 #111111
-set $foregroundColor #a5aec9
+set $foregroundColor #FFFFFF
 
 client.focused            $color1   $color1   $foregroundColor   #333333
 client.focused_inactive   $color2   $color2   #888888   #000000
@@ -182,7 +182,7 @@ bindsym $mod+r mode "resize"
 
 # Startup
     #exec --no-startup-id davmail # e-mail
-    exec --no-startup-id feh --bg-fill ~/Pictures/ghost_nebula-wallpaper-1920x1080.jpg
+    exec --no-startup-id feh --bg-fill ~/Pictures/Wallpaper1.jpeg
     # Set repeat super fast
     exec --no-startup-id xset r rate 150 100
     exec --no-startup-id arandr
