@@ -1,0 +1,22 @@
+UnityPanelWidget,
+.unity-panel {
+    border-width: 0;
+    border-style: none;
+    background-color: @theme_bg_color;
+    background-image: none;
+    color: @theme_fg_color;
+}
+
+.unity-panel.menubar,
+.unity-panel .menubar {
+}
+
+.unity-panel.menuitem,
+.unity-panel .menuitem {
+
+}
+
+.unity-panel.menubar.menuitem,
+.unity-panel.menubar .menuitem * {
+    color: @theme_fg_color;
+}
