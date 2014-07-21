@@ -14,6 +14,8 @@ rm ~/.zshrc
 ln -s ~/r00t/dotFiles/oh-my-zsh/zshrc ~/.zshrc
 rm ~/.oh-my-zsh/themes/agnoster.zsh-theme 
 ln -s ~/r00t/dotFiles/oh-my-zsh/agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme
+ln -s ~/r00t/dotFiles/fonts/* /usr/share/fonts/
+fc-cache -fv
 # inserir zsh no final do ~/.bashrc
 
 # Cloning all repos
