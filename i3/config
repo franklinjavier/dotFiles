@@ -186,9 +186,13 @@ bindsym $mod+r mode "resize"
     exec --no-startup-id nm-connection-editor
 
 # Keyboard media buttons
-    bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 1 toggle"
-    bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 -- +5% && killall -SIGUSR1 i3status"
-    bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -- -5% && killall -SIGUSR1 i3status"
+    #bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 1 toggle"
+    #bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 -- +5% && killall -SIGUSR1 i3status"
+    #bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -- -5% && killall -SIGUSR1 i3status"
+
+    bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+    bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+    bindsym XF86AudioMute exec amixer -q set Master toggle
 
 # keyboard layout
     bindsym $mod+b exec --no-startup-id setxkbmap br
@@ -207,7 +211,7 @@ bindsym $mod+r mode "resize"
 
 # WINDOW CONTROL
 # Float everything
-    for_window [class="MPlayer|Gnome-mplayer|Galculator|Gsimplecal|Viewnior|Alarm-clock|xpad|Java|Clamtk|XTerm|TeamViewer|Gvim"] floating enable
+    for_window [class="MPlayer|Gnome-mplayer|Galculator|Gsimplecal|Viewnior|Alarm-clock|xpad|Java|Clamtk|XTerm|TeamViewer"] floating enable
     for_window [class="File-roller|Lxappearance|Nitrogen|Thunar|feh|Arandr|Caffeine|Pavucontrol|emulator64-arm|Transmission-gtk|sublime-text"] floating enable
     for_window [title="Preferences|xfce4-notifyd|Skype|TrueCrypt|Catfish|Google Keep|Pocket|irssi|Application Finder"] floating enable
     for_window [title="File Operation Progress" class="Thunar"] floating enable
@@ -237,13 +241,13 @@ bindsym --release $mod+Control+Shift+Print exec --no-startup-id sleep 5 && scrot
 # shutdown, reboot, lock script
 set $mode_system System (L) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id ~/dotFiles/.i3exit lock, mode "default"
-    bindsym f exec --no-startup-id ~/dotFiles/.i3exit fun, mode "default"
-    bindsym e exec --no-startup-id ~/dotFiles/.i3exit logout, mode "default"
-    bindsym s exec --no-startup-id ~/dotFiles/.i3exit suspend, mode "default"
-    bindsym h exec --no-startup-id ~/dotFiles/.i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id ~/dotFiles/.i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id ~/dotFiles/.i3exit shutdown, mode "default"  
+    bindsym l exec --no-startup-id ~/r00t/dotFiles/.i3exit lock, mode "default"
+    bindsym f exec --no-startup-id ~/r00t/dotFiles/.i3exit fun, mode "default"
+    bindsym e exec --no-startup-id ~/r00t/dotFiles/.i3exit logout, mode "default"
+    bindsym s exec --no-startup-id ~/r00t/dotFiles/.i3exit suspend, mode "default"
+    bindsym h exec --no-startup-id ~/r00t/dotFiles/.i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id ~/r00t/dotFiles/.i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id ~/r00t/dotFiles/.i3exit shutdown, mode "default"  
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
