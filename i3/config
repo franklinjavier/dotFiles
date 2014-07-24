@@ -182,7 +182,8 @@ bindsym $mod+r mode "resize"
 
 # Startup
     #exec --no-startup-id davmail # e-mail
-    exec --no-startup-id feh --bg-fill ~/Pictures/Wallpaper1.jpeg
+    exec --no-startup-id feh --bg-fill ~/Pictures/Arch_Linux_Wallpapers_12.png
+
     # Set repeat super fast
     exec --no-startup-id xset r rate 150 100
     exec --no-startup-id arandr
