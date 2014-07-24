@@ -5,9 +5,10 @@
 set $mod Mod1
 #set $color1 #003366
 #set $color1 #347741
-set $color1 #313a69
+#set $color1 #484f72
+set $color1 #41505b
 set $color2 #111111
-set $foregroundColor #FFFFFF
+set $foregroundColor #a2b4c1
 
 client.focused            $color1   $color1   $foregroundColor   #333333
 client.focused_inactive   $color2   $color2   #888888   #000000
@@ -16,13 +17,6 @@ client.unfocused          $color2   $color2   #666666   #000000
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, if you need a lot of unicode glyphs or
-# right-to-left text rendering, you should instead use pango for rendering and
-# chose a FreeType font, such as:
-#font pango:DejaVu Sans Mono 10
-# font for window titles. ISO 10646 = Unicode
-#font fixed
 font pango:Arimo 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -33,6 +27,9 @@ bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+q kill
+
+# App finder
+bindsym F3 exec xfce4-appfinder
 
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
@@ -173,25 +170,30 @@ bindsym $mod+r mode "resize"
 
 
 # MONITOR
-    #exec --no-startup-id arandr --output DVI-0 --right-of DVI-1
-    exec --no-startup-id xrandr --output DIN --off --output DVI-1 --mode 1600x900 --pos 1680x0 --rotate normal --output DVI-0 --mode 1680x1050 --pos 0x0 --rotate normal
+    exec --no-startup-id exec sh ~/.screenlayout/layout.sh
 
 # SYSTEM
 # Lock the session
-    bindsym $mod+F12 exec i3lock -c 000000
+    bindsym $mod+F12 exec i3lock -ti ~/Pictures/arch3.png -p default -n
+    #bindsym $mod+F12 exec slimlock
 
 # Startup
+<<<<<<< HEAD
     #exec --no-startup-id davmail # e-mail
     exec --no-startup-id feh --bg-fill ~/Pictures/Arch_Linux_Wallpapers_12.png
 
+=======
+    exec --no-startup-id davmail # e-mail
+    exec --no-startup-id feh --bg-fill ~/Pictures/arch3.png
+>>>>>>> 2e048b548bafd02c308d8783e009f65b506727b6
     # Set repeat super fast
     exec --no-startup-id xset r rate 150 100
-    exec --no-startup-id arandr
+    exec --no-startup-id nm-connection-editor
 
 # Keyboard media buttons
     bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 1 toggle"
-    bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 1 -- +5% && killall -SIGUSR1 i3status"
-    bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 1 -- -5% && killall -SIGUSR1 i3status"
+    bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 -- +5% && killall -SIGUSR1 i3status"
+    bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -- -5% && killall -SIGUSR1 i3status"
 
 # keyboard layout
     bindsym $mod+b exec --no-startup-id setxkbmap br
@@ -203,15 +205,16 @@ bindsym $mod+r mode "resize"
 
 
 # Keybindings to start applications
-# open file manager
+    # open file manager
     bindsym $mod+Shift+f exec --no-startup-id thunar
+    # open gvim
     bindsym $mod+g exec --no-startup-id gvim
 
 # WINDOW CONTROL
 # Float everything
     for_window [class="MPlayer|Gnome-mplayer|Galculator|Gsimplecal|Viewnior|Alarm-clock|xpad|Java|Clamtk|XTerm|TeamViewer|Gvim"] floating enable
     for_window [class="File-roller|Lxappearance|Nitrogen|Thunar|feh|Arandr|Caffeine|Pavucontrol|emulator64-arm|Transmission-gtk|sublime-text"] floating enable
-    for_window [title="Preferences|xfce4-notifyd|Skype|TrueCrypt|Catfish|Google Keep|Pocket|irssi"] floating enable
+    for_window [title="Preferences|xfce4-notifyd|Skype|TrueCrypt|Catfish|Google Keep|Pocket|irssi|Application Finder"] floating enable
     for_window [title="File Operation Progress" class="Thunar"] floating enable
     for_window [title="Share a link on Twitter - Mozilla Firefox" class="Firefox"] floating enable
     for_window [title="Press This - Mozilla Firefox" class="Firefox"] floating enable
@@ -254,6 +257,6 @@ mode "$mode_system" {
 bindsym Control+Mod1+Delete mode "$mode_system"
 
 
-# Use normal borders.
+# Use normal borders
 new_window normal
 new_float normal
