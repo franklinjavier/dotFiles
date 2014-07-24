@@ -178,14 +178,9 @@ bindsym $mod+r mode "resize"
     #bindsym $mod+F12 exec slimlock
 
 # Startup
-<<<<<<< HEAD
-    #exec --no-startup-id davmail # e-mail
-    exec --no-startup-id feh --bg-fill ~/Pictures/Arch_Linux_Wallpapers_12.png
-
-=======
     exec --no-startup-id davmail # e-mail
-    exec --no-startup-id feh --bg-fill ~/Pictures/arch3.png
->>>>>>> 2e048b548bafd02c308d8783e009f65b506727b6
+    exec --no-startup-id feh --bg-fill ~/Pictures/arch3-bottom.png
+
     # Set repeat super fast
     exec --no-startup-id xset r rate 150 100
     exec --no-startup-id nm-connection-editor

@@ -11,9 +11,7 @@ ZSH_THEME="agnoster"
 alias vim='sudo -E vim'
 alias vi='sudo -E vim'
 alias gvim='sudo -E gvim'
-alias jsuol='cd ~/root/svn/webcontent/com/jsuol/c/'
-alias info='cd ~/root/svn/branches/infograficos/'
-alias svg2json='python ~/Dropbox/lab/python/svg2json/svg2json.py'
+alias fast='xset r rate 150 100'
 alias subl="sublime"
 alias svnu="sudo svn update"
 alias svnci="sudo svn ci -m"
@@ -35,6 +33,13 @@ alias gits="git status -sb"
 alias lst='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e 
 '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
 
+
+# UOL
+alias jsuol='cd ~/r00t/UOL/svn/webcontent/com/jsuol/c/'
+alias info='cd ~/r00t/UOL/svn/branches/infograficos/'
+alias tools='cd ~/r00t/UOL/tools/'
+alias uol='cd ~/r00t/UOL/'
+alias dataviz='cd ~/r00t/UOL/dataviz/'
 
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
@@ -102,3 +107,5 @@ fi
 
 
 precmd() { print "" }
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

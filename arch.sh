@@ -6,7 +6,7 @@ yaourt -Syua
 
 # Install all apps
 pacman -S git gvim ruby dmenu nodejs i3 dmenu
-yaourt -S google-chrome chromium chromium-pepper-flash svn feh scrot lxappearance zsh --noconfirm
+yaourt -S google-chrome chromium chromium-pepper-flash svn feh scrot lxappearance zsh openssh --noconfirm
 
 # Oh my zsh
 curl -L http://install.ohmyz.sh | sh
