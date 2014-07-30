@@ -9,15 +9,16 @@ set $mod Mod1
 set $color1 #41505b
 set $color2 #111111
 set $foregroundColor #a2b4c1
+set $color5 #ff0000
 
-client.focused            $color1   $color1   $foregroundColor   #333333
-client.focused_inactive   $color2   $color2   #888888   #000000
-client.unfocused          $color2   $color2   #666666   #000000
+client.focused            $color1   $color1   $foregroundColor   $color1
+client.focused_inactive   $color2   $color2   #888888            $color1
+client.unfocused          $color2   $color2   #666666            $color1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below. ISO 10646 = Unicode
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font pango:Arimo 9
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font inconsolata 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
