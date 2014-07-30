@@ -12,32 +12,65 @@ alias vim='sudo -E vim'
 alias vi='sudo -E vim'
 alias gvim='sudo -E gvim'
 alias fast='xset r rate 150 100'
-alias subl="sublime"
-alias svnu="sudo svn update"
-alias svnci="sudo svn ci -m"
-alias svna="sudo svn add"
-alias svnl="sudo svn log"
-alias svncu="sudo svn cleanup"
-alias chmod777="sudo chmod 777 -R ./"
-alias chmodx="sudo chmod +x"
-alias svnup="cd ~ && ./update-svn.sh"
-alias stats="cd ~/Dropbox/Jogue\ Free/Workflow/ && casperjs getStats.js"
-alias tmux="tmux -c zsh"
-alias gs="grunt server"
-alias gd="grunt dist"
-alias gdi="grunt dist:img"
-alias gdj="grunt dist:js"
-alias gdc="grunt dist:css"
-alias gitl="git log --all --graph --decorate --oneline --abbrev-commit"
-alias gits="git status -sb"
+alias subl='sublime'
+alias svnu='sudo svn update'
+alias svnci='sudo svn ci -m'
+alias svna='sudo svn add'
+alias svnl='sudo svn log'
+alias svncu='sudo svn cleanup'
+alias chmod777='sudo chmod 777 -R ./'
+alias chmodx='sudo chmod +x'
+alias svnup='cd ~ && ./update-svn.sh'
+alias stats='cd ~/Dropbox/Jogue\ Free/Workflow/ && casperjs getStats.js'
+alias tmux='tmux -c zsh'
+alias gs='grunt server'
+alias gd='grunt dist'
+alias gdi='grunt dist:img'
+alias gdj='grunt dist:js'
+alias gdc='grunt dist:css'
+alias gitl='git log --all --graph --decorate --oneline --abbrev-commit'
+alias gits='git status -sb'
 alias lst='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e 
 '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
+alias dot='cd ~/r00t/dotFiles/'
+alias serve='python3 -m http.server'
+alias dirsize='du -h --max-depth=1 "$@" | sort -k 1,1hr -k 2,2f'
+alias :q='exit'
+alias :Q='exit'
+alias 'cd..'='cd ..'
 
-alias dot="cd ~/r00t/dotFiles/"
+# Sudo
+alias s='sudo'
 
-alias :q="exit"
-alias :Q="exit"
-alias 'cd..'="cd .."
+# CD
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ~='cd ~'
+
+# RM
+alias rm='rm -r -v'
+alias rmf='rm -rf -v'
+
+# CP
+alias cp='cp -r'
+alias cpp='rsync -PrlpE'
+alias cpz='rsync -PrlpEz'
+
+# LS
+alias l='ls -Xp --color=auto'
+alias ls='ls -Xp --color=auto'
+alias ll='ls++'
+
+# MKDIR
+alias mk='mkdir -p -v'
+alias mkdir='mkdir -p -v'
+
+# Various
+alias cls='clear'
+alias h='history'
+
+alias ps="ps aux"
 
 
 # UOL
@@ -94,8 +127,8 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/franklin/.rvm/bin"
-# export MANPATH="/usr/local/man:$MANPATH"
+export PATH='/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/franklin/.rvm/bin'
+# export MANPATH='/usr/local/man:$MANPATH'
 
 # # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -109,7 +142,6 @@ fi
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-
 
 
 precmd() { print "" }
