@@ -174,12 +174,12 @@ bindsym $mod+r mode "resize"
 
 # SYSTEM
 # Lock the session
-    bindsym $mod+F12 exec i3lock -ti ~/Pictures/arch3.png -p default -n
+    bindsym $mod+F12 exec i3lock -ti ~/r00t/dotFiles/wallpaper/arch3.png -p default -n
     #bindsym $mod+F12 exec slimlock
 
 # Startup
     exec --no-startup-id davmail # e-mail
-    exec --no-startup-id feh --bg-fill ~/Pictures/purple-nebula-2.jpg
+    exec --no-startup-id feh --bg-fill ~/r00t/dotFiles/wallpaper/purple-nebula-2.jpg
 
     # Set repeat super fast
     exec --no-startup-id xset r rate 150 100
