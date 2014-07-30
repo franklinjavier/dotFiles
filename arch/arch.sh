@@ -5,7 +5,7 @@ pacman -Syy
 yaourt -Syua
 
 # Install all apps
-yaourt -S git gvim ruby dmenu nodejs i3 dmenu google-chrome chromium chromium-pepper-flash svn feh scrot lxappearance zsh openssh --noconfirm
+yaourt -S git gvim ruby dmenu nodejs i3 dmenu google-chrome chromium chromium-pepper-flash svn feh scrot lxappearance zsh openssh cmus --noconfirm
 
 git config --global user.email "franklinjalves@gmail.com"
 git config --global user.name "Franklin Javier"
