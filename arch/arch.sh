@@ -11,6 +11,8 @@ git config --global user.email "franklinjalves@gmail.com"
 git config --global user.name "Franklin Javier"
 git config --global http.sslVerify false
 git config --global credential.helper 'cache --timeout=898989899889'
+git config --global push.default simple
+
 
 mkdir ~/r00t
 mkdir ~/.i3
