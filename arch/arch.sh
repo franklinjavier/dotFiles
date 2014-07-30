@@ -10,6 +10,7 @@ yaourt -S git gvim ruby dmenu nodejs i3 dmenu google-chrome chromium chromium-pe
 git config --global user.email "franklinjalves@gmail.com"
 git config --global user.name "Franklin Javier"
 git config --global http.sslVerify false
+git config --global credential.helper 'cache --timeout=898989899889'
 
 mkdir ~/r00t
 mkdir ~/.i3
