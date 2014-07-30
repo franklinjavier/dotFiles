@@ -33,6 +33,12 @@ alias gits="git status -sb"
 alias lst='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e 
 '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
 
+alias dot="cd ~/r00t/dotFiles/"
+
+alias :q="exit"
+alias :Q="exit"
+alias 'cd..'="cd .."
+
 
 # UOL
 alias jsuol='cd ~/r00t/UOL/svn/webcontent/com/jsuol/c/'
