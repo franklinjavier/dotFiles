@@ -232,11 +232,16 @@ Bundle "terryma/vim-multiple-cursors"
 Bundle "christoomey/vim-tmux-navigator"
 Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
 Bundle "digitaltoad/vim-jade"
+Bundle 'cakebaker/scss-syntax.vim'
 Bundle "mattn/webapi-vim"
 Bundle "mattn/gist-vim"
     let g:gist_clip_command = 'xclip -selection clipboard' 
     let g:gist_detect_filetype = 1
     let g:gist_open_browser_after_post = 1
+
+Bundle 'scrooloose/nerdtree'
+    " NERDTree, Use F3 for toggle NERDTree
+    nmap <silent> <F2> :NERDTreeToggle<CR>
 
 Bundle "junegunn/vim-easy-align"
     vnoremap <silent> <Enter> :EasyAlign<cr>
@@ -258,6 +263,11 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
+
+" Simulate emmet in vim
+Bundle 'mattn/emmet-vim'
+nnoremap <C-z> :call emmet#expandAbbr(0,"")<CR>a
+inoremap <C-z> <ESC>:call emmet#expandAbbr(0,"")<CR>a
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
