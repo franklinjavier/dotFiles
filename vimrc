@@ -233,6 +233,7 @@ Bundle "christoomey/vim-tmux-navigator"
 Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
 Bundle "digitaltoad/vim-jade"
 Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'abijr/colorpicker'
 Bundle "mattn/webapi-vim"
 Bundle "mattn/gist-vim"
     let g:gist_clip_command = 'xclip -selection clipboard' 
