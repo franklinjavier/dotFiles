@@ -245,6 +245,7 @@ Bundle "mutewinter/nginx.vim"
 Bundle "tpope/vim-markdown"
     au BufNewFile,BufReadPost *.md set filetype=markdown
 
+Bundle 'abijr/colorpicker'
 Bundle "mattn/webapi-vim"
 Bundle "mattn/gist-vim"
     let g:gist_clip_command = 'xclip -selection clipboard' 
