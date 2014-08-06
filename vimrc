@@ -133,7 +133,7 @@ map <C-l> <C-w>l
 map Q gq
 " activate the Zencoding
 imap <C-z> <Esc><C-y>,a         
-"activate Nerd Commenter
+" activate Nerd Commenter
 map <C-c> <leader>ci            
 " avoid accidental hits of <F1> while aiming for <Esc>
 map <F1> <Esc>
@@ -166,30 +166,11 @@ vmap <silent> <S-Tab> <gv
 map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr> 
 
 
-" highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
-autocmd FileType php let php_sql_query=1
-" does exactly that. highlights html inside of php strings
-autocmd FileType php let php_htmlInStrings=1
-" no short tags
-autocmd FileType php let php_noShortTags=1
-" automagically folds functions & methods. this is getting IDE-like isn't it?
-autocmd FileType php let php_folding=1
-" Set multiple filetypes to the php files
-autocmd Filetype php set ft=php.html
-" set "make" command when editing php files
-set makeprg=php\ -l\ %
-set errorformat=%m\ in\ %f\ on\ line\ %l
 " autocomplete funcs and identifiers for languages
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
-au! BufRead,BufNewFile *.json set filetype json
-au BufRead,BufNewFile *.scss set filetype=scss.css
-au BufEnter *.scss :syntax sync fromstart
+"au! BufRead,BufNewFile *.json set filetype json
 au BufNewFile,BufRead,BufReadPost *.jade set filetype=jade
 " Sourced from vim tip: http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
 autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
@@ -208,6 +189,29 @@ nnoremap <leader>rv :source $MYVIMRC<cr>
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>  
 " Remove the Windows ^M - when the encodings gets messed up
 noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm  
+" Split
+noremap <Leader>h :split<CR>
+noremap <Leader>v :vsplit<CR>
+" Git
+noremap <Leader>ga :!git add .<CR>
+noremap <Leader>gc :!git commit -m '<C-R>="'"<CR>
+noremap <Leader>gsh :!git push<CR>
+noremap <Leader>gs :Gstatus<CR>
+noremap <Leader>gb :Gblame<CR>
+noremap <Leader>gd :Gvdiff<CR>
+noremap <Leader>gr :Gremove<CR>
+" Opens an edit command with the path of the currently edited file filled in
+noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+" Copy/Paste/Cut
+noremap YY "+y<CR>
+noremap P "+gP<CR>
+noremap XX "+x<CR>
+" Close 
+map <leader>q :q<cr>
+" Clean search (highlight)
+nnoremap <silent> <leader><space> :noh<cr>
+
+
 
 " in many terminal emulators the mouse works just fine
 " thus enable it.
@@ -223,29 +227,39 @@ call vundle#rc()
 
 Bundle "gmarik/vundle"
 Bundle "tpope/vim-haml"
-Bundle "tpope/vim-markdown"
 Bundle "moll/vim-node"
-Bundle "ap/vim-css-color"
-Bundle "ctrlp.vim"
-Bundle "miripiruni/CSScomb-for-Vim"
+Bundle "gorodinskiy/vim-coloresque"
 Bundle "terryma/vim-multiple-cursors"
 Bundle "christoomey/vim-tmux-navigator"
 Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
 Bundle "digitaltoad/vim-jade"
-Bundle 'cakebaker/scss-syntax.vim'
+Bundle "othree/html5.vim"
+Bundle "leshill/vim-json"
+Bundle "briancollins/vim-jst"
+
+" Syntax highlighting for nginx.conf and related config files.
+Bundle "mutewinter/nginx.vim"
+    au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif 
+
+" Vim Markdown runtime files
+Bundle "tpope/vim-markdown"
+    au BufNewFile,BufReadPost *.md set filetype=markdown
+
 Bundle "mattn/webapi-vim"
 Bundle "mattn/gist-vim"
     let g:gist_clip_command = 'xclip -selection clipboard' 
     let g:gist_detect_filetype = 1
     let g:gist_open_browser_after_post = 1
 
-Bundle 'scrooloose/nerdtree'
+" NERDTree
+Bundle "scrooloose/nerdtree"
     " NERDTree, Use F3 for toggle NERDTree
     nmap <silent> <F2> :NERDTreeToggle<CR>
 
 Bundle "junegunn/vim-easy-align"
     vnoremap <silent> <Enter> :EasyAlign<cr>
     
+Bundle "ctrlp.vim"
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 Bundle "fisadev/vim-ctrlp-cmdpalette"
     let g:ctrlp_working_path_mode = ""
@@ -253,7 +267,9 @@ Bundle "fisadev/vim-ctrlp-cmdpalette"
     \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build$'
     \ }
 
+" JavaScript Syntax 
 Bundle "pangloss/vim-javascript"
+    au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
     let b:javascript_fold=1
     let g:javascript_conceal=1
 
@@ -263,11 +279,38 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
+" Up-to-date PHP syntax file (5.3, 5.4 & 5.5 support; basic 5.6 support)
+Bundle "StanAngeloff/php.vim"
+    au FileType php set omnifunc=phpcomplete#CompletePHP
+    " highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
+    au FileType php let php_sql_query=1
+    " does exactly that. highlights html inside of php strings
+    au FileType php let php_htmlInStrings=1
+    " no short tags
+    au FileType php let php_noShortTags=1
+    " automagically folds functions & methods. this is getting IDE-like isn't it?
+    au FileType php let php_folding=1
+    " Set multiple filetypes to the php files
+    au Filetype php set ft=php.html
+    " set "make" command when editing php files
+    set makeprg=php\ -l\ %
+    set errorformat=%m\ in\ %f\ on\ line\ %l
+
+" Fork of the python.vim by Dmitry Vasiliev and Neil Schemenauer for 2.x and 3.x.
+Bundle "mitsuhiko/vim-python-combined"
+    autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " Simulate emmet in vim
-Bundle 'mattn/emmet-vim'
-nnoremap <C-z> :call emmet#expandAbbr(0,"")<CR>a
-inoremap <C-z> <ESC>:call emmet#expandAbbr(0,"")<CR>a
+Bundle "mattn/emmet-vim"
+    nnoremap <C-z> :call emmet#expandAbbr(0,"")<CR>a
+    inoremap <C-z> <ESC>:call emmet#expandAbbr(0,"")<CR>a
+
+" CSS/SASS/SCSS
+Bundle "miripiruni/CSScomb-for-Vim"
+Bundle "cakebaker/scss-syntax.vim"
+    au FileType css set omnifunc=csscomplete#CompleteCSS
+    au BufRead,BufNewFile *.scss set filetype=scss.css
+    au BufEnter *.scss :syntax sync fromstart
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions

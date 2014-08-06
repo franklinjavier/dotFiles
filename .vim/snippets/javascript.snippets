@@ -779,7 +779,7 @@ snippet width
 snippet wrap
 	${1:obj}.wrap('${2:&lt;div class="extra-wrapper"&gt;&lt;/div&gt;}')${3}
 
-snippet benchmark
+snippet bench
 	// Let's try some benchmarks!
 
 	var iterations = 10000, 
@@ -796,7 +796,18 @@ snippet benchmark
 	
 
 snippet def
-	define(function( require, exports ){
+	define(function( require, exports ) {
 		'use strict';
-		${1:obj}
+
+		${1}
 	});
+
+snippet com
+	/**
+	 * @desc ${1:Descricao}
+	 * @name ${2:Nome do metodo}
+	 * @param {} ${3}
+	 * @return 
+	 * @example 
+	 */
+
