@@ -16,6 +16,8 @@ usage
 When your are in insert mode or visual mode, press the `<F5>` button.
 The color picker dialog appear, select a color and validate.
 
+#ffffff
+
 dependencies
 -------------
 For working, this script need:

@@ -271,8 +271,7 @@ Bundle "fisadev/vim-ctrlp-cmdpalette"
 " JavaScript Syntax 
 Bundle "pangloss/vim-javascript"
     au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-    let b:javascript_fold=1
-    let g:javascript_conceal=1
+    let b:javascript_fold=0
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
@@ -309,6 +308,7 @@ Bundle "mattn/emmet-vim"
 " CSS/SASS/SCSS
 Bundle "miripiruni/CSScomb-for-Vim"
 Bundle "cakebaker/scss-syntax.vim"
+Bundle "1995eaton/vim-better-css-completion"
     au FileType css set omnifunc=csscomplete#CompleteCSS
     au BufRead,BufNewFile *.scss set filetype=scss.css
     au BufEnter *.scss :syntax sync fromstart
