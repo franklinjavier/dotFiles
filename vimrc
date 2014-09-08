@@ -63,6 +63,8 @@ set incsearch
 set history=1000
 " levels of undo command
 set undolevels=1000
+" Limits syntax column
+set synmaxcol=100
 " Change the terminal title
 set title
 " turn off error beeping 
@@ -173,8 +175,9 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 "au! BufRead,BufNewFile *.json set filetype json
 au BufNewFile,BufRead,BufReadPost *.jade set filetype=jade
 " Sourced from vim tip: http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
-autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
-autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+"autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
+"autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
+
 " Force Saving Files that Require Root Permission
 cmap w!! %!sudo tee > /dev/null %
 " Switch CWD to the directory of the open buffer
@@ -210,6 +213,11 @@ noremap XX "+x<CR>
 map <leader>q :q<cr>
 " Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
+
+" Tab completion when entering filenames
+set wildmode=list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,.hg,.svn,*.pyc,.vagrant,.DS_Store,*.jpg,
+  \*.eps,*.jpeg,*.png,*.gif,*.bmp,*.psd
 
 
 
@@ -272,6 +280,8 @@ Bundle "fisadev/vim-ctrlp-cmdpalette"
 Bundle "pangloss/vim-javascript"
     au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
     let b:javascript_fold=0
+    set foldclose=all
+
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
