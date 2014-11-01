@@ -22,7 +22,7 @@ install=${pkgname}.install
 _channel=stable
 _arch=i386
 [ "${CARCH}" = 'x86_64' ] && _arch=amd64
-source=("http://95.31.35.30/chrome/pool/main/g/google-chrome-${_channel}/google-chrome-${_channel}_34.0.1847.137-1_${_arch}.deb")
+source=("http://mirror.pcbeta.com/google/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_34.0.1847.137-1_amd64.deb")
 md5sums=('06388a15d51f815062dd4bcddaeec1cf')
 [ "${CARCH}" = 'x86_64' ] && md5sums[0]='3cc7cd28bbb7bb3e5add19f27a6d0dda'
     
@@ -52,5 +52,6 @@ package() {
     rm -r "${pkgdir}"/etc/cron.daily/ "${pkgdir}"/opt/google/chrome/cron/
     rm "${pkgdir}"/opt/google/chrome/product_logo_*.png
 }
+
 
 

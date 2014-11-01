@@ -64,7 +64,7 @@ set history=1000
 " levels of undo command
 set undolevels=1000
 " Limits syntax column
-set synmaxcol=100
+set synmaxcol=200
 " Change the terminal title
 set title
 " turn off error beeping 
