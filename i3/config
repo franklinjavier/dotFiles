@@ -184,7 +184,6 @@ bindsym $mod+r mode "resize"
 
     # Set repeat super fast
     exec --no-startup-id xset r rate 150 100
-    exec --no-startup-id nm-connection-editor
 
 # Keyboard media buttons
     bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle"

@@ -41,6 +41,7 @@ alias 'cd..'='cd ..'
 alias npmi='sudo npm i'
 
 alias bkp='sudo rsync -azP --rsh="ssh -p21" --exclude-from "$HOME/r00t/dotFiles/.ignore"' 
+
 # Sudo
 alias s='sudo'
 
