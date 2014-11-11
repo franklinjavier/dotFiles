@@ -1,0 +1,19 @@
+Extension
+    Emmet re:view
+
+Terminal
+    ctrl+u - delete from the cursor to the start of the line
+    ctrl+k - delete from the cursor to the end of the line
+    ctrl+w - delete from the cursor to the start of the word
+
+Extend
+    Shell for windows - http://bliker.github.io/cmder/
+
+Web Performance Optimization
+    TMI (Too Many Images) - http://github.com/addyosmani/tmi
+    mod_pagespeed + ngx_pagespeed - http://developers.google.com/speed/pagespeed/module/filter-prioritize-critical-css
+    Optimize Critical Path CSS - https://github.com/addyosmani/critical-path-css-demo
+                               - https://github.com/filamentgroup/loadCSS/ - ((( Importante )))
+
+Task runners
+    gulp-uncss

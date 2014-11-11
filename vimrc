@@ -64,7 +64,7 @@ set history=1000
 " levels of undo command
 set undolevels=1000
 " Limits syntax column
-set synmaxcol=200
+set synmaxcol=500
 " Change the terminal title
 set title
 " turn off error beeping 
@@ -174,6 +174,8 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType c set omnifunc=ccomplete#Complete
 "au! BufRead,BufNewFile *.json set filetype json
 au BufNewFile,BufRead,BufReadPost *.jade set filetype=jade
+"au! BufRead,BufNewFile *.vm  setfiletype velocity 
+
 " Sourced from vim tip: http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
 "autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
 "autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
@@ -322,6 +324,13 @@ Bundle "1995eaton/vim-better-css-completion"
     au FileType css set omnifunc=csscomplete#CompleteCSS
     au BufRead,BufNewFile *.scss set filetype=scss.css
     au BufEnter *.scss :syntax sync fromstart
+
+" Velocity syntax
+Bundle "lepture/vim-velocity"
+    "au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set ft=velocity
+    "au! BufRead,BufNewFile *.vm  setfiletype velocity
+    au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set syntax=vm filetype=vm 
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions

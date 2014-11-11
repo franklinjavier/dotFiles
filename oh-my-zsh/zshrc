@@ -82,6 +82,7 @@ alias info='cd ~/r00t/UOL/svn/branches/infograficos/'
 alias tools='cd ~/r00t/UOL/tools/'
 alias uol='cd ~/r00t/UOL/'
 alias dataviz='cd ~/r00t/UOL/dataviz/'
+alias tcl='cd ~/r00t/UOL/tcl/templatecache-local/ && sudo sh ./run.sh 80'
 
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
