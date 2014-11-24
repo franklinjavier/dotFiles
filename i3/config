@@ -171,16 +171,16 @@ bindsym $mod+r mode "resize"
 
 
 # MONITOR
-    exec --no-startup-id exec sh ~/.screenlayout/layout.sh
+    #exec --no-startup-id exec sh ~/.screenlayout/layout.sh
 
 # SYSTEM
 # Lock the session
-    bindsym $mod+F12 exec i3lock -ti ~/r00t/dotFiles/wallpaper/arch3.png -p default -n
+    bindsym $mod+F12 exec i3lock -ti ~/b0x/dotFiles/wallpaper/arch3.png -p default -n
     #bindsym $mod+F12 exec slimlock
 
 # Startup
-    exec --no-startup-id davmail # e-mail
-    exec --no-startup-id feh --bg-fill ~/r00t/dotFiles/wallpaper/purple-nebula-2.jpg
+    #exec --no-startup-id davmail # e-mail
+    exec --no-startup-id feh --bg-fill ~/b0x/dotFiles/wallpaper/purple-nebula-2.jpg
 
     # Set repeat super fast
     exec --no-startup-id xset r rate 150 100
@@ -205,7 +205,7 @@ bindsym $mod+r mode "resize"
     bindsym $mod+u exec --no-startup-id setxkbmap gb
 
 # keyboard repeat
-    exec --no-startup-id xset r rate 150 80
+    #exec --no-startup-id xset r rate 150 80
 
 
 
@@ -247,13 +247,13 @@ bindsym --release $mod+Control+Shift+Print exec --no-startup-id sleep 5 && scrot
 # shutdown, reboot, lock script
 set $mode_system System (L) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id ~/r00t/dotFiles/.i3exit lock, mode "default"
-    bindsym f exec --no-startup-id ~/r00t/dotFiles/.i3exit fun, mode "default"
-    bindsym e exec --no-startup-id ~/r00t/dotFiles/.i3exit logout, mode "default"
-    bindsym s exec --no-startup-id ~/r00t/dotFiles/.i3exit suspend, mode "default"
-    bindsym h exec --no-startup-id ~/r00t/dotFiles/.i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id ~/r00t/dotFiles/.i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id ~/r00t/dotFiles/.i3exit shutdown, mode "default"  
+    bindsym l exec --no-startup-id ~/b0x/dotFiles/.i3exit lock, mode "default"
+    bindsym f exec --no-startup-id ~/b0x/dotFiles/.i3exit fun, mode "default"
+    bindsym e exec --no-startup-id ~/b0x/dotFiles/.i3exit logout, mode "default"
+    bindsym s exec --no-startup-id ~/b0x/dotFiles/.i3exit suspend, mode "default"
+    bindsym h exec --no-startup-id ~/b0x/dotFiles/.i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id ~/b0x/dotFiles/.i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id ~/b0x/dotFiles/.i3exit shutdown, mode "default"  
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"

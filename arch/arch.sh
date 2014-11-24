@@ -15,22 +15,22 @@ git config credential.helper 'cache --timeout=999999'
 git config --global push.default simple
 
 
-mkdir ~/r00t
+mkdir ~/b0x
 mkdir ~/.i3
-git clone https://github.com/franklinjavier/dotFiles.git ~/r00t/dotFiles
+git clone https://github.com/franklinjavier/dotFiles.git ~/b0x/dotFiles
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-ln -s ~/r00t/dotFiles/.vim ~/.vim
-ln -s ~/r00t/dotFiles/i3/config ~/.i3/config
+ln -s ~/b0x/dotFiles/.vim ~/.vim
+ln -s ~/b0x/dotFiles/i3/config ~/.i3/config
 rm ~/.config/xfce4/terminal/terminalrc
-ln -s ~/r00t/dotFiles/terminalrc ~/.config/xfce4/terminal/terminalrc
+ln -s ~/b0x/dotFiles/terminalrc ~/.config/xfce4/terminal/terminalrc
 
 # Oh my zsh
 curl -L http://install.ohmyz.sh | sh
 rm ~/.zshrc
-ln -s ~/r00t/dotFiles/oh-my-zsh/zshrc ~/.zshrc
+ln -s ~/b0x/dotFiles/oh-my-zsh/zshrc ~/.zshrc
 rm ~/.oh-my-zsh/themes/agnoster.zsh-theme 
-ln -s ~/r00t/dotFiles/oh-my-zsh/agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme
-ln -s ~/r00t/dotFiles/fonts/* /usr/share/fonts/
+ln -s ~/b0x/dotFiles/oh-my-zsh/agnoster.zsh-theme ~/.oh-my-zsh/themes/agnoster.zsh-theme
+ln -s ~/b0x/dotFiles/fonts/* /usr/share/fonts/
 fc-cache -fv
 
 # inserir zsh no final do ~/.bashrc
