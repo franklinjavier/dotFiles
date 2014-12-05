@@ -32,7 +32,7 @@ alias gitl='git log --all --graph --decorate --oneline --abbrev-commit'
 alias gits='git status -sb'
 alias lst='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e 
 '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
-alias dot='cd ~/b0x/dotFiles/'
+alias dot='cd ~/r00t/dotFiles/'
 alias serve='python3 -m http.server'
 alias dirsize='du -h --max-depth=1 "$@" | sort -k 1,1hr -k 2,2f'
 alias :q='exit'
@@ -40,7 +40,7 @@ alias :Q='exit'
 alias 'cd..'='cd ..'
 alias npmi='sudo npm i'
 
-alias bkp='sudo rsync -azP --rsh="ssh -p21" --exclude-from "$HOME/b0x/dotFiles/.ignore"' 
+alias bkp='sudo rsync -azP --rsh="ssh -p21" --exclude-from "$HOME/r00t/dotFiles/.ignore"' 
 
 # Sudo
 alias s='sudo'
@@ -77,20 +77,14 @@ alias ps="ps aux"
 
 
 # UOL
-<<<<<<< HEAD
-alias jsuol='cd ~/b0x/UOL/svn/webcontent/com/jsuol/c/'
-alias info='cd ~/b0x/UOL/svn/branches/infograficos/'
-alias tools='cd ~/b0x/UOL/tools/'
-alias uol='cd ~/b0x/UOL/'
-alias dataviz='cd ~/b0x/UOL/dataviz/'
-=======
 alias jsuol='cd ~/r00t/UOL/svn/webcontent/com/jsuol/c/'
 alias info='cd ~/r00t/UOL/svn/branches/infograficos/'
 alias tools='cd ~/r00t/UOL/tools/'
 alias uol='cd ~/r00t/UOL/'
 alias dataviz='cd ~/r00t/UOL/dataviz/'
 alias tcl='cd ~/r00t/UOL/tcl/templatecache-local/ && sudo sh ./run.sh 80'
->>>>>>> 85e7c25265496502b9e921496167e035768b7603
+alias connect='cd ~/r00t/dotFiles/arch/ && sudo sh start.sh'
+alias hosts='vim /etc/hosts'
 
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
@@ -160,4 +154,6 @@ precmd() { print "" }
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-python3 ~/b0x/dotFiles/oh-my-zsh/archey
+python3 ~/r00t/dotFiles/oh-my-zsh/archey
+
+unset GREP_OPTIONS
