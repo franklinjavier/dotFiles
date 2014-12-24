@@ -329,8 +329,11 @@ Bundle "1995eaton/vim-better-css-completion"
 Bundle "lepture/vim-velocity"
     "au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set ft=velocity
     "au! BufRead,BufNewFile *.vm  setfiletype velocity
+    au! BufRead,BufNewFile *.html,*.htm,*.shtml,*.stm set syntax=html filetype=html
     au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set syntax=vm filetype=vm 
 
+" Go Lang
+Plugin 'fatih/vim-go'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
