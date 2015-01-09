@@ -42,8 +42,8 @@ alias npmi='sudo npm i'
 
 alias bkp='sudo rsync -azP --rsh="ssh -p21" --exclude-from "$HOME/r00t/dotFiles/.ignore"' 
 
-alias pv="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh pv $1 > /dev/null 2>&1&"
-alias cl="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh cl $1 > /dev/null 2>&1&"
+alias pv="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh pv 50 > /dev/null 2>&1&"
+alias cl="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh cl 480 > /dev/null 2>&1&"
 
 
 # Sudo
