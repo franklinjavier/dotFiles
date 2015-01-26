@@ -275,8 +275,11 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 Bundle "fisadev/vim-ctrlp-cmdpalette"
     let g:ctrlp_working_path_mode = ""
     let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build$'
-    \ }
+        \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build$'
+        \ }
+    let g:ctrlp_user_command =
+        \ ['.git/', 'git --git-dir=%s/.git
+        \ ls-files -oc --exclude-standard']
 
 " JavaScript Syntax 
 Bundle "pangloss/vim-javascript"

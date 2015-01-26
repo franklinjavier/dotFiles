@@ -157,3 +157,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 python3 ~/r00t/dotFiles/oh-my-zsh/archey
 
 unset GREP_OPTIONS
+
