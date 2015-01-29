@@ -47,6 +47,7 @@ alias cl="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh cl 480 > /dev/null 2>&1&
 alias _restart="sudo shutdown -r now"
 alias _shutdown="sudo shutdown -h now"
 alias _logout="sudo pkill -u $USER"
+alias irc="irssi -c 172.22.98.219 -p 6667 -n franklin"
 
 
 # Sudo

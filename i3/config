@@ -3,24 +3,41 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod1
+
+#
+# THEME
+# 
+bar {
+    status_command i3status
+    font Terminus 4
+    position bottom
+    colors { 
+        statusline $foregroundColor
+        background #000000
+        focused_workspace $color1 $color1 $foregroundColor
+        inactive_workspace $color2 $color2 $foregroundColor
+    }
+}
+
+
 #set $color1 #003366
 #set $color1 #347741
 #set $color1 #484f72
-set $color1 #41505b
-set $color2 #111111
+
+set $color1 #252d44
+set $color2 #0A0C0D
 set $foregroundColor #a2b4c1
-set $color5 #ff0000
+set $color5 #A72327
+
+set $active #1C2939
+set $bg #0A0C0D
+set $fontColor #a2b4c1
 
 client.focused            $color1   $color1   $foregroundColor   $color1
 client.focused_inactive   $color2   $color2   #888888            $color1
 client.unfocused          $color2   $color2   #666666            $color1
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below. ISO 10646 = Unicode
-#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font inconsolata 9
-
-# Use Mouse+$mod to drag floating windows to their wanted position
+# use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
@@ -29,29 +46,21 @@ bindsym $mod+Return exec xfce4-terminal
 # kill focused window
 bindsym $mod+q kill
 
-# App finder
+# app finder
 bindsym F3 exec xfce4-appfinder
 
-# start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-#bindsym $mod+d exec kupfer
+# start dmenu
 bindsym $mod+d exec --no-startup-id dmenu_run -fn 'Terminus-10' -nb '$color2' -nf '$foregroundColor' -sb '$color1' -sf '$foregroundColor'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-#bindsym $mod+d exec  i3-dmenu-desktop
+bindsym $mod+shift+d exec  i3-dmenu-desktop
 
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
 
 # move focused window
 bindsym $mod+Shift+h move left
@@ -157,19 +166,6 @@ bindsym $mod+r mode "resize"
 #-----------------------------------------------
 
 
-# Bar custom 
-    bar {
-            status_command i3status
-            position bottom
-            colors { 
-                    statusline $foregroundColor
-                    background #000000
-                    focused_workspace $color1 $color1 $foregroundColor
-                    inactive_workspace $color2 $color2 $foregroundColor
-            }
-    }
-
-
 # MONITOR
     exec --no-startup-id exec sh ~/.screenlayout/layout2.sh
 
@@ -266,3 +262,8 @@ bindsym Control+Mod1+Delete mode "$mode_system"
 # Use normal borders
 new_window normal
 new_float normal
+
+# Mousefix
+focus_follows_mouse no
+
+
