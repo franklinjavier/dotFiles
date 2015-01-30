@@ -1,0 +1,14 @@
+{
+	"caret_extra_width": 2,
+	"color_scheme": "Packages/Theme - Github/GitHub 2014.tmTheme",
+	"draw_indent_guides": false,
+	"font_face": "Liberation Mono",
+	"font_size": 9,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"line_padding_bottom": 2,
+	"line_padding_top": 2,
+	"theme": "Spacegray.sublime-theme"
+}
