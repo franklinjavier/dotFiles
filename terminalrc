@@ -1,5 +1,5 @@
 [Configuration]
-FontName=Monospace 9
+FontName=Inconsolata-dz for Powerline Medium 8
 MiscAlwaysShowTabs=FALSE
 MiscBell=FALSE
 MiscBordersDefault=TRUE
@@ -34,9 +34,16 @@ ColorPalette13=#838394949696
 ColorPalette14=#6c6c7171c4c4
 ColorPalette15=#9393a1a1a1a1
 ColorPalette16=#fdfdf6f6e3e3
+ColorForeground=#69697f7f8282
+ColorBackground=#00000d95110f
+ColorCursor=#93a1a1
+ColorBold=#93a1a1
+ColorPalette=#000017172121;#dcdc32322f2f;#2de94ac379fb;#5b5b711e8b8b;#393964648282;#1a136517b022;#327c49627abd;#393964648282;#60607e7e8a8a;#cbcb4b4b1616;#53536e6e7979;#65657b7b8383;#838394949696;#6c6c7171c4c4;#9393a1a1a1a1;#fdfdf6f6e3e3
+TabActivityColor=#dc322f
+ColorSelection=#00001ba32cd4
 Term=xterm-color
-ColorPalette=#1a1a21212a2a;#df8a66a766a7;#27b531572ece;#bbd737bb3954;#5a5a6d6d6868;#72b53a3a7bdd;#ba0f92e8b958;#77bd77bd77bd;#555557575353;#efef29292929;#b03fcbd9bdf9;#fcfce9e94f4f;#7373cfcf8155;#c40e51bfb7a2;#3434e2e2e2e2;#b1b1b1b1b1b1
-ColorBackground=#1a1a21212a2a
-ColorForeground=#9b1ba215a6f5
+BackgroundDarkness=0.860000
+BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 ColorBoldUseDefault=FALSE
+ColorSelectionUseDefault=FALSE
 
