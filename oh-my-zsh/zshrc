@@ -41,9 +41,13 @@ alias 'cd..'='cd ..'
 alias npmi='sudo npm i'
 
 alias bkp='sudo rsync -azP --rsh="ssh -p21" --exclude-from "$HOME/b0x/dotFiles/.ignore"' 
-
 alias pv="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh pv 50 > /dev/null 2>&1&"
 alias cl="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh cl 480 > /dev/null 2>&1&"
+
+alias _restart="sudo shutdown -r now"
+alias _shutdown="sudo shutdown -h now"
+alias _logout="sudo pkill -u $USER"
+alias irc="irssi -c 172.22.98.219 -p 6667 -n franklin"
 
 
 # Sudo
@@ -164,3 +168,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 python3 ~/b0x/dotFiles/oh-my-zsh/archey
 
 unset GREP_OPTIONS
+

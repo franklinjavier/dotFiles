@@ -304,8 +304,8 @@ endif
 call s:X("Visual","","503d50","","","")
 call s:X("Cursor","","996699","","","")
 
-call s:X("Normal","babdb6","1e2426","","White","")
-call s:X("LineNr","605958","1e2426","none","Black","")
+call s:X("Normal","abada8","181c1e","","White","")
+call s:X("LineNr","605958","181c1e","none","Black","")
 call s:X("Comment","656763","","italic","Grey","")
 call s:X("Todo","8a3c3b","","bold","","")
  
@@ -323,7 +323,7 @@ call s:X("Constant","cf6a4c","","","Red","")
 call s:X("Special","799d6a","","","Green","")
 call s:X("Delimiter","668799","","","Grey","")
  
-call s:X("String","99ad6a","","","Green","")
+call s:X("String","8fa566","","","Green","")
 call s:X("StringDelimiter","556633","","","DarkGreen","")
  
 call s:X("Identifier","c6b6ee","","","LightCyan","")
@@ -337,7 +337,7 @@ call s:X("Test","8fbfdc","","","LightBlue","")
 hi link Operator Normal
  
 call s:X("Type","d8a465","","","Yellow","")
-call s:X("NonText","808080","1e2426","","","")
+call s:X("NonText","808080","181c1e","","","")
  
 call s:X("SpecialKey","808080","343434","","","")
  
