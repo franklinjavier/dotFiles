@@ -338,6 +338,9 @@ Bundle "lepture/vim-velocity"
 " Go Lang
 Plugin 'fatih/vim-go'
 
+" Editor config
+Bundle "editorconfig/editorconfig-vim"
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
