@@ -43,6 +43,10 @@ alias npmi='sudo npm i'
 alias bkp='sudo rsync -azP --rsh="ssh -p21" --exclude-from "$HOME/b0x/dotFiles/.ignore"' 
 alias pv="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh pv 50 > /dev/null 2>&1&"
 alias cl="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh cl 480 > /dev/null 2>&1&"
+alias sshcl='ssh -p 21 root@104.236.192.225'
+alias sshboiada='ssh -p 21 root@104.236.252.45'
+alias sshjogue='ssh -p 21 site@franklinjavier.com'
+
 
 alias _restart="sudo shutdown -r now"
 alias _shutdown="sudo shutdown -h now"
