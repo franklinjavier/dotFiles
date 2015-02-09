@@ -42,8 +42,7 @@ ColorPalette=#000017172121;#dcdc32322f2f;#2de94ac379fb;#5b5b711e8b8b;#3939646482
 TabActivityColor=#dc322f
 ColorSelection=#00001ba32cd4
 Term=xterm-color
-BackgroundDarkness=0.860000
+BackgroundDarkness=0,920000
 BackgroundMode=TERMINAL_BACKGROUND_TRANSPARENT
 ColorBoldUseDefault=FALSE
 ColorSelectionUseDefault=FALSE
-
