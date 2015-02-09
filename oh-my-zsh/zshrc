@@ -32,7 +32,7 @@ alias gitl='git log --all --graph --decorate --oneline --abbrev-commit'
 alias gits='git status -sb'
 alias lst='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e 
 '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
-alias dot='cd ~/b0x/dotFiles/'
+alias dot='cd ~/r00t/dotFiles/'
 alias serve='python3 -m http.server'
 alias dirsize='du -h --max-depth=1 "$@" | sort -k 1,1hr -k 2,2f'
 alias :q='exit'
@@ -40,7 +40,7 @@ alias :Q='exit'
 alias 'cd..'='cd ..'
 alias npmi='sudo npm i'
 
-alias bkp='sudo rsync -azP --rsh="ssh -p21" --exclude-from "$HOME/b0x/dotFiles/.ignore"' 
+alias bkp='sudo rsync -azP --rsh="ssh -p21" --exclude-from "$HOME/r00t/dotFiles/.ignore"' 
 alias pv="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh pv 50 > /dev/null 2>&1&"
 alias cl="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh cl 480 > /dev/null 2>&1&"
 
@@ -165,7 +165,7 @@ precmd() { print "" }
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
-python3 ~/b0x/dotFiles/oh-my-zsh/archey
+python3 ~/r00t/dotFiles/oh-my-zsh/archey
 
 unset GREP_OPTIONS
 

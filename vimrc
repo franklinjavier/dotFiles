@@ -277,16 +277,15 @@ Bundle "fisadev/vim-ctrlp-cmdpalette"
     let g:ctrlp_custom_ignore = {
         \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build$'
         \ }
-    let g:ctrlp_user_command =
-        \ ['.git/', 'git --git-dir=%s/.git
-        \ ls-files -oc --exclude-standard']
+    "let g:ctrlp_user_command =
+        "\ ['.git/', 'git --git-dir=%s/.git
+        "\ ls-files -oc --exclude-standard']
 
 " JavaScript Syntax 
 Bundle "pangloss/vim-javascript"
     au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
     let b:javascript_fold=0
     set foldclose=all
-
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
@@ -333,7 +332,7 @@ Bundle "lepture/vim-velocity"
     "au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set ft=velocity
     "au! BufRead,BufNewFile *.vm  setfiletype velocity
     au! BufRead,BufNewFile *.html,*.htm,*.shtml,*.stm set syntax=html filetype=html
-    au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set syntax=vm filetype=vm 
+    "au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set syntax=vm filetype=vm 
 
 " Go Lang
 Plugin 'fatih/vim-go'
