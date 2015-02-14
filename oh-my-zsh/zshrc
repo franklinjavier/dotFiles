@@ -30,7 +30,7 @@ alias gdj='grunt dist:js'
 alias gdc='grunt dist:css'
 alias gitl='git log --all --graph --decorate --oneline --abbrev-commit'
 alias gits='git status -sb'
-alias lst='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e 
+alias lst='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e
 '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
 alias dot='cd ~/r00t/dotFiles/'
 alias serve='python3 -m http.server'
@@ -41,6 +41,7 @@ alias 'cd..'='cd ..'
 alias npmi='sudo npm i'
 
 alias bkp='sudo rsync -azP --rsh="ssh -p21" --exclude-from "$HOME/r00t/dotFiles/.ignore"' 
+alias energetico='cd ~/Dropbox/Jogue\ Free/boiada/ && bkp pv.txt cl.txt root@104.236.252.45:/home/boiada/ && bkp pv.txt cl.txt root@104.236.192.225:/home/boiada/'
 alias pv="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh pv 30 > /dev/null 2>&1&"
 alias cl="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh cl 480 > /dev/null 2>&1&"
 alias sshcl='sudo ssh -p 21 root@104.236.192.225'
@@ -134,7 +135,7 @@ export TERM=xterm-256color
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to  shown in the command execution time stamp 
+# Uncomment following line if you want to  shown in the command execution time stamp
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
