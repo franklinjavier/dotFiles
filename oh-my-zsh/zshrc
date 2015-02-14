@@ -40,8 +40,7 @@ alias :Q='exit'
 alias 'cd..'='cd ..'
 alias npmi='sudo npm i'
 
-<<<<<<< HEAD
-alias bkp='sudo rsync -azP --rsh="ssh -p21" --exclude-from "$HOME/b0x/dotFiles/.ignore"' 
+alias bkp='sudo rsync -azP --rsh="ssh -p21" --exclude-from "$HOME/r00t/dotFiles/.ignore"' 
 alias pv="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh pv 30 > /dev/null 2>&1&"
 alias cl="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh cl 480 > /dev/null 2>&1&"
 alias sshcl='sudo ssh -p 21 root@104.236.192.225'
