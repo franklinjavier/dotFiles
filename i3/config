@@ -176,17 +176,16 @@ bindsym $mod+r mode "resize"
 
 # Startup
     #exec --no-startup-id davmail # e-mail
-    #exec --no-startup-id feh --bg-fill ~/b0x/dotFiles/wallpaper/purple-nebula-2.jpg
-    exec --no-startup-id feh --bg-fill ~/Pictures/galaxy.jpg
+    exec --no-startup-id feh --bg-fill ~/b0x/dotFiles/wallpaper/purple-nebula-2.jpg
+    #exec --no-startup-id feh --bg-fill ~/Pictures/galaxy.jpg
 
     # Set repeat super fast
     exec --no-startup-id xset r rate 150 100
 
 # Keyboard media buttons
-    bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle"
-    bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 -- +5% && killall -SIGUSR1 i3status"
-    bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -- -5% && killall -SIGUSR1 i3status"
-
+    bindsym $mod+m exec --no-startup-id "pactl set-sink-mute 1 toggle"
+    bindsym $mod+Up exec --no-startup-id "pactl set-sink-volume 1 -- +5% && killall -SIGUSR1 i3status"
+    bindsym $mod+Down exec --no-startup-id "pactl set-sink-volume 1 -- -5% && killall -SIGUSR1 i3status"
     #bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
     #bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
     #bindsym XF86AudioMute exec amixer -q set Master toggle
@@ -249,7 +248,7 @@ mode "$mode_system" {
     bindsym e exec --no-startup-id ~/b0x/dotFiles/.i3exit logout, mode "default"
     bindsym s exec --no-startup-id ~/b0x/dotFiles/.i3exit suspend, mode "default"
     bindsym h exec --no-startup-id ~/b0x/dotFiles/.i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id ~/b0x/dotFiles/.i3exit reboot, mode "default"
+    bindsym r exec --no-startup-id sudo sh ~/b0x/dotFiles/.i3exit reboot, mode "default"
     bindsym Shift+s exec --no-startup-id ~/b0x/dotFiles/.i3exit shutdown, mode "default"  
 
     # back to normal: Enter or Escape
