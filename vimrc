@@ -6,31 +6,32 @@ if v:progname =~? "evim"
   finish
 endif
 
-" Re-organize statusline
-" http://got-ravings.blogspot.com.br/2008/08/vim-pr0n-making-statuslines-that-own.html
-set statusline=%t               
- "file encoding
-set statusline+=[%{strlen(&fenc)?&fenc:'none'}, 
-"fugitive.vim information
-set statusline+=%{fugitive#statusline()} 
-" file format
-set statusline+=%{&ff}]
-" help file flag
-set statusline+=%h
-" modified flag
-set statusline+=%m
-" read only flag
-set statusline+=%r
-" filetype
-set statusline+=%y
-" left/right separator
-set statusline+=%=
-" cursor column
-set statusline+=%c,
-" cursor line/total lines
-set statusline+=%l/%L
-" percent through file
-set statusline+=\ %P
+
+"" Re-organize statusline
+"" http://got-ravings.blogspot.com.br/2008/08/vim-pr0n-making-statuslines-that-own.html
+"set statusline=%t
+" "file encoding
+"set statusline+=[%{strlen(&fenc)?&fenc:'none'},
+""fugitive.vim information
+"set statusline+=%{fugitive#statusline()}
+"" file format
+"set statusline+=%{&ff}]
+"" help file flag
+"set statusline+=%h
+"" modified flag
+"set statusline+=%m
+"" read only flag
+"set statusline+=%r
+"" filetype
+"set statusline+=%y
+"" left/right separator
+"set statusline+=%=
+"" cursor column
+"set statusline+=%c,
+"" cursor line/total lines
+"set statusline+=%l/%L
+"" percent through file
+"set statusline+=\ %P
 " hides the buffer instead of closing the files
 set hidden
 " wrap lines
@@ -47,7 +48,7 @@ set si
 set copyindent
 " set 4 space for autoindenting
 set shiftwidth=4
-" set multiples of shiftwidth when indenting with '<' 
+" set multiples of shiftwidth when indenting with '<'
 set shiftround
 " show the matching symbols
 set showmatch
@@ -67,7 +68,7 @@ set undolevels=1000
 set synmaxcol=500
 " Change the terminal title
 set title
-" turn off error beeping 
+" turn off error beeping
 set noeb vb t_vb=
 " turn off flashing
 au GUIEnter * set vb t_vb=
@@ -90,7 +91,7 @@ filetype indent on
 syntax on
 " set color scheme
 colorscheme candyman
-if !has("gui_running")          
+if !has("gui_running")
     let g:solarized_termtrans=1
     let g:solarized_termcolors=256
 endif
@@ -112,21 +113,21 @@ set expandtab
 " set number
 set number
 
-" change leader to a comma because the backslash is too far away 
-"   that means all \x commands turn into ,x                        
-"   the mapleader has to be set before vundle starts loading all   
-"   the plugins.                                       
-let mapleader=","                           
+" change leader to a comma because the backslash is too far away
+"   that means all \x commands turn into ,x
+"   the mapleader has to be set before vundle starts loading all
+"   the plugins.
+let mapleader=","
 
 " fast saving
 nmap <leader>w :w!<cr>
 " fast saving and close
 nmap <leader>x :x<cr>
-" changing focus of split panes can 
+" changing focus of split panes can
 map <C-h> <C-w>h
 " remember info about open buffers on close
 set viminfo^=%
-" be a bit of a pain (<C-w>[direction]), 
+" be a bit of a pain (<C-w>[direction]),
 map <C-j> <C-w>j
 " let's drop the middle man!
 map <C-k> <C-w>k
@@ -134,9 +135,9 @@ map <C-l> <C-w>l
 " don't use Ex mode, use Q for formatting
 map Q gq
 " activate the Zencoding
-imap <C-z> <Esc><C-y>,a         
+imap <C-z> <Esc><C-y>,a
 " activate Nerd Commenter
-map <C-c> <leader>ci            
+map <C-c> <leader>ci
 " avoid accidental hits of <F1> while aiming for <Esc>
 map <F1> <Esc>
 " encoding for the terminal
@@ -146,7 +147,7 @@ set encoding=utf-8
 " don't update the display while executing macros
 set lazyredraw
 " tell VIM to always put a status line in, even
-" if there is only one window     
+" if there is only one window
 set laststatus=2
 " make tab completion for files/buffers act like bash
 set wildmenu
@@ -162,11 +163,9 @@ xmap <c-k> :mo'<-- <cr> gv
 xmap <c-j> :mo'>+ <cr> gv
 " tab indents selection
 vmap <silent> <Tab> >gv
-" shift-tab unindents
 vmap <silent> <S-Tab> <gv
-" ,p --> past from clipboard system 
-map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr> 
-
+" ,p --> past from clipboard system
+map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
 " autocomplete funcs and identifiers for languages
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
@@ -174,7 +173,7 @@ autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType c set omnifunc=ccomplete#Complete
 "au! BufRead,BufNewFile *.json set filetype json
 au BufNewFile,BufRead,BufReadPost *.jade set filetype=jade
-"au! BufRead,BufNewFile *.vm  setfiletype velocity 
+"au! BufRead,BufNewFile *.vm  setfiletype velocity
 
 " Sourced from vim tip: http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
 "autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
@@ -191,9 +190,9 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " Reload vimrc
 nnoremap <leader>rv :source $MYVIMRC<cr>
 " When you press <leader>r you can search and replace the selected text
-vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>  
+vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 " Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm  
+noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 " Split
 noremap <Leader>h :split<CR>
 noremap <Leader>v :vsplit<CR>
@@ -211,10 +210,76 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 noremap YY "+y<CR>
 noremap P "+gP<CR>
 noremap XX "+x<CR>
-" Close 
+" Close
 map <leader>q :q<cr>
 " Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
+
+" <Esc><Esc> - Clear the search highlight in Normal mode
+nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
+
+" ,f Fast grep-Recursive search in current directory for matches with current word
+    map <Leader>f :execute "Ack " . expand("<cword>") <Bar> cw<CR>
+
+" ,s Shortcut for :%s//
+    nnoremap <leader>s :%s//<left>
+    vnoremap <leader>s :s//<left>
+
+" <Space> = <PageDown>
+    nmap <Space> <PageDown>
+
+" K to split
+    " Basically this splits the current line into two new ones at the cursor position,
+    " then joins the second one with whatever comes next.
+    "
+    " Example:                      Cursor Here
+    "                                    |
+    "                                    V
+    " foo = ('hello', 'world', 'a', 'b', 'c',
+    "        'd', 'e')
+    "
+    " becomes
+    "
+    " foo = ('hello', 'world', 'a', 'b',
+    "        'c', 'd', 'e')
+    "
+    " Especially useful for adding items in the middle of long lists/tuples in Python
+    " while maintaining a sane text width.
+    nnoremap K <nop>
+    nnoremap K h/[^ ]<cr>"zd$jyyP^v$h"zpJk:s/\v +$//<cr>:noh<cr>j^
+
+" ,ts
+    " Fix trailing white space
+    map <leader>ts :%s/\s\+$//e<CR>
+
+" ,bl
+    " Show buffers
+    nmap <Leader>bl :ls<cr>:b
+
+" ,bp
+    " Go to prev buffer
+    nmap <Leader>bp :bp<cr>
+
+" ,bn
+    " Go to next buffer
+    nmap <Leader>bn :bn<cr>
+
+" ,a
+    " Select all
+    map <Leader>a <esc>ggVG
+    imap <Leader>a <esc>ggVG
+    map <C-a> <esc>ggVG
+
+" Ctrl+s
+    map <C-s> <esc>:w<CR>
+    imap <C-s> <esc>:w<CR>
+
+" ,n
+    " Edit another file in the same directory with the current one
+    map <Leader>n :vnew <C-R>=expand("%:p:h") . '/'<CR>
+
+" Bind :Q to :q
+    command! Q q
 
 " Tab completion when entering filenames
 set wildmode=list:full
@@ -226,7 +291,7 @@ set wildignore+=*.o,*.obj,.git,*.rbc,.hg,.svn,*.pyc,.vagrant,.DS_Store,*.jpg,
 " in many terminal emulators the mouse works just fine
 " thus enable it.
 if has('mouse')
-  set mouse=a                   
+  set mouse=a
 endif
 
 " Plugins
@@ -249,16 +314,15 @@ Bundle "briancollins/vim-jst"
 
 " Syntax highlighting for nginx.conf and related config files.
 Bundle "mutewinter/nginx.vim"
-    au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif 
+    au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
 
 " Vim Markdown runtime files
 Bundle "tpope/vim-markdown"
     au BufNewFile,BufReadPost *.md set filetype=markdown
 
-Bundle 'abijr/colorpicker'
 Bundle "mattn/webapi-vim"
 Bundle "mattn/gist-vim"
-    let g:gist_clip_command = 'xclip -selection clipboard' 
+    let g:gist_clip_command = 'xclip -selection clipboard'
     let g:gist_detect_filetype = 1
     let g:gist_open_browser_after_post = 1
 
@@ -269,7 +333,7 @@ Bundle "scrooloose/nerdtree"
 
 Bundle "junegunn/vim-easy-align"
     vnoremap <silent> <Enter> :EasyAlign<cr>
-    
+
 Bundle "ctrlp.vim"
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 Bundle "fisadev/vim-ctrlp-cmdpalette"
@@ -281,7 +345,7 @@ Bundle "fisadev/vim-ctrlp-cmdpalette"
         "\ ['.git/', 'git --git-dir=%s/.git
         "\ ls-files -oc --exclude-standard']
 
-" JavaScript Syntax 
+" JavaScript Syntax
 Bundle "pangloss/vim-javascript"
     au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
     let b:javascript_fold=0
@@ -332,13 +396,75 @@ Bundle "lepture/vim-velocity"
     "au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set ft=velocity
     "au! BufRead,BufNewFile *.vm  setfiletype velocity
     au! BufRead,BufNewFile *.html,*.htm,*.shtml,*.stm set syntax=html filetype=html
-    "au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set syntax=vm filetype=vm 
+    "au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set syntax=vm filetype=vm
 
 " Go Lang
 Plugin 'fatih/vim-go'
 
 " Editor config
 Bundle "editorconfig/editorconfig-vim"
+
+" For Power Users
+Plugin 'itchyny/calendar.vim'
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+
+Plugin 'itchyny/vim-autoft'
+let g:autoft_config = [
+          \ { 'filetype': 'html' , 'pattern': '<\%(!DOCTYPE\|html\|head\|script\)' },
+          \ { 'filetype': 'c'    , 'pattern': '^\s*#\s*\%(include\|define\)\>' },
+          \ { 'filetype': 'diff' , 'pattern': '^diff -' },
+          \ { 'filetype': 'sh'   , 'pattern': '^#!.*\%(\<sh\>\|\<bash\>\)\s*$' },
+          \ ]
+
+Plugin 'itchyny/vim-cursorword'
+Plugin 'itchyny/screensaver.vim'
+
+Plugin 'itchyny/lightline.vim'
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'fugitive': 'MyFugitive',
+      \   'readonly': 'MyReadonly',
+      \   'modified': 'MyModified'
+      \ },
+      \ 'separator': { 'left': '⮀', 'right': '⮂' },
+      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ }
+
+function! MyModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
+function! MyReadonly()
+  if &filetype == "help"
+    return ""
+  elseif &readonly
+    return "⭤"
+  else
+    return ""
+  endif
+endfunction
+
+function! MyFugitive()
+  if exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? '⭠ '._ : ''
+  endif
+  return ''
+endfunction
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Helper functions
