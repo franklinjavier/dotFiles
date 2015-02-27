@@ -419,6 +419,10 @@ let g:autoft_config = [
 
 Plugin 'itchyny/vim-cursorword'
 Plugin 'itchyny/screensaver.vim'
+Plugin 'junegunn/goyo.vim'
+Plugin 'amix/vim-zenroom2'
+nnoremap <silent> <leader>z :Goyo<cr>
+
 
 Plugin 'itchyny/lightline.vim'
 let g:lightline = {
