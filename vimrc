@@ -339,7 +339,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 Bundle "fisadev/vim-ctrlp-cmdpalette"
     let g:ctrlp_working_path_mode = ""
     let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build$'
+        \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build|target|draft'
         \ }
     "let g:ctrlp_user_command =
         "\ ['.git/', 'git --git-dir=%s/.git
@@ -394,9 +394,8 @@ Bundle "1995eaton/vim-better-css-completion"
 " Velocity syntax
 Bundle "lepture/vim-velocity"
     "au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set ft=velocity
-    "au! BufRead,BufNewFile *.vm  setfiletype velocity
-    au! BufRead,BufNewFile *.html,*.htm,*.shtml,*.stm set syntax=html filetype=html
-    "au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set syntax=vm filetype=vm
+    au! BufRead,BufNewFile *.html,*.htm,*.shtml,*.stm set filetype=html
+    au! BufRead,BufNewFile *.vm,*.tpl set filetype=vm
 
 " Go Lang
 Plugin 'fatih/vim-go'

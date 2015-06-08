@@ -165,6 +165,7 @@ fi
 precmd() { print "" }
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/playframework/activator" # Add activator from Play framework
 
 python3 ~/b0x/dotFiles/oh-my-zsh/archey
 
