@@ -176,8 +176,7 @@ bindsym $mod+r mode "resize"
 
 # Startup
     #exec --no-startup-id davmail # e-mail
-    exec --no-startup-id feh --bg-fill ~/b0x/dotFiles/wallpaper/purple-nebula-2.jpg
-    #exec --no-startup-id feh --bg-fill ~/Pictures/galaxy.jpg
+    exec --no-startup-id feh --bg-scale ~/b0x/dotFiles/wallpaper/purple-nebula-2.jpg
 
     # Set repeat super fast
     exec --no-startup-id xset r rate 150 100
