@@ -225,8 +225,6 @@ nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
     nnoremap <leader>s :%s//<left>
     vnoremap <leader>s :s//<left>
 
-" <Space> = <PageDown>
-    nmap <Space> <PageDown>
 
 " K to split
     " Basically this splits the current line into two new ones at the cursor position,
@@ -339,7 +337,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 Bundle "fisadev/vim-ctrlp-cmdpalette"
     let g:ctrlp_working_path_mode = ""
     let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build$'
+        \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build|target$'
         \ }
     "let g:ctrlp_user_command =
         "\ ['.git/', 'git --git-dir=%s/.git
@@ -438,6 +436,13 @@ let g:lightline = {
       \ 'separator': { 'left': '⮀', 'right': '⮂' },
       \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
       \ }
+
+
+Plugin 'derekwyatt/vim-scala'
+let g:scala_sort_across_groups=1
+let g:scala_first_party_namespaces='\(controllers\|views\|models\|util\|de.\)'
+au BufNewFile,BufRead,BufReadPost *.scala.html set filetype=scala
+
 
 function! MyModified()
   if &filetype == "help"
