@@ -1,0 +1,23 @@
+# {{name}}
+snippet {
+	{{${1}}}
+
+# {{#…}}section{{/…}}
+snippet #
+	{{#${1}}}
+	  ${2}
+	{{/${3}}}
+
+# {{^…}}inverted_section{{/…}}
+snippet ^
+	{{^${1}}}
+	  ${2}
+	{{/${3}}}
+
+# {{& escaped}}
+snippet &
+	{{& ${1}}}
+
+# {{> partial}}
+snippet >
+	{{> ${1}}}

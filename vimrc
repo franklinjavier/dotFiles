@@ -449,6 +449,11 @@ let g:scala_sort_across_groups=1
 let g:scala_first_party_namespaces='\(controllers\|views\|models\|util\|de.\)'
 au BufNewFile,BufRead,BufReadPost *.scala.html set filetype=scala
 
+" Vim mustache / handlebars
+Plugin 'mustache/vim-mustache-handlebars'
+let g:mustache_abbreviations = 1
+au! BufRead,BufNewFile *.hbs,*.hbt set filetype=html.mustache syntax=mustache
+
 
 function! MyModified()
   if &filetype == "help"
