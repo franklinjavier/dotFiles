@@ -220,7 +220,7 @@ noremap XX "+x<CR>
 map <leader>q :q<cr>
 
 " ,<space> Clean search (highlight)
-nnoremap <silent> <leader><space> :noh<cr>
+"nnoremap <silent> <leader><space> :noh<cr>
 
 " <Esc><Esc> - Clear the search highlight in Normal mode
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
@@ -285,6 +285,9 @@ nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 
 " Bind :Q to :q
     command! Q q
+
+" ,<space>
+    nnoremap <leader><space> :CtrlP<Cr>
 
 " Tab completion when entering filenames
 set wildmode=list:full
