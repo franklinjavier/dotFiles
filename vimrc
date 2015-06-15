@@ -204,15 +204,22 @@ noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
-" Opens an edit command with the path of the currently edited file filled in
+
+" ,e    Opens an edit command with the path of the currently edited file filled in
 noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-" Copy/Paste/Cut
+
+" YY    Copy to clipboard
 noremap YY "+y<CR>
+" P     Paste from clipboard 
 noremap P "+gP<CR>
+" XX    Cut to clipboard
 noremap XX "+x<CR>
-" Close
+
+
+" ,q    Alias to close
 map <leader>q :q<cr>
-" Clean search (highlight)
+
+" ,<space> Clean search (highlight)
 nnoremap <silent> <leader><space> :noh<cr>
 
 " <Esc><Esc> - Clear the search highlight in Normal mode
