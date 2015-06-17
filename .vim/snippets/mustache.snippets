@@ -21,3 +21,16 @@ snippet &
 # {{> partial}}
 snippet >
 	{{> ${1}}}
+
+# {{#if ...}}section{{/if}
+snippet #if
+	{{#if ${1}}}
+	  ${2}
+	{{/if}}
+
+# {{#if ...}}section{{/if}
+snippet #ife
+	{{#if ${1}}}
+	  ${2}
+	{{else}}
+	{{/if}}

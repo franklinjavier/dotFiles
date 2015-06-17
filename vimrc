@@ -295,6 +295,19 @@ set wildignore+=*.o,*.obj,.git,*.rbc,.hg,.svn,*.pyc,.vagrant,.DS_Store,*.jpg,
   \*.eps,*.jpeg,*.png,*.gif,*.bmp,*.psd
 
 
+" RENAME CURRENT FILE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <leader>N :call RenameFile()<cr>
+
 
 " in many terminal emulators the mouse works just fine
 " thus enable it.
@@ -455,7 +468,7 @@ au BufNewFile,BufRead,BufReadPost *.scala.html set filetype=scala
 " Vim mustache / handlebars
 Plugin 'mustache/vim-mustache-handlebars'
 let g:mustache_abbreviations = 1
-au! BufRead,BufNewFile *.hbs,*.hbt set filetype=html.mustache syntax=mustache
+au! BufRead,BufNewFile *.hbs,*.hbt,*.html set filetype=html.mustache syntax=mustache
 
 
 function! MyModified()
