@@ -204,16 +204,23 @@ noremap <Leader>gs :Gstatus<CR>
 noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
-" Opens an edit command with the path of the currently edited file filled in
+
+" ,e    Opens an edit command with the path of the currently edited file filled in
 noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-" Copy/Paste/Cut
+
+" YY    Copy to clipboard
 noremap YY "+y<CR>
+" P     Paste from clipboard 
 noremap P "+gP<CR>
+" XX    Cut to clipboard
 noremap XX "+x<CR>
-" Close
+
+
+" ,q    Alias to close
 map <leader>q :q<cr>
-" Clean search (highlight)
-nnoremap <silent> <leader><space> :noh<cr>
+
+" ,<space> Clean search (highlight)
+"nnoremap <silent> <leader><space> :noh<cr>
 
 " <Esc><Esc> - Clear the search highlight in Normal mode
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
@@ -279,11 +286,27 @@ nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 " Bind :Q to :q
     command! Q q
 
+" ,<space>
+    nnoremap <leader><space> :CtrlP<Cr>
+
 " Tab completion when entering filenames
 set wildmode=list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,.hg,.svn,*.pyc,.vagrant,.DS_Store,*.jpg,
   \*.eps,*.jpeg,*.png,*.gif,*.bmp,*.psd
 
+
+" RENAME CURRENT FILE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
+map <leader>N :call RenameFile()<cr>
 
 
 " in many terminal emulators the mouse works just fine
@@ -441,6 +464,11 @@ Plugin 'derekwyatt/vim-scala'
 let g:scala_sort_across_groups=1
 let g:scala_first_party_namespaces='\(controllers\|views\|models\|util\|de.\)'
 au BufNewFile,BufRead,BufReadPost *.scala.html set filetype=scala
+
+" Vim mustache / handlebars
+Plugin 'mustache/vim-mustache-handlebars'
+let g:mustache_abbreviations = 1
+au! BufRead,BufNewFile *.hbs,*.hbt,*.html set filetype=html.mustache syntax=mustache
 
 
 function! MyModified()
