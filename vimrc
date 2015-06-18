@@ -365,7 +365,7 @@ Bundle "StanAngeloff/php.vim"
     " no short tags
     au FileType php let php_noShortTags=1
     " automagically folds functions & methods. this is getting IDE-like isn't it?
-    au FileType php let php_folding=1
+    au FileType php let php_folding=0
     " Set multiple filetypes to the php files
     au Filetype php set ft=php.html
     " set "make" command when editing php files
