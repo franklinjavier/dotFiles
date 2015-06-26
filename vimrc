@@ -6,32 +6,6 @@ if v:progname =~? "evim"
   finish
 endif
 
-
-"" Re-organize statusline
-"" http://got-ravings.blogspot.com.br/2008/08/vim-pr0n-making-statuslines-that-own.html
-"set statusline=%t
-" "file encoding
-"set statusline+=[%{strlen(&fenc)?&fenc:'none'},
-""fugitive.vim information
-"set statusline+=%{fugitive#statusline()}
-"" file format
-"set statusline+=%{&ff}]
-"" help file flag
-"set statusline+=%h
-"" modified flag
-"set statusline+=%m
-"" read only flag
-"set statusline+=%r
-"" filetype
-"set statusline+=%y
-"" left/right separator
-"set statusline+=%=
-"" cursor column
-"set statusline+=%c,
-"" cursor line/total lines
-"set statusline+=%l/%L
-"" percent through file
-"set statusline+=\ %P
 " hides the buffer instead of closing the files
 set hidden
 " wrap lines
@@ -210,7 +184,7 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " YY    Copy to clipboard
 noremap YY "+y<CR>
-" P     Paste from clipboard 
+" P     Paste from clipboard
 noremap P "+gP<CR>
 " XX    Cut to clipboard
 noremap XX "+x<CR>
@@ -469,6 +443,9 @@ au BufNewFile,BufRead,BufReadPost *.scala.html set filetype=scala
 Plugin 'mustache/vim-mustache-handlebars'
 let g:mustache_abbreviations = 1
 au! BufRead,BufNewFile *.hbs,*.hbt,*.html set filetype=html.mustache syntax=mustache
+
+" Ack
+Plugin 'mileszs/ack.vim'
 
 
 function! MyModified()
