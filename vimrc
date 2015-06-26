@@ -263,6 +263,10 @@ nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 " ,<space>
     nnoremap <leader><space> :CtrlP<Cr>
 
+" ,d 
+    " Duplicate line
+    map <leader>d <esc>yyp
+
 " Tab completion when entering filenames
 set wildmode=list:full
 set wildignore+=*.o,*.obj,.git,*.rbc,.hg,.svn,*.pyc,.vagrant,.DS_Store,*.jpg,
