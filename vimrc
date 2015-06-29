@@ -170,6 +170,7 @@ noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 " Split
 noremap <Leader>h :split<CR>
 noremap <Leader>v :vsplit<CR>
+
 " Git
 noremap <Leader>ga :!git add .<CR>
 noremap <Leader>gc :!git commit -m '<C-R>="'"<CR>
@@ -179,75 +180,83 @@ noremap <Leader>gb :Gblame<CR>
 noremap <Leader>gd :Gvdiff<CR>
 noremap <Leader>gr :Gremove<CR>
 
-" ,e    Opens an edit command with the path of the currently edited file filled in
+" ,e    
+" Opens an edit command with the path of the currently edited file filled in
 noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
-" YY    Copy to clipboard
+" YY    
+" Copy to clipboard
 noremap YY "+y<CR>
-" P     Paste from clipboard
+
+" P     
+" Paste from clipboard
 noremap P "+gP<CR>
-" XX    Cut to clipboard
+
+" XX    
+" Cut to clipboard
 noremap XX "+x<CR>
 
-
-" ,q    Alias to close
+" ,q
+" Alias to close
 map <leader>q :q<cr>
 
-" ,<space> Clean search (highlight)
-"nnoremap <silent> <leader><space> :noh<cr>
-
-" <Esc><Esc> - Clear the search highlight in Normal mode
+" <Esc><Esc> 
+" Clear the search highlight in Normal mode
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 
-" ,f Fast grep-Recursive search in current directory for matches with current word
-    map <Leader>f :execute "Ack " . expand("<cword>") <Bar> cw<CR>
+" ,f 
+" Fast grep-Recursive search in current directory for matches with current word
+map <Leader>f :execute "Ag " . expand("<cword>") <Bar> cw<CR>
+"let g:ackprg = 'ag --nogroup --nocolor --column'
 
-" ,s Shortcut for :%s//
-    nnoremap <leader>s :%s//<left>
-    vnoremap <leader>s :s//<left>
+" ,s 
+" Shortcut for :%s//
+nnoremap <leader>s :%s//<left>
+vnoremap <leader>s :s//<left>
 
 
 " K to split
-    " Basically this splits the current line into two new ones at the cursor position,
-    " then joins the second one with whatever comes next.
-    "
-    " Example:                      Cursor Here
-    "                                    |
-    "                                    V
-    " foo = ('hello', 'world', 'a', 'b', 'c',
-    "        'd', 'e')
-    "
-    " becomes
-    "
-    " foo = ('hello', 'world', 'a', 'b',
-    "        'c', 'd', 'e')
-    "
-    " Especially useful for adding items in the middle of long lists/tuples in Python
-    " while maintaining a sane text width.
-    nnoremap K <nop>
-    nnoremap K h/[^ ]<cr>"zd$jyyP^v$h"zpJk:s/\v +$//<cr>:noh<cr>j^
+" Basically this splits the current line into two new ones at the cursor position,
+" then joins the second one with whatever comes next.
+"
+" Example:                      Cursor Here
+"                                    |
+"                                    V
+" foo = ('hello', 'world', 'a', 'b', 'c',
+"        'd', 'e')
+"
+" becomes
+"
+" foo = ('hello', 'world', 'a', 'b',
+"        'c', 'd', 'e')
+"
+" Especially useful for adding items in the middle of long lists/tuples in Python
+" while maintaining a sane text width.
+nnoremap K <nop>
+nnoremap K h/[^ ]<cr>"zd$jyyP^v$h"zpJk:s/\v +$//<cr>:noh<cr>j^
 
-" ,ts
-    " Fix trailing white space
-    map <leader>ts :%s/\s\+$//e<CR>
 
-" ,bl
-    " Show buffers
-    nmap <Leader>bl :ls<cr>:b
+" ,ts   
+" Fix trailing white space
+map <leader>ts :%s/\s\+$//e<CR>
 
-" ,bp
-    " Go to prev buffer
-    nmap <Leader>bp :bp<cr>
+" ,bl   
+" Show buffers
+nmap <Leader>bl :ls<cr>:b
 
-" ,bn
-    " Go to next buffer
-    nmap <Leader>bn :bn<cr>
+" ,bp   
+" Go to prev buffer
+nmap <Leader>bp :bp<cr>
 
-" ,a
-    " Select all
-    map <Leader>a <esc>ggVG
-    imap <Leader>a <esc>ggVG
-    map <C-a> <esc>ggVG
+" ,tab 
+" Go to next buffer
+nmap <Leader><tab> :bn<cr>
+
+" ,a    
+" Select all
+map <Leader>a <esc>ggVG
+imap <Leader>a <esc>ggVG
+map <C-a> <esc>ggVG
 
 " Ctrl+s
     map <C-s> <esc>:w<CR>
@@ -263,7 +272,7 @@ nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 " ,<space>
     nnoremap <leader><space> :CtrlP<Cr>
 
-" ,d 
+" ,d
     " Duplicate line
     map <leader>d <esc>yyp
 
@@ -450,6 +459,9 @@ au! BufRead,BufNewFile *.hbs,*.hbt,*.html set filetype=html.mustache syntax=must
 
 " Ack
 Plugin 'mileszs/ack.vim'
+" Ag - like ack, but faster
+Plugin 'rking/ag.vim'
+let g:agprg="/home/franklin/ --column"
 
 
 function! MyModified()
