@@ -264,4 +264,7 @@ new_float normal
 # Mousefix
 focus_follows_mouse no
 
-
+# Just add the following lines to your i3 config file
+# dynamic tagging feature
+bindsym $mod+t exec ~/.i3/get_workspace_options.py | dmenu -b | ~/.i3/go_to_workspace.py
+bindsym $mod+Shift+t exec ~/.i3/get_workspace_options.py | dmenu -b | ~/.i3/move_to_workspace.py
