@@ -1,89 +1,129 @@
 " this must be first, because it changes other options as a side effect!!
 set nocompatible
 
-" When started as "evim", evim.vim will already have done these settings.
+" when started as "evim", evim.vim will already have done these settings
 if v:progname =~? "evim"
   finish
 endif
 
+" in many terminal emulators the mouse works just fine thus enable it
+if has('mouse')
+  set mouse=a
+endif
+
 " hides the buffer instead of closing the files
 set hidden
+
 " wrap lines
 set nowrap
+
 " set tab to be 4 spaces
 set tabstop=4
+
 " allow backspace over everything in edit mode
 set backspace=indent,eol,start
+
 " set auto indent
 set autoindent
+
 " set smart indent
 set si
+
 " copy the previous indentation
 set copyindent
+
 " set 4 space for autoindenting
 set shiftwidth=4
+
 " set multiples of shiftwidth when indenting with '<'
 set shiftround
+
 " show the matching symbols
 set showmatch
+
 " ignore case when searching
 set ignorecase
+
 " use case sensitive when the terms are not all in smallcase
 set smartcase
+
 " highlight search terms
 set hlsearch
+
 " show search matches as you type
 set incsearch
+
 " remember more commands
 set history=1000
+
 " levels of undo command
 set undolevels=1000
+
 " Limits syntax column
 set synmaxcol=500
+
 " Change the terminal title
 set title
+
 " turn off error beeping
 set noeb vb t_vb=
+
 " turn off flashing
 au GUIEnter * set vb t_vb=
+
 " show the cursor position all the time
 set ruler
+
 " display incomplete commands
 set showcmd
+
 " set 4 lines on the edge of the screen
 set scrolloff=4
+
 " let the cursor go anywhere
 set virtualedit=all
+
 " no backup file :D
 set nobackup
 set noswapfile
+
 " no underline html links
 hi link htmlLink NONE
+
 " Set the identation on
 filetype indent on
+
 " highlight the syntax
 syntax on
+
 " set color scheme
 colorscheme candyman
 if !has("gui_running")
     let g:solarized_termtrans=1
     let g:solarized_termcolors=256
 endif
+
 " set background=dark
 " set term=xterm-256color
 " set the default gui font to Inconsolata
 set guifont=Inconsolata\ 11
+
 " disable the toolbar
 set guioptions-=T
+
 " disable the menu
 set guioptions-=m
+
 " disable the scrollbar
 set guioptions+=LlRrb
 set guioptions-=LlRrb
+
 " set the tab space to 4
 set ts=4
+
 " convert tab to spaces
 set expandtab
+
 " set number
 set number
 
@@ -93,130 +133,177 @@ set number
 "   the plugins.
 let mapleader=","
 
-" fast saving
-nmap <leader>w :w!<cr>
-" fast saving and close
-nmap <leader>x :x<cr>
-" changing focus of split panes can
-map <C-h> <C-w>h
 " remember info about open buffers on close
 set viminfo^=%
-" be a bit of a pain (<C-w>[direction]),
-map <C-j> <C-w>j
-" let's drop the middle man!
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-" don't use Ex mode, use Q for formatting
-map Q gq
-" activate the Zencoding
-imap <C-z> <Esc><C-y>,a
-" activate Nerd Commenter
-map <C-c> <leader>ci
-" avoid accidental hits of <F1> while aiming for <Esc>
-map <F1> <Esc>
+
 " encoding for the terminal
 set termencoding=utf-8
+
 " set the encoding
 set encoding=utf-8
+
 " don't update the display while executing macros
 set lazyredraw
+
 " tell VIM to always put a status line in, even
 " if there is only one window
 set laststatus=2
+
 " make tab completion for files/buffers act like bash
 set wildmenu
+
 " show a list when pressing tab and complete
 set wildmode=list:full
+
 " enable filetype plugins
 filetype plugin on
+
 " turn off highlighting
 :nohl
-" moving selection to up
-xmap <c-k> :mo'<-- <cr> gv
-" moving selection to down
-xmap <c-j> :mo'>+ <cr> gv
-" tab indents selection
-vmap <silent> <Tab> >gv
-vmap <silent> <S-Tab> <gv
-" ,p --> past from clipboard system
-map <Leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
 " autocomplete funcs and identifiers for languages
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType c set omnifunc=ccomplete#Complete
-"au! BufRead,BufNewFile *.json set filetype json
+
 au BufNewFile,BufRead,BufReadPost *.jade set filetype=jade
 "au! BufRead,BufNewFile *.vm  setfiletype velocity
 
-" Sourced from vim tip: http://vim.wikia.com/wiki/Keep_folds_closed_while_inserting_text
-"autocmd InsertEnter * if !exists('w:last_fdm') | let w:last_fdm=&foldmethod | setlocal foldmethod=manual | endif
-"autocmd InsertLeave,WinLeave * if exists('w:last_fdm') | let &l:foldmethod=w:last_fdm | unlet w:last_fdm | endif
-
-" Force Saving Files that Require Root Permission
+" force Saving Files that Require Root Permission
 cmap w!! %!sudo tee > /dev/null %
-" Switch CWD to the directory of the open buffer
+
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Shortcuts, alias, etc
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" don't use Ex mode, use Q for formatting
+map Q gq
+
+" ,[wx] fast saving and close
+nmap <leader>w :w!<cr>
+map <C-s> <esc>:w<CR>
+imap <C-s> <esc>:w<CR>
+nmap <leader>x :x<cr>
+
+" navigating over split
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" activate the Zencoding
+imap <C-z> <Esc><C-y>,a
+
+" activate Nerd Commenter
+map <C-c> <leader>ci
+
+" avoid accidental hits of <F1> while aiming for <Esc>
+map <F1> <Esc>
+
+" ctrl + k  moving selection to up
+xmap <c-k> :mo'<-- <cr> gv
+
+" ctrl + j  moving selection to down
+xmap <c-j> :mo'>+ <cr> gv
+
+" tab   indents selection
+vmap <silent> <Tab> >gv
+vmap <silent> <S-Tab> <gv
+
+" ,p    past from clipboard system
+map <leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+
+" ,cd   switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
-" Delete HTML tags but keeps text
-map <leader>h :%s#<[^>]\+>##g<cr>
-" Easy access to the vimrc
+
+" ,ev   easy access to the vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-" Reload vimrc
+
+" ,rv   reload vimrc
 nnoremap <leader>rv :source $MYVIMRC<cr>
-" When you press <leader>r you can search and replace the selected text
+
+" ,r    when you press <leader>r you can search and 
+"       replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
-" Remove the Windows ^M - when the encodings gets messed up
-noremap <Leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
-" Split
-noremap <Leader>h :split<CR>
-noremap <Leader>v :vsplit<CR>
 
-" Git
-noremap <Leader>ga :!git add .<CR>
-noremap <Leader>gc :!git commit -m '<C-R>="'"<CR>
-noremap <Leader>gsh :!git push<CR>
-noremap <Leader>gs :Gstatus<CR>
-noremap <Leader>gb :Gblame<CR>
-noremap <Leader>gd :Gvdiff<CR>
-noremap <Leader>gr :Gremove<CR>
+" ,m    remove the ^M (from windows) 
+"       when the encodings gets messed up
+noremap <leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
-" ,e    
-" Opens an edit command with the path of the currently edited file filled in
-noremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+" ,[hv] split horizontal or vertical
+noremap <leader>h :split<CR>
+noremap <leader>v :vsplit<CR>
 
-" YY    
-" Copy to clipboard
+" git
+noremap <leader>ga :!git add .<CR>
+noremap <leader>gc :!git commit -m '<C-R>="'"<CR>
+noremap <leader>gsh :!git push<CR>
+noremap <leader>gs :Gstatus<CR>
+noremap <leader>gb :Gblame<CR>
+noremap <leader>gd :Gvdiff<CR>
+noremap <leader>gr :Gremove<CR>
+
+" ,e    edit command with the current path
+noremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
+" copy, paste, cut
 noremap YY "+y<CR>
-
-" P     
-" Paste from clipboard
 noremap P "+gP<CR>
 
-" XX    
-" Cut to clipboard
-noremap XX "+x<CR>
-
-" ,q
-" Alias to close
+" ,q    alias to close
 map <leader>q :q<cr>
 
-" <Esc><Esc> 
-" Clear the search highlight in Normal mode
+" double esc    clear the search highlight in Normal mode
 nnoremap <silent> <Esc><Esc> :nohlsearch<CR><Esc>
 
-" ,f 
-" Fast grep-Recursive search in current directory for matches with current word
-map <Leader>f :execute "Ag " . expand("<cword>") <Bar> cw<CR>
-"let g:ackprg = 'ag --nogroup --nocolor --column'
+" ,f    really fast search in current directory for matches with current word
+map <leader>f :execute "Ag " . expand("<cword>") <Bar> cw<CR>
 
-" ,s 
-" Shortcut for :%s//
+" ,s    alias to :%s//
 nnoremap <leader>s :%s//<left>
 vnoremap <leader>s :s//<left>
 
+" ,ts   fix trailing white space
+map <leader>ts :%s/\s\+$//e<CR>
+
+" ,bb   show buffers
+nmap <leader>bb :ls<cr>:b
+
+" ,bp   go to prev buffer
+nmap <leader>bp :bp<cr>
+
+" ,tab  go to next buffer
+nmap <leader><tab> :bn<cr>
+
+" ,a    select all
+map <leader>a <esc>ggVG
+imap <leader>a <esc>ggVG
+map <C-a> <esc>ggVG
+
+" ,n   edit another file in the same directory with the current one
+map <leader>n :vnew <C-R>=expand("%:p:h") . '/'<CR>
+
+" bind :Q to :q
+command! Q q
+
+" ,<space>  open ctrl+p plugin
+nnoremap <leader><space> :CtrlP<Cr>
+
+" ,d    Duplicate line
+map <leader>d <esc>yyp
+
+" ,N    rename the current file
+map <leader>N :call RenameFile()<cr>
+
+" tab completion when entering filenames
+set wildmode=list:full
+set wildignore+=*.o,*.obj,.git,*.rbc,.hg,.svn,*.pyc,.vagrant,.DS_Store,*.jpg,
+  \*.eps,*.jpeg,*.png,*.gif,*.bmp,*.psd
 
 " K to split
-" Basically this splits the current line into two new ones at the cursor position,
+" basically this splits the current line into two new ones at the cursor position,
 " then joins the second one with whatever comes next.
 "
 " Example:                      Cursor Here
@@ -230,131 +317,87 @@ vnoremap <leader>s :s//<left>
 " foo = ('hello', 'world', 'a', 'b',
 "        'c', 'd', 'e')
 "
-" Especially useful for adding items in the middle of long lists/tuples in Python
+" sspecially useful for adding items in the middle of long lists/tuples in Python
 " while maintaining a sane text width.
 nnoremap K <nop>
 nnoremap K h/[^ ]<cr>"zd$jyyP^v$h"zpJk:s/\v +$//<cr>:noh<cr>j^
 
 
-" ,ts   
-" Fix trailing white space
-map <leader>ts :%s/\s\+$//e<CR>
 
-" ,bl   
-" Show buffers
-nmap <Leader>bl :ls<cr>:b
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" PLUGINS
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" ,bp   
-" Go to prev buffer
-nmap <Leader>bp :bp<cr>
-
-" ,tab 
-" Go to next buffer
-nmap <Leader><tab> :bn<cr>
-
-" ,a    
-" Select all
-map <Leader>a <esc>ggVG
-imap <Leader>a <esc>ggVG
-map <C-a> <esc>ggVG
-
-" Ctrl+s
-    map <C-s> <esc>:w<CR>
-    imap <C-s> <esc>:w<CR>
-
-" ,n
-    " Edit another file in the same directory with the current one
-    map <Leader>n :vnew <C-R>=expand("%:p:h") . '/'<CR>
-
-" Bind :Q to :q
-    command! Q q
-
-" ,<space>
-    nnoremap <leader><space> :CtrlP<Cr>
-
-" ,d
-    " Duplicate line
-    map <leader>d <esc>yyp
-
-" Tab completion when entering filenames
-set wildmode=list:full
-set wildignore+=*.o,*.obj,.git,*.rbc,.hg,.svn,*.pyc,.vagrant,.DS_Store,*.jpg,
-  \*.eps,*.jpeg,*.png,*.gif,*.bmp,*.psd
-
-
-" RENAME CURRENT FILE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-function! RenameFile()
-  let old_name = expand('%')
-  let new_name = input('New file name: ', expand('%'), 'file')
-  if new_name != '' && new_name != old_name
-    exec ':saveas ' . new_name
-    exec ':silent !rm ' . old_name
-    redraw!
-  endif
-endfunction
-map <leader>N :call RenameFile()<cr>
-
-
-" in many terminal emulators the mouse works just fine
-" thus enable it.
-if has('mouse')
-  set mouse=a
-endif
-
-" Plugins
-
-" Manager plugins
+" manager plugins
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle "gmarik/vundle"
-Bundle "tpope/vim-haml"
-Bundle "moll/vim-node"
-Bundle "gorodinskiy/vim-coloresque"
-Bundle "terryma/vim-multiple-cursors"
-Bundle "christoomey/vim-tmux-navigator"
-Bundle "daylerees/colour-schemes", { "rtp": "vim-themes/" }
-Bundle "digitaltoad/vim-jade"
-Bundle "othree/html5.vim"
-Bundle "leshill/vim-json"
-Bundle "briancollins/vim-jst"
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-haml'
+Bundle 'moll/vim-node'
+Bundle 'gorodinskiy/vim-coloresque'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'daylerees/colour-schemes', { 'rtp': 'vim-themes/' }
+Bundle 'digitaltoad/vim-jade'
+Bundle 'othree/html5.vim'
+Bundle 'leshill/vim-json'
+Bundle 'briancollins/vim-jst'
+Bundle 'scrooloose/nerdtree'
+Bundle 'mutewinter/nginx.vim'
+Bundle 'tpope/vim-markdown'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
+Bundle 'junegunn/vim-easy-align'
+Bundle 'ctrlp.vim'
+Bundle 'fisadev/vim-ctrlp-cmdpalette'
+Bundle 'StanAngeloff/php.vim'
+Bundle 'mitsuhiko/vim-python-combined'
+Bundle 'mattn/emmet-vim'
+Bundle 'miripiruni/CSScomb-for-Vim'
+Bundle 'cakebaker/scss-syntax.vim'
+Bundle '1995eaton/vim-better-css-completion'
+Bundle 'lepture/vim-velocity'
+Bundle 'pangloss/vim-javascript'
+Bundle 'fatih/vim-go'
+Bundle 'editorconfig/editorconfig-vim'
+Bundle 'itchyny/calendar.vim'
+Bundle 'itchyny/vim-autoft'
+Bundle 'itchyny/vim-cursorword'
+Bundle 'itchyny/screensaver.vim'
+Bundle 'junegunn/goyo.vim'
+Bundle 'amix/vim-zenroom2'
+Bundle 'itchyny/lightline.vim'
+Bundle 'derekwyatt/vim-scala'
+Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'mileszs/ack.vim'
+Bundle 'rking/ag.vim'
 
-" Syntax highlighting for nginx.conf and related config files.
-Bundle "mutewinter/nginx.vim"
-    au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
+" syntax highlighting for nginx.conf and related config files.
+au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
 
-" Vim Markdown runtime files
-Bundle "tpope/vim-markdown"
-    au BufNewFile,BufReadPost *.md set filetype=markdown
+" vim Markdown runtime files
+au BufNewFile,BufReadPost *.md set filetype=markdown
 
-Bundle "mattn/webapi-vim"
-Bundle "mattn/gist-vim"
-    let g:gist_clip_command = 'xclip -selection clipboard'
-    let g:gist_detect_filetype = 1
-    let g:gist_open_browser_after_post = 1
+" Gist
+let g:gist_clip_command = 'xclip -selection clipboard'
+let g:gist_detect_filetype = 1
+let g:gist_open_browser_after_post = 1
 
-" NERDTree
-Bundle "scrooloose/nerdtree"
-    " NERDTree, Use F3 for toggle NERDTree
-    nmap <silent> <F2> :NERDTreeToggle<CR>
+" NERDTree, Use F3 for toggle NERDTree
+nmap <silent> <F2> :NERDTreeToggle<CR>
 
-Bundle "junegunn/vim-easy-align"
-    vnoremap <silent> <Enter> :EasyAlign<cr>
+" EasyAlign
+vnoremap <silent> <Enter> :EasyAlign<cr>
 
-Bundle "ctrlp.vim"
+" CtrlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
-Bundle "fisadev/vim-ctrlp-cmdpalette"
-    let g:ctrlp_working_path_mode = ""
-    let g:ctrlp_custom_ignore = {
-        \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build|target|draft'
-        \ }
-    "let g:ctrlp_user_command =
-        "\ ['.git/', 'git --git-dir=%s/.git
-        "\ ls-files -oc --exclude-standard']
+let g:ctrlp_working_path_mode = ""
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build|target|draft'
+    \ }
 
 " JavaScript Syntax
-Bundle "pangloss/vim-javascript"
     au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
     let b:javascript_fold=0
     set foldclose=all
@@ -365,58 +408,44 @@ autocmd BufReadPost *
      \   exe "normal! g`\"" |
      \ endif
 
-" Up-to-date PHP syntax file (5.3, 5.4 & 5.5 support; basic 5.6 support)
-Bundle "StanAngeloff/php.vim"
-    au FileType php set omnifunc=phpcomplete#CompletePHP
-    " highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
-    au FileType php let php_sql_query=1
-    " does exactly that. highlights html inside of php strings
-    au FileType php let php_htmlInStrings=1
-    " no short tags
-    au FileType php let php_noShortTags=1
-    " automagically folds functions & methods. this is getting IDE-like isn't it?
-    au FileType php let php_folding=0
-    " Set multiple filetypes to the php files
-    au Filetype php set ft=php.html
-    " set "make" command when editing php files
-    set makeprg=php\ -l\ %
-    set errorformat=%m\ in\ %f\ on\ line\ %l
+" up-to-date PHP syntax file (5.3, 5.4 & 5.5 support; basic 5.6 support)
+au FileType php set omnifunc=phpcomplete#CompletePHP
+" highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
+au FileType php let php_sql_query=1
+" does exactly that. highlights html inside of php strings
+au FileType php let php_htmlInStrings=1
+" no short tags
+au FileType php let php_noShortTags=1
+" automagically folds functions & methods. this is getting IDE-like isn't it?
+au FileType php let php_folding=0
+" set multiple filetypes to the php files
+au Filetype php set ft=php.html
+" set "make" command when editing php files
+set makeprg=php\ -l\ %
+set errorformat=%m\ in\ %f\ on\ line\ %l
 
-" Fork of the python.vim by Dmitry Vasiliev and Neil Schemenauer for 2.x and 3.x.
-Bundle "mitsuhiko/vim-python-combined"
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
+" fork of the python.vim by Dmitry Vasiliev and Neil Schemenauer for 2.x and 3.x.
+autocmd FileType python set omnifunc=pythoncomplete#Complete
 
-" Simulate emmet in vim
-Bundle "mattn/emmet-vim"
-    nnoremap <C-z> :call emmet#expandAbbr(0,"")<CR>a
-    inoremap <C-z> <ESC>:call emmet#expandAbbr(0,"")<CR>a
+" simulate emmet in vim
+nnoremap <C-z> :call emmet#expandAbbr(0,"")<CR>a
+inoremap <C-z> <ESC>:call emmet#expandAbbr(0,"")<CR>a
 
 " CSS/SASS/SCSS
-Bundle "miripiruni/CSScomb-for-Vim"
-Bundle "cakebaker/scss-syntax.vim"
-Bundle "1995eaton/vim-better-css-completion"
-    au FileType css set omnifunc=csscomplete#CompleteCSS
-    au BufRead,BufNewFile *.scss set filetype=scss.css
-    au BufEnter *.scss :syntax sync fromstart
+au FileType css set omnifunc=csscomplete#CompleteCSS
+au BufRead,BufNewFile *.scss set filetype=scss.css
+au BufEnter *.scss :syntax sync fromstart
 
-" Velocity syntax
-Bundle "lepture/vim-velocity"
-    "au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set ft=velocity
-    au! BufRead,BufNewFile *.html,*.htm,*.shtml,*.stm set filetype=html
-    au! BufRead,BufNewFile *.vm,*.tpl set filetype=vm
+" velocity syntax
+"au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set ft=velocity
+au! BufRead,BufNewFile *.html,*.htm,*.shtml,*.stm set filetype=html
+au! BufRead,BufNewFile *.vm,*.tpl set filetype=vm
 
-" Go Lang
-Plugin 'fatih/vim-go'
-
-" Editor config
-Bundle "editorconfig/editorconfig-vim"
-
-" For Power Users
-Plugin 'itchyny/calendar.vim'
+" calendar - For Power Users
 let g:calendar_google_calendar = 1
 let g:calendar_google_task = 1
 
-Plugin 'itchyny/vim-autoft'
+" vim-autoft
 let g:autoft_config = [
           \ { 'filetype': 'html' , 'pattern': '<\%(!DOCTYPE\|html\|head\|script\)' },
           \ { 'filetype': 'c'    , 'pattern': '^\s*#\s*\%(include\|define\)\>' },
@@ -424,14 +453,10 @@ let g:autoft_config = [
           \ { 'filetype': 'sh'   , 'pattern': '^#!.*\%(\<sh\>\|\<bash\>\)\s*$' },
           \ ]
 
-Plugin 'itchyny/vim-cursorword'
-Plugin 'itchyny/screensaver.vim'
-Plugin 'junegunn/goyo.vim'
-Plugin 'amix/vim-zenroom2'
+" enable vim zen
 nnoremap <silent> <leader>z :Goyo<cr>
 
-
-Plugin 'itchyny/lightline.vim'
+" vim lightline
 let g:lightline = {
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
@@ -447,22 +472,33 @@ let g:lightline = {
       \ }
 
 
-Plugin 'derekwyatt/vim-scala'
+" vim scala
 let g:scala_sort_across_groups=1
 let g:scala_first_party_namespaces='\(controllers\|views\|models\|util\|de.\)'
 au BufNewFile,BufRead,BufReadPost *.scala.html set filetype=scala
 
 " Vim mustache / handlebars
-Plugin 'mustache/vim-mustache-handlebars'
 let g:mustache_abbreviations = 1
 au! BufRead,BufNewFile *.hbs,*.hbt,*.html set filetype=html.mustache syntax=mustache
 
-" Ack
-Plugin 'mileszs/ack.vim'
 " Ag - like ack, but faster
-Plugin 'rking/ag.vim'
 let g:agprg="/home/franklin/ --column"
 
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Helper functions
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+function! RenameFile()
+  let old_name = expand('%')
+  let new_name = input('New file name: ', expand('%'), 'file')
+  if new_name != '' && new_name != old_name
+    exec ':saveas ' . new_name
+    exec ':silent !rm ' . old_name
+    redraw!
+  endif
+endfunction
 
 function! MyModified()
   if &filetype == "help"
@@ -494,10 +530,6 @@ function! MyFugitive()
   return ''
 endfunction
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Helper functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 function! CmdLine(str)
     exe "menu Foo.Bar :" . a:str
     emenu Foo.Bar
@@ -524,7 +556,6 @@ function! VisualSelection(direction) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
-
 
 " Returns true if paste mode is enabled
 function! HasPaste()
