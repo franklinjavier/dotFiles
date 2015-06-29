@@ -52,6 +52,7 @@ alias _restart="sudo shutdown -r now"
 alias _logout="sudo pkill -u whoami"
 alias _shutdown="sudo shutdown -h now"
 alias irc="irssi -c 172.22.98.219 -p 6667 -n franklin"
+alias blog="cd ~/b0x/Projects/blog/"
 
 # Sudo
 alias s='sudo'
