@@ -212,9 +212,10 @@ bindsym $mod+r mode "resize"
 
 # WINDOW CONTROL
 # Float everything
+    for_window [class="Xfce4-notifyd"] floating enable; border none; focus mode_toggle
     for_window [class="MPlayer|Gnome-mplayer|Galculator|Gsimplecal|Viewnior|Alarm-clock|xpad|Java|Clamtk|XTerm|TeamViewer"] floating enable
     for_window [class="File-roller|Lxappearance|Nitrogen|Thunar|feh|Arandr|Caffeine|Pavucontrol|emulator64-arm|Transmission-gtk|sublime-text"] floating enable
-    for_window [title="Preferences|xfce4-notifyd|Skype|TrueCrypt|Catfish|Google Keep|Pocket|irssi|Application Finder"] floating enable
+    for_window [title="Preferences|Skype|TrueCrypt|Catfish|Google Keep|Pocket|irssi|Application Finder"] floating enable
     for_window [title="File Operation Progress" class="Thunar"] floating enable
     for_window [title="Share a link on Twitter - Mozilla Firefox" class="Firefox"] floating enable
     for_window [title="Press This - Mozilla Firefox" class="Firefox"] floating enable
