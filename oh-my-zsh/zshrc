@@ -48,6 +48,7 @@ alias sshcl='sudo ssh -p 21 root@104.236.192.225'
 alias sshboiada='sudo ssh -p 21 root@104.236.252.45'
 alias sshfranklin='sudo ssh -p 21 site@franklinjavier.com'
 alias sshsite='sudo ssh -p 21 site@45.55.86.140'
+alias sshqueropontos='ssh -p 21 site@104.131.79.81'
 alias _restart="sudo shutdown -r now"
 alias _logout="sudo pkill -u whoami"
 alias _shutdown="sudo shutdown -h now"
