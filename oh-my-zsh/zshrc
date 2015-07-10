@@ -32,7 +32,7 @@ alias gitl='git log --all --graph --decorate --oneline --abbrev-commit'
 alias gits='git status -sb'
 alias lst='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e
 '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
-alias dot='cd ~/b0x/dotFiles/'
+alias dotFiles='cd ~/b0x/dotFiles/'
 alias serve='python3 -m http.server'
 alias dirsize='du -h --max-depth=1 "$@" | sort -k 1,1hr -k 2,2f'
 alias :q='exit'
@@ -44,13 +44,13 @@ alias energetico='cd ~/Dropbox/Jogue\ Free/boiada/ && bkp pv.txt cl.txt root@104
 alias pv="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh pv 30 > /dev/null 2>&1&"
 alias cl="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh cl 30 > /dev/null 2>&1&"
 alias parar="sudo kill -9 $(pgrep 'casperjs|cron.sh|phantomjs')"
-alias sshcl='sudo ssh -p 21 root@104.236.192.225'
-alias sshboiada='sudo ssh -p 21 root@104.236.252.45'
-alias sshfranklin='sudo ssh -p 21 site@franklinjavier.com'
+alias sshcl='ssh -p 21 root@104.236.192.225'
+alias sshboiada='ssh -p 21 root@104.236.252.45'
+alias sshfranklin='ssh -p 21 site@franklinjavier.com'
 alias sshsite='sudo ssh -p 21 site@45.55.86.140'
 alias sshqueropontos='ssh -p 21 site@104.131.79.81'
 alias _restart="sudo shutdown -r now"
-alias _logout="sudo pkill -u whoami"
+alias _logout="sudo pkill -u $USER"
 alias _shutdown="sudo shutdown -h now"
 alias irc="irssi -c 172.22.98.219 -p 6667 -n franklin"
 alias blog="cd ~/b0x/Projects/blog/"

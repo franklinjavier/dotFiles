@@ -167,7 +167,7 @@ bindsym $mod+r mode "resize"
 
 
 # MONITOR
-    exec --no-startup-id exec sh ~/.screenlayout/layout.sh
+    exec --no-startup-id exec sh ~/.screenlayout/hybrid.sh
 
 # SYSTEM
 # Lock the session

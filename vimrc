@@ -103,8 +103,8 @@ if !has("gui_running")
     let g:solarized_termcolors=256
 endif
 
-" set background=dark
-" set term=xterm-256color
+"set background=dark
+"set term=xterm-256color
 " set the default gui font to Inconsolata
 set guifont=Inconsolata\ 11
 
