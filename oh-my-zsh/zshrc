@@ -97,7 +97,7 @@ alias info='cd ~/b0x/UOL/svn/branches/infograficos/'
 alias tools='cd ~/b0x/UOL/tools/'
 alias uol='cd ~/b0x/UOL/'
 alias dataviz='cd ~/b0x/UOL/dataviz/'
-alias tcl='cd ~/b0x/UOL/tcl/templatecache-local/ && sudo sh ./run.sh 80'
+alias tcl='sudo apache2ctl stop && cd ~/b0x/UOL/tcl/templatecache-local/ && sudo sh ./run.sh 80'
 alias connect='cd ~/b0x/dotFiles/arch/ && sudo sh start.sh'
 alias hosts='vim /etc/hosts'
 
