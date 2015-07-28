@@ -127,7 +127,7 @@ snippet doc_h
 	 * @copyright ${4:$2}, `strftime('%d %B, %Y')`
 	 * @package ${5:default}
 	 **/
-	
+
 	/**
 	 * Define DocBlock
 	 *//
@@ -228,6 +228,7 @@ snippet array
 	$${1:arrayName} = array('${2}' => ${3});${4}
 snippet dump
 	echo '<pre>' . nl2br(print_r(${1:value},true)) . '</pre>';
+	exit();
 snippet e
 	exit();${1}
 
@@ -275,12 +276,12 @@ snippet zfcrender
 
 snippet zfvt
 	$this->translate('${1}')${2}
-	
+
 snippet zfurl
 	$this->url(array('action'=>'${1:action}','controller'=>'${2:'controller'}'),
 				'${3:default}',${4:true})
 
-snippet zfaction 
+snippet zfaction
 	/**
 	 * ${2:Description}
 	 *
@@ -289,12 +290,12 @@ snippet zfaction
 	 **/
 	public function ${1:name}Action()
 	{
-		${3://code}	
+		${3://code}
 	}
 
 snippet zfcontroller
 	namespace \ $1
-    
+
 	/**
 	 * @uses Zend\Mvc\Controller\ActionController
 	 */
@@ -318,7 +319,7 @@ snippet zfcontroller
 	{
 		public function __construct()
 		{
-			${5://code} 
+			${5://code}
 		}
 	}
 snippet zfnt
@@ -331,7 +332,7 @@ snippet zfnt
 	<tuv xml:lang="pt_BR">
 	<seg>${3:translation}</seg>
 	</tuv>
-	</tu>       
+	</tu>
 
 snippet	zfinput
 	$this->add(array(
@@ -344,8 +345,8 @@ snippet	zfinput
 				),
 			'options' => array(
 				'label' => '$1',
-				), 
-			));$5    
+				),
+			));$5
 
 snippet clog
 	ChromePhp::log(${1:message});${2}
