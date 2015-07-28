@@ -438,7 +438,7 @@ au BufEnter *.scss :syntax sync fromstart
 
 " velocity syntax
 "au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set ft=velocity
-au! BufRead,BufNewFile *.html,*.htm,*.shtml,*.stm set filetype=html
+au! BufRead,BufNewFile *.html,*.htm,*.shtml,*.stm,*.tpl set filetype=html
 au! BufRead,BufNewFile *.vm,*.tpl set filetype=vm
 
 " calendar - For Power Users
@@ -479,7 +479,7 @@ au BufNewFile,BufRead,BufReadPost *.scala.html set filetype=scala
 
 " Vim mustache / handlebars
 let g:mustache_abbreviations = 1
-au! BufRead,BufNewFile *.hbs,*.hbt,*.html set filetype=html.mustache syntax=mustache
+au! BufRead,BufNewFile *.hbs,*.hbt,*.html,*.tpl set filetype=html.mustache syntax=mustache
 
 " Ag - like ack, but faster
 let g:agprg="/home/franklin/ --column"
