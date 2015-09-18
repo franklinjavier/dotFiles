@@ -6,19 +6,26 @@ snippet proto
 	};
 # Function
 snippet fun
-	function ${1:function_name} (${2:argument}) {
-		${3:// body...}
+	function ${1:function_name}(${2:argument}) {
+		${3}
 	}
 # Anonymous Function
 snippet f
-	function(${1}) {${2}};
+	function(${1}) {
+	  ${2}
+	}
 # if
 snippet if
-	if (${1:true}) {${2}}
+	if (${1}) {
+	  ${2}
+	}
 # if ... else
 snippet ife
-	if (${1:true}) {${2}}
-	else{${3}}
+	if (${1}) {
+	  ${2}
+	} else {
+	  ${3}
+	}
 # tertiary conditional
 snippet t
 	${1:/* condition */} ? ${2:a} : ${3:b}
@@ -54,15 +61,19 @@ snippet :f
 	${1:method_name}: function(${2:attribute}) {
 		${4}
 	}${3:,}
+
 # setTimeout function
 snippet timeout
 	setTimeout(function() {${3}}${2}, ${1:10};
+
 # Get Elements
 snippet get
 	getElementsBy${1:TagName}('${2}')${3}
+
 # Get Element
 snippet gett
 	getElementBy${1:Id}('${2}')${3}
+
 # Console log
 snippet	cl
 	console.log(${1:});${2}
@@ -89,18 +100,18 @@ snippet constructor
 
 snippet for
 	var ${1:i} = 0,
-		${2:len} = object.length;
+		${2:len} = ${3:object}.length;
 	for ( ; $1 < $2; $1++ ) {
-		${3:// object[ i ]}
-	};
-	
+		console.log(${4:$3[$1]});
+	}
+
 snippet forin
 	var ${1:prop};
 	for ( $1 in ${2:obj} ) {
 		if ( obj.hasOwnProperty( $1 ) ) {
-			${3:$2[ $1 ]}
+			${3:$2[$1]}
 		}
-	};
+	}
 
 
 snippet ifun
@@ -124,70 +135,6 @@ snippet jsonp
 	window.jsonp = function( data ) {
 		${1}
 	}
-
-
-snippet info
-	/*
-	* ${1:Nome do infografico}
-	* MES DIA ANO - fgonzalez (franklinjavier)
-	*/
-
-	(function( window, document ) {
-
-		var $wrapper,		// usado para cachear o elemento container do infografico
-			omnitureParam = '$1 - ',
-			eventClick	  = 'ontouchstart' in document.documentElement ? 'touchend' : 'click';
-
-		var App = {
-
-			/*
-			* Metodo responsavel por carregar todas dependencias
-			*/
-
-			load: function() {
-
-				loader({
-					'teste'   : function() { return window.jQuery },
-					'src'     : SRC.jquery || 'http://jsuol.com/c/jquery/jquery.js',
-					'require' : [
-						''
-					],
-					'charset': 'UTF-8',
-					'onLoad' : function() {
-
-						App.init( data );
-
-					}
-				});
-
-			},
-
-
-			/*
-			* Metodo inicializador
-			*/
-
-			init: function() {
-
-				$wrapper = $('#${2}');
-
-			},
-
-
-			/* 
-			* Metricas da estacao
-			*/
-			metrics: function( value ) {
-
-				omtrHitCounter( omnitureParam + value );
-
-			}
-
-		}; // app
-
-		App.load();
-
-	}( window, document ));
 
 snippet add
 	${1:obj}.add('${2:selector expression}')${3}
@@ -778,11 +725,10 @@ snippet width
 	${1:obj}.width(${2:integer})${3}
 snippet wrap
 	${1:obj}.wrap('${2:&lt;div class="extra-wrapper"&gt;&lt;/div&gt;}')${3}
-
 snippet bench
 	// Let's try some benchmarks!
 
-	var iterations = 10000, 
+	var iterations = 10000,
 		i = 0;
 
 	console.time('Fancy');
@@ -793,21 +739,56 @@ snippet bench
 	}
 
 	console.timeEnd('Fancy');
-	
 
 snippet def
 	define(function( require, exports ) {
 		'use strict';
-
 		${1}
 	});
-
 snippet com
 	/**
 	 * @desc ${1:Descricao}
-	 * @name ${2:Nome do metodo}
 	 * @param {} ${3}
-	 * @return 
-	 * @example 
+	 * @return
+	 * @example
 	 */
 
+############## MISC
+snippet jsons "JSON.stringify formatted" i
+	JSON.stringify(${1})${2}
+
+snippet jsonp "JSON.parse formatted" i
+	JSON.parse(${1})${2}
+
+############## Node.js
+snippet me "module.exports" b
+	module.exports = ${1};
+
+snippet exp "exports"
+	exports = ${1};
+
+snippet r "just require"
+	require('${1}');
+
+snippet re
+	var ${1:module} = require('${2:$1}');
+
+
+
+############## Tests
+snippet ds "describe a test suite" b
+	describe('#$1', function() {
+		$2
+	});
+snippet it "describe a test" b
+	it('Should $1', function() {
+		$2
+	});
+snippet ae "afterEach" b
+	afterEach(function($1) {
+		$2
+	});
+snippet be "beforeEach" b
+	beforeEach(function($1) {
+		$2
+	});

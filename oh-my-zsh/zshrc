@@ -102,6 +102,9 @@ alias tcl='sudo apache2ctl stop && cd ~/b0x/UOL/tcl/templatecache-local/ && sudo
 alias connect='cd ~/b0x/dotFiles/arch/ && sudo sh start.sh'
 alias hosts='vim /etc/hosts'
 
+# Blz
+alias blz='cd ~/Projects/blz/'
+
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
 

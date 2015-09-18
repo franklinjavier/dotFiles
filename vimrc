@@ -372,6 +372,7 @@ Bundle 'derekwyatt/vim-scala'
 Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
+Bundle 'wavded/vim-stylus'
 
 " syntax highlighting for nginx.conf and related config files.
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
@@ -431,10 +432,11 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 nnoremap <C-z> :call emmet#expandAbbr(0,"")<CR>a
 inoremap <C-z> <ESC>:call emmet#expandAbbr(0,"")<CR>a
 
-" CSS/SASS/SCSS
+" CSS/SASS/SCSS/Stylus
 au FileType css set omnifunc=csscomplete#CompleteCSS
 au BufRead,BufNewFile *.scss set filetype=scss.css
 au BufEnter *.scss :syntax sync fromstart
+au BufRead,BufNewFile *.styl set filetype=stylus
 
 " velocity syntax
 "au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set ft=velocity
