@@ -198,3 +198,5 @@ if [ "$TERM" = "linux" ]; then
   # get rid of artifacts
   clear
 fi
+
+export NODE_ENV=development

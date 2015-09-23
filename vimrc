@@ -373,6 +373,7 @@ Bundle 'mustache/vim-mustache-handlebars'
 Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
 Bundle 'wavded/vim-stylus'
+Bundle 'OrangeT/vim-csharp'
 
 " syntax highlighting for nginx.conf and related config files.
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
@@ -397,6 +398,18 @@ let g:ctrlp_working_path_mode = ""
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build|target|draft'
     \ }
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  "let g:ctrlp_use_caching = 0
+endif
 
 " JavaScript Syntax
     au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -440,7 +453,7 @@ au BufRead,BufNewFile *.styl set filetype=stylus
 
 " velocity syntax
 "au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set ft=velocity
-au! BufRead,BufNewFile *.html,*.htm,*.shtml,*.stm,*.tpl set filetype=html
+au! BufRead,BufNewFile *.html,*.htm,*.shtml,*.stm,*.tpl,*.cshtml set filetype=html
 au! BufRead,BufNewFile *.vm,*.tpl set filetype=vm
 
 " calendar - For Power Users
