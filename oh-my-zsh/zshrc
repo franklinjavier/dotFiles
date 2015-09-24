@@ -200,3 +200,4 @@ if [ "$TERM" = "linux" ]; then
 fi
 
 export NODE_ENV=development
+export PATH=/home/$(whoami)/mongodb/bin:$PATH
