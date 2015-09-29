@@ -173,7 +173,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/playframework/activator" # Add activator from Play framework
 
 unset GREP_OPTIONS
-#source ~/.nvm/nvm.sh
+source ~/.nvm/nvm.sh
 
 #!/bin/sh
 if [ "$TERM" = "linux" ]; then
