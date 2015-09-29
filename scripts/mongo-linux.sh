@@ -1,25 +1,33 @@
-MONGO_PATH="/home/$(whoami)/mongodb"
+##
+## Install MongoDB on Ubuntu
+## by Franklin Javier
+## Sep 23 2015
+##
 
+INSTALLATION_PATH="/home/$(whoami)/mongodb3"
+DATA_PATH="/home/$(whoami)/mongodata/"
+LATEST=`curl https://github.com/mongodb/mongo/tags | grep -oh ".*.tar.gz" | sed -e "s/<a href=\"/https:\/\/github\.com${replace}/g" | head -n 1`
+FILE=$INSTALLATION_PATH/mongo
 
-echo 'Creating structure...'
-mkdir -p $MONGO_PATH
-cd $MONGO_PATH
+# Structure
+mkdir -p $INSTALLATION_PATH
+cd $INSTALLATION_PATH
 
-sudo mkdir -p /data/db
-sudo chmod 0755 /data/db
-sudo chown $USER /data/db
+# Permission
+sudo mkdir -p $DATA_PATH
+sudo chmod 0755 $DATA_PATH
+sudo chown $USER $DATA_PATH
 
-echo 'Downloading...'
-curl -O https://fastdl.mongodb.org/linux/mongodb-linux-x86_64-3.0.6.tgz
+# Download last version
+wget $LATEST -O $FILE.tar.gz
 
-echo 'Unziping...'
-tar -zxvf mongodb-linux-x86_64-3.0.6.tgz
+# Extract content
+tar -zxvf $FILE.tar.gz
+mv mongo*/* .
+rm -rf $FILE
 
-echo 'Configuring...'
-mv mongodb-linux-x86_64-3.0.6/* .
-rm -rf mongodb-linux-x86_64-3.0.6
-echo 'export PATH=/home/$(whoami)/mongodb/bin:$PATH' >> ~/.zshrc
+# Set PATH to the bashrc
+echo 'export PATH=/home/$(whoami)/mongodb/bin:$PATH' >> ~/.bashrc
 
-echo 'Done!\n\n'
-
-mongo
+# Done
+echo 'Done!\nRestart your terminal and type:\nmongo --version'
