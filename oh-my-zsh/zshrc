@@ -55,6 +55,9 @@ alias _shutdown="sudo shutdown -h now"
 alias irc="irssi -c 172.22.98.219 -p 6667 -n franklin"
 alias blog="cd ~/b0x/Projects/blog/"
 
+# Mongo
+alias mongostart="sudo mongod --dbpath /home/$USER/mongodata"
+
 # Sudo
 alias s='sudo'
 
@@ -85,11 +88,8 @@ alias mkdir='mkdir -p -v'
 # Various
 alias cls='clear'
 alias h='history'
-
 alias ps="ps aux"
 alias pstree="pstree -au | grep"
-
-
 
 # UOL
 alias jsuol='cd ~/b0x/UOL/svn/webcontent/com/jsuol/c/'

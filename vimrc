@@ -374,6 +374,11 @@ Bundle 'mileszs/ack.vim'
 Bundle 'rking/ag.vim'
 Bundle 'wavded/vim-stylus'
 Bundle 'OrangeT/vim-csharp'
+Bundle 'isRuslan/vim-es6'
+Bundle 'mxw/vim-jsx'
+
+" JSX syntax highlighting in .js files
+let g:jsx_ext_required = 0
 
 " syntax highlighting for nginx.conf and related config files.
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif

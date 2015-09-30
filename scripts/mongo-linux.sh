@@ -4,7 +4,7 @@
 ## Sep 23 2015
 ##
 
-INSTALLATION_PATH="/home/$(whoami)/mongodb3"
+INSTALLATION_PATH="/home/$(whoami)/mongodb"
 DATA_PATH="/home/$(whoami)/mongodata/"
 LATEST=`curl https://github.com/mongodb/mongo/tags | grep -oh ".*.tar.gz" | sed -e "s/<a href=\"/https:\/\/github\.com${replace}/g" | head -n 1`
 FILE=$INSTALLATION_PATH/mongo
