@@ -404,17 +404,6 @@ let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build|target|draft'
     \ }
 
-" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  "let g:ctrlp_use_caching = 0
-endif
 
 " JavaScript Syntax
     au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
@@ -504,6 +493,9 @@ au! BufRead,BufNewFile *.hbs,*.hbt,*.html,*.tpl set filetype=html.mustache synta
 " Ag - like ack, but faster
 let g:agprg="/home/franklin/ --column"
 
+
+" identify dot files
+au! BufRead,BufNewFile *.eslintrc,*.babelrc,*.jscsrc set filetype=json
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
