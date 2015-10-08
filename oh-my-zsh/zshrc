@@ -39,6 +39,7 @@ alias :q='exit'
 alias :Q='exit'
 alias 'cd..'='cd ..'
 alias npmi='sudo npm i'
+alias npms='npm start'
 alias bkp='sudo rsync -azP --rsh="ssh -p21" --exclude-from "$HOME/b0x/dotFiles/.ignore"'
 alias energetico='cd ~/Dropbox/Jogue\ Free/boiada/ && bkp pv.txt cl.txt root@104.236.252.45:/home/boiada/ && bkp pv.txt cl.txt root@104.236.192.225:/home/boiada/'
 alias pv="cd ~/Dropbox/Jogue\ Free/boiada/ && ./cron.sh pv 30 > /dev/null 2>&1&"
@@ -104,6 +105,7 @@ alias hosts='vim /etc/hosts'
 
 # Blz
 alias blz='cd ~/Projects/blz/'
+alias bo='cd ~/Projects/blz/github/backoffice/'
 
 export TERM=xterm-256color
 [ -n "$TMUX" ] && export TERM=screen-256color
