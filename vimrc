@@ -377,6 +377,7 @@ Bundle 'wavded/vim-stylus'
 Bundle 'OrangeT/vim-csharp'
 Bundle 'isRuslan/vim-es6'
 Bundle 'mxw/vim-jsx'
+Bundle 'jscappini/material.vim'
 
 " JSX syntax highlighting in .js files
 let g:jsx_ext_required = 0
@@ -496,7 +497,7 @@ let g:agprg="/home/franklin/ --column"
 
 
 " identify dot files
-au! BufRead,BufNewFile *.eslintrc,*.babelrc,*.jscsrc set filetype=json
+au! BufRead,BufNewFile *.eslintrc,*.babelrc,*.jscsrc,*.csslintrc set filetype=json
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
