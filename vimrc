@@ -224,11 +224,11 @@ nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " ,rv   reload vimrc
 nnoremap <leader>rv :source $MYVIMRC<cr>
 
-" ,r    when you press <leader>r you can search and 
+" ,r    when you press <leader>r you can search and
 "       replace the selected text
 vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
 
-" ,m    remove the ^M (from windows) 
+" ,m    remove the ^M (from windows)
 "       when the encodings gets messed up
 noremap <leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
@@ -382,6 +382,7 @@ Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
 "Bundle 'othree/yajs.vim'
 "Bundle 'othree/es.next.syntax.vim'
 Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'Glench/Vim-Jinja2-Syntax'
 
 " JSX syntax highlighting in .js files
 let g:jsx_ext_required = 0
