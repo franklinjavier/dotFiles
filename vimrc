@@ -106,7 +106,7 @@ endif
 "set background=dark
 "set term=xterm-256color
 " set the default gui font to Inconsolata
-set guifont=Inconsolata\ 11
+set guifont=Monaco:h12
 
 " disable the toolbar
 set guioptions-=T
@@ -378,9 +378,15 @@ Bundle 'OrangeT/vim-csharp'
 Bundle 'isRuslan/vim-es6'
 Bundle 'mxw/vim-jsx'
 Bundle 'jscappini/material.vim'
+Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+"Bundle 'othree/yajs.vim'
+"Bundle 'othree/es.next.syntax.vim'
+Bundle 'othree/javascript-libraries-syntax.vim'
 
 " JSX syntax highlighting in .js files
 let g:jsx_ext_required = 0
+let g:used_javascript_libs = 'underscore,backbone,jquery,angularjs,react,flux,requirejs,sugar,jasmine,chai,handlebars'
+
 
 " syntax highlighting for nginx.conf and related config files.
 au BufRead,BufNewFile /etc/nginx/*,/usr/local/nginx/conf/* if &ft == '' | setfiletype nginx | endif
