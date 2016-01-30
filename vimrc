@@ -165,6 +165,11 @@ filetype plugin on
 autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType scss set omnifunc=csscomplete#CompleteCSS
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 
 au BufNewFile,BufRead,BufReadPost *.jade set filetype=jade
 "au! BufRead,BufNewFile *.vm  setfiletype velocity
@@ -342,7 +347,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'daylerees/colour-schemes', { 'rtp': 'vim-themes/' }
 Plug 'digitaltoad/vim-jade'
 Plug 'othree/html5.vim'
-Plug 'leshill/vim-json'
 Plug 'briancollins/vim-jst'
 Plug 'scrooloose/nerdtree'
 Plug 'albfan/nerdtree-git-plugin'
@@ -393,6 +397,18 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
 Plug 'tomtom/tcomment_vim'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'einars/js-beautify'
+
+  autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+  " for json 
+  autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+  " for jsx 
+  autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+  " for html
+  autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+  " for css or scss
+  autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
   let g:tcommentMapLeader1 = '<c-c>'
   let g:tcommentMapLeader2 = '<leader>c'
@@ -419,10 +435,7 @@ Plug 'tomtom/tcomment_vim'
   let g:dko_js_indent = 'gavocanov/vim-js-indent'
   if exists('g:dko_js_indent') && exists("g:plugs['yajs.vim']")
     Plug g:dko_js_indent, { 'for': 'javascript' }
-endif
-
-  " extends syntax for with jQuery,backbone,etc.
-  Plug 'othree/javascript-libraries-syntax.vim'
+  endif
 
 
   " ----------------------------------------
@@ -498,11 +511,8 @@ let g:ctrlp_custom_ignore = {
     \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build|target|draft'
     \ }
 
-
-" JavaScript Syntax
-    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-    "let b:javascript_fold=0
-    "set foldclose=all
+let b:javascript_fold=0
+set foldclose=all
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
@@ -511,7 +521,6 @@ autocmd BufReadPost *
      \ endif
 
 " up-to-date PHP syntax file (5.3, 5.4 & 5.5 support; basic 5.6 support)
-au FileType php set omnifunc=phpcomplete#CompletePHP
 " highlights interpolated variables in sql strings and does sql-syntax highlighting. yay
 au FileType php let php_sql_query=1
 " does exactly that. highlights html inside of php strings
@@ -526,15 +535,12 @@ au Filetype php set ft=php.html
 set makeprg=php\ -l\ %
 set errorformat=%m\ in\ %f\ on\ line\ %l
 
-" fork of the python.vim by Dmitry Vasiliev and Neil Schemenauer for 2.x and 3.x.
-autocmd FileType python set omnifunc=pythoncomplete#Complete
 
 " simulate emmet in vim
 nnoremap <C-z> :call emmet#expandAbbr(0,"")<CR>a
 inoremap <C-z> <ESC>:call emmet#expandAbbr(0,"")<CR>a
 
 " CSS/SASS/SCSS/Stylus
-autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS noci
 au BufRead,BufNewFile *.scss set filetype=scss.css
 au BufEnter *.scss :syntax sync fromstart
 au BufRead,BufNewFile *.styl set filetype=stylus
@@ -669,7 +675,3 @@ function! HasPaste()
     en
     return ''
 endfunction
-
-
-Plug 'Glench/Vim-Jinja2-Syntax'
-
