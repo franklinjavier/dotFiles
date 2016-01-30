@@ -17,9 +17,6 @@ set hidden
 " wrap lines
 set nowrap
 
-" set tab to be 4 spaces
-set tabstop=4
-
 " allow backspace over everything in edit mode
 set backspace=indent,eol,start
 
@@ -32,8 +29,8 @@ set si
 " copy the previous indentation
 set copyindent
 
-" set 4 space for autoindenting
-set shiftwidth=4
+" set 2 space for autoindenting
+set shiftwidth=2
 
 " set multiples of shiftwidth when indenting with '<'
 set shiftround
@@ -118,8 +115,11 @@ set guioptions-=m
 set guioptions+=LlRrb
 set guioptions-=LlRrb
 
-" set the tab space to 4
-set ts=4
+" set the tab space to 2
+set ts=2
+
+" set tab to be 2 spaces
+set tabstop=2
 
 " convert tab to spaces
 set expandtab
@@ -197,7 +197,7 @@ map <C-l> <C-w>l
 imap <C-z> <Esc><C-y>,a
 
 " activate Nerd Commenter
-map <C-c> <leader>ci
+"map <C-c> <leader>ci
 
 " avoid accidental hits of <F1> while aiming for <Esc>
 map <F1> <Esc>
@@ -213,7 +213,7 @@ vmap <silent> <Tab> >gv
 vmap <silent> <S-Tab> <gv
 
 " ,p    past from clipboard system
-map <leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
+"map <leader>p :set paste<CR>o<esc>"*]p:set nopaste<cr>
 
 " ,cd   switch CWD to the directory of the open buffer
 map <leader>cd :cd %:p:h<cr>:pwd<cr>
@@ -237,13 +237,13 @@ noremap <leader>h :split<CR>
 noremap <leader>v :vsplit<CR>
 
 " git
-noremap <leader>ga :!git add .<CR>
-noremap <leader>gc :!git commit -m '<C-R>="'"<CR>
-noremap <leader>gsh :!git push<CR>
-noremap <leader>gs :Gstatus<CR>
-noremap <leader>gb :Gblame<CR>
-noremap <leader>gd :Gvdiff<CR>
-noremap <leader>gr :Gremove<CR>
+"noremap <leader>ga :!git add .<CR>
+"noremap <leader>gc :!git commit -m '<C-R>="'"<CR>
+"noremap <leader>gsh :!git push<CR>
+"noremap <leader>gs :Gstatus<CR>
+"noremap <leader>gb :Gblame<CR>
+"noremap <leader>gd :Gvdiff<CR>
+"noremap <leader>gr :Gremove<CR>
 
 " ,e    edit command with the current path
 noremap <leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
@@ -329,60 +329,145 @@ nnoremap K h/[^ ]<cr>"zd$jyyP^v$h"zpJk:s/\v +$//<cr>:noh<cr>j^
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " manager plugins
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+"set rtp+=~/.vim/bundle/vundle/
+"call vundle#rc()
+call plug#begin('~/.vim/plugged')
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-haml'
-Bundle 'moll/vim-node'
-Bundle 'gorodinskiy/vim-coloresque'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'christoomey/vim-tmux-navigator'
-Bundle 'daylerees/colour-schemes', { 'rtp': 'vim-themes/' }
-Bundle 'digitaltoad/vim-jade'
-Bundle 'othree/html5.vim'
-Bundle 'leshill/vim-json'
-Bundle 'briancollins/vim-jst'
-Bundle 'scrooloose/nerdtree'
-Bundle 'albfan/nerdtree-git-plugin'
-Bundle 'mutewinter/nginx.vim'
-Bundle 'tpope/vim-markdown'
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'junegunn/vim-easy-align'
-Bundle 'ctrlp.vim'
-Bundle 'fisadev/vim-ctrlp-cmdpalette'
-Bundle 'StanAngeloff/php.vim'
-Bundle 'mitsuhiko/vim-python-combined'
-Bundle 'mattn/emmet-vim'
-Bundle 'miripiruni/CSScomb-for-Vim'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle '1995eaton/vim-better-css-completion'
-Bundle 'lepture/vim-velocity'
-Bundle 'pangloss/vim-javascript'
-Bundle 'fatih/vim-go'
-Bundle 'editorconfig/editorconfig-vim'
-Bundle 'itchyny/calendar.vim'
-Bundle 'itchyny/vim-autoft'
-Bundle 'itchyny/vim-cursorword'
-Bundle 'itchyny/screensaver.vim'
-Bundle 'junegunn/goyo.vim'
-Bundle 'amix/vim-zenroom2'
-Bundle 'itchyny/lightline.vim'
-Bundle 'derekwyatt/vim-scala'
-Bundle 'mustache/vim-mustache-handlebars'
-Bundle 'mileszs/ack.vim'
-Bundle 'rking/ag.vim'
-Bundle 'wavded/vim-stylus'
-Bundle 'OrangeT/vim-csharp'
-Bundle 'isRuslan/vim-es6'
-Bundle 'mxw/vim-jsx'
-Bundle 'jscappini/material.vim'
-Bundle 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
-"Bundle 'othree/yajs.vim'
-"Bundle 'othree/es.next.syntax.vim'
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'Glench/Vim-Jinja2-Syntax'
+"Plug 'gmarik/vundle'
+Plug 'tpope/vim-haml'
+Plug 'moll/vim-node'
+Plug 'gorodinskiy/vim-coloresque'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'daylerees/colour-schemes', { 'rtp': 'vim-themes/' }
+Plug 'digitaltoad/vim-jade'
+Plug 'othree/html5.vim'
+Plug 'leshill/vim-json'
+Plug 'briancollins/vim-jst'
+Plug 'scrooloose/nerdtree'
+Plug 'albfan/nerdtree-git-plugin'
+Plug 'mutewinter/nginx.vim'
+Plug 'tpope/vim-markdown'
+Plug 'mattn/webapi-vim'
+Plug 'mattn/gist-vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'ctrlp.vim'
+Plug 'fisadev/vim-ctrlp-cmdpalette'
+Plug 'StanAngeloff/php.vim'
+Plug 'mitsuhiko/vim-python-combined'
+Plug 'mattn/emmet-vim'
+Plug 'miripiruni/CSScomb-for-Vim'
+Plug 'cakebaker/scss-syntax.vim'
+Plug '1995eaton/vim-better-css-completion'
+Plug '1995eaton/vim-better-javascript-completion'
+Plug 'lepture/vim-velocity'
+Plug 'pangloss/vim-javascript'
+Plug 'fatih/vim-go'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'itchyny/calendar.vim'
+Plug 'itchyny/vim-autoft'
+Plug 'itchyny/vim-cursorword'
+Plug 'itchyny/screensaver.vim'
+Plug 'junegunn/goyo.vim'
+Plug 'amix/vim-zenroom2'
+Plug 'itchyny/lightline.vim'
+Plug 'derekwyatt/vim-scala'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'mileszs/ack.vim'
+Plug 'rking/ag.vim'
+Plug 'wavded/vim-stylus'
+Plug 'OrangeT/vim-csharp'
+Plug 'isRuslan/vim-es6'
+Plug 'mxw/vim-jsx'
+Plug 'jscappini/material.vim'
+Plug 'powerline/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plug 'othree/yajs.vim'
+Plug 'othree/es.next.syntax.vim'
+Plug 'gavocanov/vim-js-indent'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'Glench/Vim-Jinja2-Syntax'
+Plug 'othree/html5.vim'
+Plug 'othree/xml.vim'
+Plug 'digitaltoad/vim-jade'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'elzr/vim-json'
+Plug 'leafgarland/typescript-vim'
+Plug 'tomtom/tcomment_vim'
+
+  let g:tcommentMapLeader1 = '<c-c>'
+  let g:tcommentMapLeader2 = '<leader>c'
+  let g:vimjs#smartcomplete = 1
+
+  " Options
+  let g:dko_js_syntax = 'othree/yajs.vim'
+
+  " The "for" is required so the syntax registers on filetype, otherwise
+  " yajs has trouble overriding the default js syntax due to runtime order
+  if exists('g:dko_js_syntax')
+    Plug g:dko_js_syntax, { 'for': 'javascript' }
+  endif
+
+  " ----------------------------------------
+  " Syntax Addons
+  " ----------------------------------------
+
+  " Options
+  "'gavocanov/vim-js-indent'                " Indent from pangloss
+  "'jiangmiao/simple-javascript-indenter'   " Alternative js indent
+  "'jason0x43/vim-js-indent'                " Use HTML's indenter with
+                                            " TypeScript support
+  let g:dko_js_indent = 'gavocanov/vim-js-indent'
+  if exists('g:dko_js_indent') && exists("g:plugs['yajs.vim']")
+    Plug g:dko_js_indent, { 'for': 'javascript' }
+endif
+
+  " extends syntax for with jQuery,backbone,etc.
+  Plug 'othree/javascript-libraries-syntax.vim'
+
+
+  " ----------------------------------------
+  " Features
+  " ----------------------------------------
+
+  " Parameter completion
+  Plug 'othree/jspc.vim'
+
+  " <leader>pd on function to insert jsdoc above
+  "Plug 'heavenshell/vim-jsdoc'
+  " USING MY FORK INSTEAD
+  Plug 'davidosomething/vim-jsdoc'
+
+  " ,gf for going to node_modules files
+  Plug 'moll/vim-node'
+
+  " creates less filetype
+  Plug 'groenewege/vim-less'
+
+  " css.vim provides @media syntax highlighting where hail2u doesn't
+  " JulesWang/css.vim is the active repo for the css.vim bundled with vim
+  " hail2u extends vim's css highlighting
+  Plug 'JulesWang/css.vim'
+        \| Plug 'hail2u/vim-css3-syntax'
+        \| Plug 'cakebaker/scss-syntax.vim'
+
+  " ----------------------------------------
+  " Features
+  " ----------------------------------------
+
+  let s:dko_use_colorv = 1
+  if s:dko_use_colorv | Plug 'Rykka/colorv.vim'
+  else                | Plug 'ap/vim-css-color'
+  endif
+
+  " Omnicompletion
+  Plug 'othree/csscomplete.vim'
+
+  " add gS to smart split lines like comma lists and html tags
+  Plug 'AndrewRadev/splitjoin.vim'
+  Plug 'gregsexton/MatchTag'
+
+    " append vim-plug rtps and ft/syn enable
+  call plug#end()
 
 " JSX syntax highlighting in .js files
 let g:jsx_ext_required = 0
@@ -415,9 +500,9 @@ let g:ctrlp_custom_ignore = {
 
 
 " JavaScript Syntax
-    au FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-    let b:javascript_fold=0
-    set foldclose=all
+    autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+    "let b:javascript_fold=0
+    "set foldclose=all
 
 " Return to last edit position when opening files (You want this!)
 autocmd BufReadPost *
@@ -449,7 +534,7 @@ nnoremap <C-z> :call emmet#expandAbbr(0,"")<CR>a
 inoremap <C-z> <ESC>:call emmet#expandAbbr(0,"")<CR>a
 
 " CSS/SASS/SCSS/Stylus
-au FileType css set omnifunc=csscomplete#CompleteCSS
+autocmd FileType css,scss setlocal omnifunc=csscomplete#CompleteCSS noci
 au BufRead,BufNewFile *.scss set filetype=scss.css
 au BufEnter *.scss :syntax sync fromstart
 au BufRead,BufNewFile *.styl set filetype=stylus
@@ -485,9 +570,7 @@ let g:lightline = {
       \   'fugitive': 'MyFugitive',
       \   'readonly': 'MyReadonly',
       \   'modified': 'MyModified'
-      \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+      \ }
       \ }
 
 
@@ -588,5 +671,5 @@ function! HasPaste()
 endfunction
 
 
-Bundle 'Glench/Vim-Jinja2-Syntax'
+Plug 'Glench/Vim-Jinja2-Syntax'
 
