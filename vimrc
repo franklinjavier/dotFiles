@@ -106,7 +106,7 @@ endif
 "set background=dark
 "set term=xterm-256color
 " set the default gui font to Inconsolata
-set guifont=Inconsolata\ 11
+set guifont=Monaco:h12
 
 " disable the toolbar
 set guioptions-=T
@@ -451,6 +451,7 @@ au BufRead,BufNewFile *.styl set filetype=stylus
 "au! BufRead,BufNewFile *.vm,*.html,*.htm,*.shtml,*.stm set ft=velocity
 au! BufRead,BufNewFile *.html,*.htm,*.shtml,*.stm,*.tpl,*.cshtml set filetype=html
 au! BufRead,BufNewFile *.vm,*.tpl set filetype=vm
+au! BufRead,BufNewFile *.html set filetype=jinja
 
 " calendar - For Power Users
 let g:calendar_google_calendar = 1
@@ -578,4 +579,7 @@ function! HasPaste()
     en
     return ''
 endfunction
+
+
+Bundle 'Glench/Vim-Jinja2-Syntax'
 
