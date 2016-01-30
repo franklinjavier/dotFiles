@@ -485,8 +485,8 @@ Plug 'junegunn/gv.vim'
   call plug#end()
 
 " JSX syntax highlighting in .js files
-let g:jsx_ext_required = 0
-let g:used_javascript_libs = 'underscore,backbone,jquery,angularjs,react,flux,requirejs,sugar,jasmine,chai,handlebars'
+"let g:jsx_ext_required = 0
+"let g:used_javascript_libs = 'underscore,backbone,jquery,angularjs,react,flux,requirejs,sugar,jasmine,chai,handlebars'
 
 
 " syntax highlighting for nginx.conf and related config files.
