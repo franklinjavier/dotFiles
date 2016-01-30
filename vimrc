@@ -399,6 +399,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'einars/js-beautify'
+Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
 
   autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
   " for json 
@@ -595,6 +597,9 @@ let g:agprg="/home/franklin/ --column"
 
 " identify dot files
 au! BufRead,BufNewFile *.eslintrc,*.babelrc,*.jscsrc,*.csslintrc set filetype=json
+
+set rtp+=~/.fzf
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
