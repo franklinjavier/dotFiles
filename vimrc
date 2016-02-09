@@ -401,6 +401,7 @@ Plug 'Glench/Vim-Jinja2-Syntax'
 Plug 'einars/js-beautify'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
+Plug 'junegunn/vim-journal'
 
   autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
   " for json 
@@ -600,6 +601,20 @@ au! BufRead,BufNewFile *.eslintrc,*.babelrc,*.jscsrc,*.csslintrc set filetype=js
 
 set rtp+=~/.fzf
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+  " Open files in vertical horizontal split
+  nnoremap <silent> <Leader>f :call fzf#run({
+        \   'right': winwidth('.') / 2,
+        \   'sink':  'vertical botright split' })<CR>
+
+  nnoremap <silent> <Leader>t :call fzf#run({
+        \   'source':
+        \     map(split(globpath(&rtp, "colors/*.vim"), "\n"),
+        \         "substitute(fnamemodify(v:val, ':t'), '\\..\\{-}$', '', '')"),
+        \   'sink':    'colo',
+        \   'options': '+m',
+        \   'left':    30
+        \ })<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
