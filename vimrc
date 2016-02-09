@@ -511,7 +511,7 @@ vnoremap <silent> <Enter> :EasyAlign<cr>
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_working_path_mode = ""
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build|target|draft'
+    \ 'dir': '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build|target|draft|coverage-*'
     \ }
 
 let b:javascript_fold=0
