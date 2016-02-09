@@ -402,6 +402,7 @@ Plug 'einars/js-beautify'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-journal'
+Plug 'lambdatoast/elm.vim'
 
   autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
   " for json 
