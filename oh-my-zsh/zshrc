@@ -55,6 +55,7 @@ alias _logout="sudo pkill -u $USER"
 alias _shutdown="sudo shutdown -h now"
 alias irc="irssi -c 172.22.98.219 -p 6667 -n franklin"
 alias blog="cd ~/b0x/Projects/blog/"
+alias delete_branchs="git checkout master && git branch --merged | grep -v master | xargs git branch -d"
 
 # Mongo
 alias mongostart="sudo mongod --dbpath /home/$USER/mongodata"
