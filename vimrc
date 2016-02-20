@@ -94,7 +94,7 @@ filetype indent on
 syntax on
 
 " set color scheme
-colorscheme candyman
+colorscheme OceanicNext
 if !has("gui_running")
     let g:solarized_termtrans=1
     let g:solarized_termcolors=256
@@ -403,6 +403,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-journal'
 Plug 'elmcast/elm-vim'
+Plug 'mhartington/oceanic-next'
 
   autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
   " for json 
@@ -471,17 +472,11 @@ Plug 'elmcast/elm-vim'
   " Features
   " ----------------------------------------
 
-  let s:dko_use_colorv = 1
-  if s:dko_use_colorv | Plug 'Rykka/colorv.vim'
-  else                | Plug 'ap/vim-css-color'
-  endif
-
   " Omnicompletion
   Plug 'othree/csscomplete.vim'
 
   " add gS to smart split lines like comma lists and html tags
   Plug 'AndrewRadev/splitjoin.vim'
-  Plug 'gregsexton/MatchTag'
 
     " append vim-plug rtps and ft/syn enable
   call plug#end()
