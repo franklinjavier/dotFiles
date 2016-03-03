@@ -94,7 +94,7 @@ filetype indent on
 syntax on
 
 " set color scheme
-colorscheme OceanicNext
+colorscheme candyman
 if !has("gui_running")
     let g:solarized_termtrans=1
     let g:solarized_termcolors=256
@@ -507,8 +507,10 @@ vnoremap <silent> <Enter> :EasyAlign<cr>
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_working_path_mode = ""
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build|target|draft|coverage-*'
+    \ 'dir': '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build|target|draft|coverage-*|log?s|bower_components'
     \ }
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
 
 let b:javascript_fold=0
 set foldclose=all
