@@ -509,7 +509,7 @@ let g:ctrlp_working_path_mode = ""
 let g:ctrlp_custom_ignore = {
     \ 'dir': '\v[\/]\.(git|hg|svn)|node_modules|build|dist|build|target|draft|coverage-*|log?s|bower_components'
     \ }
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+" let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 
 let b:javascript_fold=0
@@ -589,10 +589,6 @@ au BufNewFile,BufRead,BufReadPost *.scala.html set filetype=scala
 " Vim mustache / handlebars
 let g:mustache_abbreviations = 1
 au! BufRead,BufNewFile *.hbs,*.hbt,*.html,*.tpl set filetype=html.mustache syntax=mustache
-
-" Ag - like ack, but faster
-let g:agprg="/home/franklin/ --column"
-
 
 " identify dot files
 au! BufRead,BufNewFile *.eslintrc,*.babelrc,*.jscsrc,*.csslintrc set filetype=json
@@ -709,4 +705,7 @@ if executable('ag')
 endif
 
 " bind K to grep word under cursor
-nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap F :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap \ :Ag<SPACE>
+let g:ackprg = 'ag --column'
+
