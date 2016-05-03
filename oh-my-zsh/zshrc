@@ -30,6 +30,7 @@ alias gdj='grunt dist:js'
 alias gdc='grunt dist:css'
 alias gitl='git log --all --graph --decorate --oneline --abbrev-commit'
 alias gits='git status -sb'
+alias gitup='git pull --rebase origin master'
 alias lst='ls -R | grep ":$" | sed -e '"'"'s/:$//'"'"' -e
 '"'"'s/[^-][^\/]*\//--/g'"'"' -e '"'"'s/^/   /'"'"' -e '"'"'s/-/|/'"'"
 alias dotFiles='cd ~/b0x/dotFiles/'
