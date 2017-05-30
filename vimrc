@@ -398,22 +398,13 @@ Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
 Plug 'tomtom/tcomment_vim'
 Plug 'Glench/Vim-Jinja2-Syntax'
-Plug 'einars/js-beautify'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-journal'
-Plug 'elmcast/elm-vim'
 Plug 'mhartington/oceanic-next'
 
-  autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
-  " for json 
-  autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
-  " for jsx 
-  autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
-  " for html
-  autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-  " for css or scss
-  autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+  " beautify js with prettier
+  inoremap gp :silent %!prettier --stdin --trailing-comma all --single-quote<CR>
 
   let g:tcommentMapLeader1 = '<c-c>'
   let g:tcommentMapLeader2 = '<leader>c'
