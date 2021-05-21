@@ -1,0 +1,27 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"ayu",
+		"C2console",
+		"DotENV",
+		"EditorConfig",
+		"FileIcons",
+		"Git blame",
+		"GraphQL",
+		"Jest",
+		"Jinja2",
+		"JsPrettier",
+		"MDX Syntax Highlighting",
+		"Nunjucks",
+		"Package Control",
+		"Pretty YAML",
+		"SideBarEnhancements",
+		"Stylus",
+		"SublimeLinter-eslint",
+		"TypeScript",
+	],
+}
