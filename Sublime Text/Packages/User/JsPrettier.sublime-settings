@@ -1,0 +1,16 @@
+{
+	"prettier_cli_path": "/usr/local/bin/prettier",
+	"auto_format_on_save": true,
+	"auto_format_on_save_excludes": ["*.html", "*.graphql", "*.yml", "*.mdx"],
+	"prettier_options": {
+		"useTabs": false,
+		"printWidth": 100,
+		"tabWidth": 2,
+		"singleQuote": true,
+		"trailingComma": "none",
+		"jsxBracketSameLine": false,
+		"parser": "babel",
+		"arrowParens": "always",
+		"semi": true
+	}
+}
