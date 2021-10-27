@@ -1,6 +1,6 @@
 # the svn plugin has to be activated for this to work.
-local ret_status="%(?:%{$fg_bold[silver]%}▲:%{$fg_bold[red]%}➜ %s)"
-PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[white]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}$(svn_prompt_info)%{$reset_color%}'
+local ret_status="%(?:%{$fg_bold[silver]%}▲:%{$fg_bold[red]%}▲%s)"
+PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$FG[008]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%}$(svn_prompt_info)%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
